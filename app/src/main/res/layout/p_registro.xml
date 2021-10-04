@@ -71,9 +71,9 @@
 
     <TextView
         android:id="@+id/txterror"
-        android:layout_width="310dp"
-        android:layout_height="34dp"
+        android:layout_width="212dp"
+        android:layout_height="47dp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="495dp" />
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="484dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
