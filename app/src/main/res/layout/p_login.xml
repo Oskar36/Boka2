@@ -41,21 +41,20 @@
         android:text="Entrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_contr"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_txt_error"
+        app:layout_constraintVertical_bias="0.077" />
 
     <TextView
         android:id="@+id/Login_txt_error"
-        android:layout_width="184dp"
-        android:layout_height="34dp"
+        android:layout_width="208dp"
+        android:layout_height="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_contr"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <TextView
         android:id="@+id/Login_txt_registro"
