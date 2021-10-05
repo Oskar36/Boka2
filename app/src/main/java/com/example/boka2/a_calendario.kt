@@ -1,17 +1,12 @@
 package com.example.boka2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 
-import android.R.id
-
 import android.app.Activity
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.p_calendario.*
 
 
@@ -23,7 +18,7 @@ class a_calendario : Activity() {
         setContentView(R.layout.p_calendario)
 
         //Obtenemos el linear layout donde colocar los botones
-        val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
+        val llBotonera = findViewById<View>(R.id.llcarta) as LinearLayout
 
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
