@@ -1,13 +1,25 @@
 package com.example.boka2
 
-import android.content.Intent
+import android.R.id
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.p_carta.*
+import kotlinx.android.synthetic.main.p_carta.view.*
+import com.google.android.material.tabs.TabLayout
+
+import android.R.id.tabs
+import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabItem
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 
-class a_reservas : AppCompatActivity() {
+
+class a_carta : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         fun onCreateOptionsMenu(menu: Menu?): Boolean {
             super.onCreateOptionsMenu(menu)
@@ -52,6 +64,26 @@ class a_reservas : AppCompatActivity() {
             return true
         }
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.p_reservas)
+        setContentView(R.layout.p_carta)
+        tablay.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                if(tablay.selectedTabPosition==0){
+                   carta()
+                }else{
+                    oferta()
+
+                }
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+        })
     }
+}
+fun oferta (){
+
+}
+fun carta (){
+
 }
