@@ -19,8 +19,9 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapLocalizacion"
-        android:layout_width="359dp"
-        android:layout_height="471dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="72dp"
+        android:layout_height="136dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

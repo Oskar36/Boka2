@@ -10,7 +10,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.p_event_ofe.*
 
 class MainActivity : AppCompatActivity() {
-
+//si
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
 
         btnhdtpm.setOnClickListener {
-            val menu = Intent(this, a_calendario::class.java)
+            val menu = Intent(this, a_login::class.java)
             startActivity(menu)
         }
 

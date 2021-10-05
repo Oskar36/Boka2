@@ -18,8 +18,9 @@
         <activity
             android:name=".a_reservas"
             android:exported="true" />
+
         <activity
-            android:name=".a_PantallaPrincipal"
+            android:name=".a_carta"
             android:exported="true" />
         <activity
             android:name=".a_perfil"

@@ -7,5 +7,6 @@ class a_login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_login)
+
     }
 }
