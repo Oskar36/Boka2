@@ -16,6 +16,9 @@
             android:name=".a_reservas"
             android:exported="true" />
         <activity
+            android:name=".a_PantallaPrincipal"
+            android:exported="true" />
+        <activity
             android:name=".a_perfil"
             android:exported="true" />
         <activity

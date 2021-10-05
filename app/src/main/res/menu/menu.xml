@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Carta"
+        android:id="@+id/carta">
+    </item>
+
+    <item android:title="Localizar Foodtruck"
+        android:id="@+id/Localizar">
+    </item>
+
+    <item android:title="Reservar"
+        android:id="@+id/Reservar">
+    </item>
+
+    <item android:title="Calendario"
+        android:id="@+id/Calendario">
+    </item>
+
+    <item android:title="Quienes somos"
+        android:id="@+id/Quienes">
+    </item>
+
+    <item android:title="Perfil"
+        android:id="@+id/Perfil">
+    </item>
+
+    <item android:title="Cerrar sesion"
+        android:id="@+id/sesion">
+    </item>
+</menu>
