@@ -37,7 +37,7 @@ class a_calendario : Activity() {
 
 
         )
-        //prueba
+
     val layout:LinearLayout=l_layout
 
         //Creamos los botones en bucle
