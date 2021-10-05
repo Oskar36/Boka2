@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Boka2">
         <activity
+            android:name=".a_carta"
+            android:exported="true" />
+        <activity
             android:name=".a_quienesSomos"
             android:exported="true" />
         <activity
@@ -17,10 +20,6 @@
             android:exported="true" />
         <activity
             android:name=".a_reservas"
-            android:exported="true" />
-
-        <activity
-            android:name=".a_carta"
             android:exported="true" />
         <activity
             android:name=".a_perfil"
