@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:accessibilityPaneTitle="@string/app_name">
 
     <Button
         android:id="@+id/btnhdtpm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        tools:ignore="SpeakableTextPresentCheck"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="233dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
