@@ -13,6 +13,9 @@
             android:name=".a_quienesSomos"
             android:exported="true" />
         <activity
+            android:name=".a_calendario"
+            android:exported="true" />
+        <activity
             android:name=".a_reservas"
             android:exported="true" />
         <activity
