@@ -23,7 +23,8 @@ class a_calendario : Activity() {
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val iditem = item.getItemId()
+
+       val iditem = item.getItemId()
 
         if (iditem==R.id.carta){
             val intent= Intent(this, a_carta::class.java)
@@ -49,7 +50,6 @@ class a_calendario : Activity() {
             startActivity(intent)
         }
         if (iditem==R.id.sesion){
-
             Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
             val intent= Intent(this, a_login::class.java)
             finish()
