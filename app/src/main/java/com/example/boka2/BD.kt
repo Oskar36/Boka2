@@ -12,7 +12,7 @@ data class carta (val nombre:String, val tipo:String,val precio:Int,val info:Str
 data class localizacion (val calle: String, val municipio: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("create table usuarios (correo text primary key, contraseña text)")
+        db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
         db!!.execSQL("create table eventos_ofertas ( titulo text,fecha text,tipo text, img text,primary key(titulo,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,precio real,info text,img text,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
@@ -25,30 +25,25 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("drop table if exists localizacion")
         onCreate(db)
     }
-    fun insertar(correo:String, contraseña:String ){
+    fun insertar(user:String, contrasena:String ){
         val db=this.writableDatabase
         val fila=ContentValues()
-        fila.put("correo",correo)
-        fila.put("contraseña",contraseña)
+        fila.put("user",user)
+        fila.put("contrasena",contrasena)
         db.insert("articulos",null,fila)
     }
     //
-    fun buscarCorreo(correo1:String):Boolean{
+    fun buscarCorreo(user1:String):Boolean{
 
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select * where correo=?", arrayOf(correo1))
+        val fila = db.rawQuery("select * from usuarios where user='$user1'", null)
 
         return true
     }
-    fun ComprobarUsuario(correo1:String,contraseña1:String):List<usuario>{
-        val fila:MutableList<usuario> = ArrayList()
+    fun ComprobarUsuario(user1:String,contraseña1:String):Boolean{
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select * where correo=? & contraseña=?", arrayOf(correo1))
-        while (cursor.moveToNext()){
-            val todo= usuario(cursor.getString(0),cursor.getString(1))
-            fila.add(todo)
-        }
-        return fila
+        val fila = db.rawQuery("select * from usuarios where user='$user1' & contrasena='$contraseña1'", null)
+        return true
     }
     fun Eventos(evento:String):List<eve_ofe>{
         val fila:MutableList<eve_ofe> = ArrayList()

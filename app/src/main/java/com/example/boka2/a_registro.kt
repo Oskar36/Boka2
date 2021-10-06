@@ -15,19 +15,29 @@ class a_registro : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
-        getSupportActionBar()?.setLogo(R.drawable.logo2)
-        getSupportActionBar()?.setTitle("")
-        getSupportActionBar()?.setDisplayUseLogoEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setLogo(R.drawable.logo2)
+        supportActionBar?.title = ""
+        supportActionBar?.setDisplayUseLogoEnabled(true)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_registro)
-        btnRegistro.setOnClickListener(){
-            if(BBDD.buscarCorreo(txtmail.text.toString())==false)
-            if(txtpsw.text.toString().equals(txtreppaswd.text.toString())){
-                BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
-            }else{
-                Toast.makeText(this, "Ambas contraseñas deben ser iguales", Toast.LENGTH_SHORT).show()
+        btnRegistro.setOnClickListener() {
+            if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
+                if (BBDD.buscarCorreo(txtmail.text.toString())) {
+                    BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
+
+                    val intent=Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+
+                } else {
+                    Toast.makeText(this, ""+BBDD.buscarCorreo(txtmail.text.toString()), Toast.LENGTH_SHORT)
+                        .show()
+
+                }
+            }else {
+                Toast.makeText(this, "Ambas contraseñas deben ser iguales", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
         

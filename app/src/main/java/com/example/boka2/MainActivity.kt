@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         if (iditem==R.id.carta){
             val intent=Intent(this, a_carta::class.java)
             startActivity(intent)
+
+
         }
         if (iditem==R.id.Localizar){
             val intent= Intent(this, a_localizacion::class.java)
