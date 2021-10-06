@@ -32,6 +32,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         fila.put("contraseña",contraseña)
         db.insert("articulos",null,fila)
     }
+    //
     fun buscarCorreo(correo1:String):Boolean{
 
         val db=this.readableDatabase
