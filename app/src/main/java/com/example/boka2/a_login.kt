@@ -14,6 +14,12 @@ class a_login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_login)
         Login_txt_registro.setOnClickListener(){
+
+            getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+            getSupportActionBar()?.setLogo(R.drawable.logo2)
+            getSupportActionBar()?.setTitle("")
+            getSupportActionBar()?.setDisplayUseLogoEnabled(true)
+
             val intent= Intent(this, a_registro::class.java)
             startActivity(intent)
         }
