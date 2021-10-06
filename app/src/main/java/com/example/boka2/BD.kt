@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 data class usuario (val correo: String, val contraseña: String)
+//data class eve_ofe()
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("create table usuarios (correo text primary key, contraseña text)")
@@ -34,7 +35,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
 
         return fila
     }
-    fun ComprobarUsuarion(correo1:String,contraseña1:String):List<usuario>{
+    fun ComprobarUsuario(correo1:String,contraseña1:String):List<usuario>{
         val fila:MutableList<usuario> = ArrayList()
         val db=this.readableDatabase
         val cursor:Cursor = db.rawQuery("select * where correo=? & contraseña=?", arrayOf(correo1))
@@ -42,7 +43,6 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
             val todo= usuario(cursor.getString(0),cursor.getString(1))
             fila.add(todo)
         }
-
         return fila
     }
 }
