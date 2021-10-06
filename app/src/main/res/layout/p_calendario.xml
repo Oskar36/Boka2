@@ -6,25 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".a_calendario">
 
-        <LinearLayout
-            android:id="@+id/l_layout"
+    <LinearLayout
+        android:id="@+id/l_layout"
+        android:layout_width="391dp"
+        android:layout_height="301dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context="com.example.boka2.a_calendario">
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:context="com.example.boka2.a_calendario">
+            tools:ignore="SpeakableTextPresentCheck">
 
-            <ScrollView
+            <LinearLayout
+                android:id="@+id/llprincipal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/llprincipal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"></LinearLayout>
-            </ScrollView>
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
