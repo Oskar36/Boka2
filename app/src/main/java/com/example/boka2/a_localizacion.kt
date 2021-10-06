@@ -29,17 +29,16 @@ class a_localizacion : AppCompatActivity() {
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
-            val intent= Intent(this, a_localizacion::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
         }
         if (iditem==R.id.Reservar){
             val intent= Intent(this, a_reservas::class.java)
             startActivity(intent)
         }
-        /*  if (iditem==R.id.Calendario){
+        if (iditem==R.id.Calendario){
                val intent=Intent(this, a_calendario::class.java)
                startActivity(intent)
-           }*/
+           }
         if (iditem==R.id.Quienes){
             val intent=Intent(this, a_quienesSomos::class.java)
             startActivity(intent)

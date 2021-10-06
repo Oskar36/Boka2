@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val iditem = item.getItemId()
 
-        /*if (iditem==R.id.carta){
-            val intent=Intent(this, carta::class.java)
+        if (iditem==R.id.carta){
+            val intent=Intent(this, a_carta::class.java)
             startActivity(intent)
-        }*/
+        }
         if (iditem==R.id.Localizar){
             val intent= Intent(this, a_localizacion::class.java)
             startActivity(intent)
@@ -31,14 +31,14 @@ class MainActivity : AppCompatActivity() {
             val intent= Intent(this, a_reservas::class.java)
             startActivity(intent)
         }
-        /* if (iditem==R.id.Calendario){
-             val intent=Intent(this, ::class.java)
-             startActivity(intent)
-         }*/
-        /*if (iditem==R.id.Quienes){
-            val intent=Intent(this, ::class.java)
+       if (iditem==R.id.Calendario){
+               val intent=Intent(this, a_calendario::class.java)
+               startActivity(intent)
+           }
+        if (iditem==R.id.Quienes){
+            val intent=Intent(this, a_quienesSomos::class.java)
             startActivity(intent)
-        }*/
+        }
         if (iditem==R.id.Perfil){
             val intent= Intent(this, a_perfil::class.java)
             startActivity(intent)
@@ -46,8 +46,9 @@ class MainActivity : AppCompatActivity() {
         if (iditem==R.id.sesion){
 
             Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+            val intent= Intent(this, a_login::class.java)
             finish()
-
+            startActivity(intent)
         }
 
         return true

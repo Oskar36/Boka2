@@ -29,24 +29,23 @@ class a_perfil : AppCompatActivity() {
             val intent= Intent(this, a_reservas::class.java)
             startActivity(intent)
         }
-        /*  if (iditem==R.id.Calendario){
+        if (iditem==R.id.Calendario){
                val intent=Intent(this, a_calendario::class.java)
                startActivity(intent)
-           }*/
+           }
         if (iditem==R.id.Quienes){
             val intent=Intent(this, a_quienesSomos::class.java)
             startActivity(intent)
         }
         if (iditem==R.id.Perfil){
-            val intent= Intent(this, a_perfil::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
         }
         if (iditem==R.id.sesion){
 
-            val intent= Intent(this, a_login::class.java)
-            startActivity(intent)
-            finish()
             Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+            val intent= Intent(this, a_login::class.java)
+            finish()
+            startActivity(intent)
 
 
         }
