@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             txt.setLayoutParams(lp2)
             img.setLayoutParams(lp)
             //Asignamos Texto al botón
-            img.setBackgroundResource(R.drawable.evento)
+            img.setBackgroundResource(R.drawable.oferta)
             //Añadimos el botón a la botonera
             llBotonera.addView(img)
             llBotonera.addView(txt)
