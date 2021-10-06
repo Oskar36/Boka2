@@ -84,7 +84,7 @@ class a_carta : AppCompatActivity() {
             txt.setLayoutParams(lp2)
             img.setLayoutParams(lp)
             //Asignamos Texto al botón
-            img.setBackgroundResource(R.drawable.instagram)
+            img.setBackgroundResource(R.drawable.ensalada)
             //Añadimos el botón a la botonera
             llBotonera.addView(img)
             llBotonera.addView(txt)

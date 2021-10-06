@@ -91,7 +91,7 @@ class a_calendario : Activity() {
             img.setLayoutParams(lp)
             //Asignamos Texto al botón
             txt.setText("Boton " + String.format("%02d", i))
-            img.setBackgroundResource(R.drawable.instagram)
+            img.setBackgroundResource(R.drawable.evento)
             //Añadimos el botón a la botonera
             llBotonera.addView(img)
             llBotonera.addView(txt)

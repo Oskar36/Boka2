@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             txt.setLayoutParams(lp2)
             img.setLayoutParams(lp)
             //Asignamos Texto al botón
-            img.setBackgroundResource(R.drawable.instagram)
+            img.setBackgroundResource(R.drawable.evento)
             //Añadimos el botón a la botonera
             llBotonera.addView(img)
             llBotonera.addView(txt)
