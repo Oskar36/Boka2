@@ -23,7 +23,8 @@ class a_calendario : AppCompatActivity() {
         val iditem = item.getItemId()
 
         if (iditem==R.id.carta){
-            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
+            val intent= Intent(this, a_carta::class.java)
+            startActivity(intent)
         }
         if (iditem==R.id.Localizar){
             val intent= Intent(this, a_localizacion::class.java)
@@ -34,8 +35,7 @@ class a_calendario : AppCompatActivity() {
             startActivity(intent)
         }
         if (iditem==R.id.Calendario){
-            val intent= Intent(this, a_calendario::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
         }
         if (iditem==R.id.Quienes){
             val intent= Intent(this, a_quienesSomos::class.java)
