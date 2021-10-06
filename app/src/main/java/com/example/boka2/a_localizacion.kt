@@ -60,6 +60,11 @@ class a_localizacion : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+        getSupportActionBar()?.setLogo(R.drawable.logo2)
+        getSupportActionBar()?.setTitle("")
+        getSupportActionBar()?.setDisplayUseLogoEnabled(true)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_localizacion)
 

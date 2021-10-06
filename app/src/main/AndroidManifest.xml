@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Boka2">
         <activity
+            android:name=".a_calendario"
+            android:exported="true" />
+        <activity
+            android:name=".pruebacalendario"
+            android:exported="true" />
+        <activity
             android:name=".a_carta"
             android:exported="true" />
         <activity
             android:name=".a_quienesSomos"
-            android:exported="true" />
-        <activity
-            android:name=".a_calendario"
             android:exported="true" />
         <activity
             android:name=".a_reservas"
@@ -34,7 +37,6 @@
             android:name=".a_login"
             android:exported="true" />
         <activity
-
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

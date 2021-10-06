@@ -1,21 +1,18 @@
 package com.example.boka2
 
-import android.os.Bundle
-import android.widget.LinearLayout
-
-import android.app.Activity
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.p_calendario.*
+import kotlinx.android.synthetic.main.p_event_ofe.*
 
-
-class a_calendario : Activity() {
-
+class a_calendario : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
@@ -23,12 +20,10 @@ class a_calendario : Activity() {
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-       val iditem = item.getItemId()
+        val iditem = item.getItemId()
 
         if (iditem==R.id.carta){
-            val intent= Intent(this, a_carta::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
         }
         if (iditem==R.id.Localizar){
             val intent= Intent(this, a_localizacion::class.java)
@@ -38,9 +33,10 @@ class a_calendario : Activity() {
             val intent= Intent(this, a_reservas::class.java)
             startActivity(intent)
         }
-          if (iditem==R.id.Calendario){
-              Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
-           }
+        if (iditem==R.id.Calendario){
+            val intent= Intent(this, a_calendario::class.java)
+            startActivity(intent)
+        }
         if (iditem==R.id.Quienes){
             val intent= Intent(this, a_quienesSomos::class.java)
             startActivity(intent)
@@ -50,7 +46,9 @@ class a_calendario : Activity() {
             startActivity(intent)
         }
         if (iditem==R.id.sesion){
+
             Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+
             val intent= Intent(this, a_login::class.java)
             finish()
             startActivity(intent)
@@ -58,15 +56,20 @@ class a_calendario : Activity() {
 
         return true
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-        //Establecemos el layout main
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+        getSupportActionBar()?.setLogo(R.drawable.logo2)
+        getSupportActionBar()?.setTitle("")
+        getSupportActionBar()?.setDisplayUseLogoEnabled(true)
+
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.p_calendario)
 
-        //Obtenemos el linear layout donde colocar los botones
-        val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
+
+
+
+        val llBotonera = findViewById<View>(R.id.llprincipal) as LinearLayout
 
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
@@ -74,14 +77,14 @@ class a_calendario : Activity() {
             //LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams(1125, 700)
         )
-            val lp2 = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT,
+        val lp2 = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
 
 
-        )
+            )
 
-    val layout:LinearLayout=l_layout
+        val layout: LinearLayout =llprincipal
 
         //Creamos los botones en bucle
         for (i in 0 until numBotones) {
@@ -90,8 +93,7 @@ class a_calendario : Activity() {
             txt.setLayoutParams(lp2)
             img.setLayoutParams(lp)
             //Asignamos Texto al botón
-            txt.setText("Boton " + String.format("%02d", i))
-            img.setBackgroundResource(R.drawable.evento)
+            img.setBackgroundResource(R.drawable.instagram)
             //Añadimos el botón a la botonera
             llBotonera.addView(img)
             llBotonera.addView(txt)
@@ -102,4 +104,5 @@ class a_calendario : Activity() {
     companion object {
         var numBotones = 5
     }
-}
+
+    }

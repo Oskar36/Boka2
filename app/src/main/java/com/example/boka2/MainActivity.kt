@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val iditem = item.getItemId()
 
+
+
         if (iditem==R.id.carta){
             val intent=Intent(this, a_carta::class.java)
             startActivity(intent)
@@ -57,6 +59,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+        getSupportActionBar()?.setLogo(R.drawable.logo2)
+        getSupportActionBar()?.setTitle("")
+        getSupportActionBar()?.setDisplayUseLogoEnabled(true)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_event_ofe)

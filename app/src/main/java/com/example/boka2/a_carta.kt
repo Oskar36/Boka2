@@ -58,6 +58,12 @@ class a_carta : AppCompatActivity() {
         return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+        getSupportActionBar()?.setLogo(R.drawable.logo2)
+        getSupportActionBar()?.setTitle("")
+        getSupportActionBar()?.setDisplayUseLogoEnabled(true)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_carta)
         val llBotonera = findViewById<View>(R.id.llcarta) as LinearLayout
