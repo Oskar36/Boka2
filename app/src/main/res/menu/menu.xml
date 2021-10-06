@@ -5,7 +5,7 @@
         android:id="@+id/carta">
     </item>
 
-    <item android:title="Localizar Foodtruck"
+    <item android:title="Localizar Food Truck"
         android:id="@+id/Localizar">
     </item>
 
