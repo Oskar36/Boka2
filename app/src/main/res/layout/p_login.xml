@@ -77,7 +77,7 @@
         android:layout_width="196dp"
         android:layout_height="155dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/logotrans"
+        android:src="@drawable/logotrans2"
         app:layout_constraintBottom_toTopOf="@+id/login_correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
