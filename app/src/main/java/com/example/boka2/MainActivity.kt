@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.Toast
+import android.view.View
+import android.widget.*
+import kotlinx.android.synthetic.main.p_carta.*
 import kotlinx.android.synthetic.main.p_event_ofe.*
+import kotlinx.android.synthetic.main.p_event_ofe.llprincipal
 
 class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -59,12 +61,41 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_event_ofe)
 
+        val llBotonera = findViewById<View>(R.id.llprincipal) as LinearLayout
 
-        btnhdtpm.setOnClickListener {
-            val menu = Intent(this, a_carta::class.java)
-            startActivity(menu)
+        //Creamos las propiedades de layout que tendrán los botones.
+        //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
+        val lp = LinearLayout.LayoutParams(
+            //LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams(1125, 700)
+        )
+        val lp2 = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+
+
+            )
+
+        val layout: LinearLayout =llcarta
+
+        //Creamos los botones en bucle
+        for (i in 0 until numBotones) {
+            val img = ImageView(this)
+            val txt = TextView(this)
+            txt.setLayoutParams(lp2)
+            img.setLayoutParams(lp)
+            //Asignamos Texto al botón
+            img.setBackgroundResource(R.drawable.instagram)
+            //Añadimos el botón a la botonera
+            llBotonera.addView(img)
+            llBotonera.addView(txt)
+
         }
+    }
+
+    companion object {
+        var numBotones = 5
+    }
 
     }
 
-}
