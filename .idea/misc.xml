@@ -4,16 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_calendario.xml" value="0.2" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_event_ofe.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_calendario.xml" value="0.1" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.2" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_event_ofe.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_localizacion.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_login.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_pantalla_principal.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_perfil.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_quienes_somos.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_registro.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_reservas.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_reservas.xml" value="0.6" />
       </map>
     </option>
   </component>
