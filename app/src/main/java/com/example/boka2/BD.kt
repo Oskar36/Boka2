@@ -25,22 +25,19 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("drop table if exists localizacion")
         onCreate(db)
     }
-    fun insertarUsurario(correo:String, contraseña:String ){
+    fun insertar(correo:String, contraseña:String ){
         val db=this.writableDatabase
         val fila=ContentValues()
         fila.put("correo",correo)
         fila.put("contraseña",contraseña)
         db.insert("articulos",null,fila)
     }
-    fun buscarCorreo(correo1:String):List<usuario>{
-        val fila:MutableList<usuario> = ArrayList()
+    fun buscarCorreo(correo1:String):Boolean{
+
         val db=this.readableDatabase
         val cursor:Cursor = db.rawQuery("select * where correo=?", arrayOf(correo1))
-        while (cursor.moveToNext()){
-            val todo= usuario(cursor.getString(0),cursor.getString(1))
-            fila.add(todo)
-        }
-        return fila
+
+        return true
     }
     fun ComprobarUsuario(correo1:String,contraseña1:String):List<usuario>{
         val fila:MutableList<usuario> = ArrayList()
