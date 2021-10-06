@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
             )
 
-        val layout: LinearLayout =llcarta
+        val layout: LinearLayout =llprincipal
 
         //Creamos los botones en bucle
         for (i in 0 until numBotones) {

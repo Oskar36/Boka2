@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tablay"
-        tools:context="com.example.boka2.a_calendario">
+        tools:context="com.example.boka2.a_carta">
 
         <ScrollView
             android:layout_width="match_parent"
