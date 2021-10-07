@@ -4,16 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_boka2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_boka2_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Boka2">
         <activity
             android:name=".a_calendario"
-            android:exported="true" />
-        <activity
-            android:name=".pruebacalendario"
             android:exported="true" />
         <activity
             android:name=".a_carta"
