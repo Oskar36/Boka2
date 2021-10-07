@@ -61,18 +61,19 @@
 
     <TextView
         android:id="@+id/Login_txt_registro"
+        style="@style/texto"
         android:layout_width="230dp"
         android:layout_height="52dp"
         android:layout_marginTop="41dp"
         android:text="¿No tienes una cuenta? Regístrate"
+        android:textColor="#2979FF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_but_entrar"
-        app:layout_constraintVertical_bias="0.0"
-        style="@style/texto"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView"
