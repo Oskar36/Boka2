@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".a_quienesSomos">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="55dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/titulo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="27dp"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginTop="16dp"
+                            android:text="¿QUIENES SOMOS?"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/gmailIcono"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="11dp"
+                            app:layout_constraintStart_toEndOf="@+id/QuienesSomos"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+                            app:srcCompat="@drawable/gmail" />
+
+                        <TextView
+                            android:id="@+id/txtTwitter"
+                            android:layout_width="120dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="4dp"
+                            android:gravity="center_vertical"
+                            android:text="boka2_Bilbao"
+                            app:layout_constraintStart_toEndOf="@+id/twitterIcono"
+                            app:layout_constraintTop_toBottomOf="@+id/txtGmail" />
+
+                        <ImageView
+                            android:id="@+id/twitterIcono"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="11dp"
+                            app:layout_constraintStart_toEndOf="@+id/QuienesSomos"
+                            app:layout_constraintTop_toBottomOf="@+id/gmailIcono"
+                            app:srcCompat="@drawable/twitter" />
+
+                        <TextView
+                            android:id="@+id/txtGmail"
+                            android:layout_width="120dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="4dp"
+                            android:gravity="center_vertical"
+                            android:text="boka2@gmail.com"
+                            app:layout_constraintStart_toEndOf="@+id/gmailIcono"
+                            app:layout_constraintTop_toBottomOf="@+id/txtFacebook" />
+
+                        <ImageView
+                            android:id="@+id/telefonoIcono"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="11dp"
+                            android:layout_marginTop="126dp"
+                            app:layout_constraintStart_toEndOf="@+id/QuienesSomos"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@android:drawable/ic_menu_call" />
+
+                        <TextView
+                            android:id="@+id/txtTelefono"
+                            android:layout_width="120dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="126dp"
+                            android:text="666 666 666"
+                            app:layout_constraintStart_toEndOf="@+id/telefonoIcono"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:gravity="center_vertical" />
+
+                        <TextView
+                            android:id="@+id/txtInstagram"
+                            android:layout_width="120dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="4dp"
+                            android:gravity="center_vertical"
+                            android:text="boka2_Bilbao
+                    "
+                            app:layout_constraintStart_toEndOf="@+id/instagramIcono"
+                            app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
+
+                        <ImageView
+                            android:id="@+id/instagramIcono"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="11dp"
+                            app:layout_constraintStart_toEndOf="@+id/QuienesSomos"
+                            app:layout_constraintTop_toBottomOf="@+id/telefonoIcono"
+                            app:srcCompat="@drawable/instagram" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="11dp"
+                            app:layout_constraintStart_toEndOf="@+id/QuienesSomos"
+                            app:layout_constraintTop_toBottomOf="@+id/instagramIcono"
+                            app:srcCompat="@drawable/facebook1" />
+
+                        <TextView
+                            android:id="@+id/txtFacebook"
+                            android:layout_width="120dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="4dp"
+                            android:gravity="center_vertical"
+                            android:text="boka2_Bilbao"
+                            app:layout_constraintStart_toEndOf="@+id/imageView10"
+                            app:layout_constraintTop_toBottomOf="@+id/txtInstagram" />
+
+                        <ImageView
+                            android:id="@+id/imgFurgoneta"
+                            android:layout_width="255dp"
+                            android:layout_height="183dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="126dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:srcCompat="@drawable/furgoneta" />
+
+                        <TextView
+                            android:id="@+id/QuienesSomos"
+                            style="@style/texto"
+                            android:layout_width="261dp"
+                            android:layout_height="180dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="126dp"
+                            android:layout_marginBottom="24dp"
+                            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgFurgoneta"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
