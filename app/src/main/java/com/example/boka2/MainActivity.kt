@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
 
+
         }
         if (iditem==R.id.Localizar){
             val intent= Intent(this, a_localizacion::class.java)

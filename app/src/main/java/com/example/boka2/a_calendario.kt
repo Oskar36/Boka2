@@ -24,14 +24,17 @@ class a_calendario : AppCompatActivity() {
 
         if (iditem==R.id.carta){
             val intent= Intent(this, a_carta::class.java)
+            finishAffinity()
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
             val intent= Intent(this, a_localizacion::class.java)
+            finishAffinity()
             startActivity(intent)
         }
         if (iditem==R.id.Reservar){
             val intent= Intent(this, a_reservas::class.java)
+            finishAffinity()
             startActivity(intent)
         }
         if (iditem==R.id.Calendario){
@@ -39,10 +42,12 @@ class a_calendario : AppCompatActivity() {
         }
         if (iditem==R.id.Quienes){
             val intent= Intent(this, a_quienesSomos::class.java)
+            finishAffinity()
             startActivity(intent)
         }
         if (iditem==R.id.Perfil){
             val intent= Intent(this, a_perfil::class.java)
+            finishAffinity()
             startActivity(intent)
         }
         if (iditem==R.id.sesion){
