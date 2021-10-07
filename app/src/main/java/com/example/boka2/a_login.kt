@@ -30,11 +30,11 @@ class a_login : AppCompatActivity() {
         Login_but_entrar.setOnClickListener() {
             if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
 
-                val intent=Intent(this, MainActivity::class.java)
-                startActivity(intent)
+               val intent=Intent(this, MainActivity::class.java)
+               startActivity(intent)
 
             } else {
-                Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show()
+                txterror.text = "El usuario o la contraseña no son correctos"
             }
         }
     }

@@ -27,23 +27,37 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     }
     fun insertar(user:String, contrasena:String ){
         val db=this.writableDatabase
-        val fila=ContentValues()
-        fila.put("user",user)
-        fila.put("contrasena",contrasena)
-        db.insert("articulos",null,fila)
+        val registrar=ContentValues()
+        registrar.put("user",user)
+        registrar.put("contrasena",contrasena)
+        db.insert("usuarios",null,registrar)
     }
     //
     fun buscarCorreo(user1:String):Boolean{
-
+        val fila:MutableList<usuario> = ArrayList()
         val db=this.readableDatabase
-        val fila = db.rawQuery("select * from usuarios where user='$user1'", null)
+        val cursorfila = db.rawQuery("select * from usuarios where user=?", arrayOf(user1))
+        println(cursorfila.count)
+        if (cursorfila.count == 0){
+            return true
 
-        return true
+
+        }else{
+            return false
+
+        }
+
     }
-    fun ComprobarUsuario(user1:String,contraseña1:String):Boolean{
+    fun ComprobarUsuario(user1:String,contrasena1:String):Boolean{
+        val fila:MutableList<usuario> = ArrayList()
         val db=this.readableDatabase
-        val fila = db.rawQuery("select * from usuarios where user='$user1' & contrasena='$contraseña1'", null)
-        return true
+        val cursorfila = db.rawQuery("select * from usuarios where user=? AND contrasena=?", arrayOf(user1, contrasena1))
+        println("El numero de filas es: "+cursorfila.count)
+        if (cursorfila.count == 1){
+            return true
+        }else{
+            return false
+        }
     }
     fun Eventos(evento:String):List<eve_ofe>{
         val fila:MutableList<eve_ofe> = ArrayList()

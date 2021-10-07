@@ -23,22 +23,30 @@ class a_registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_registro)
         btnRegistro.setOnClickListener() {
-            if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
-                if (BBDD.buscarCorreo(txtmail.text.toString())) {
-                    BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
-
-                    val intent=Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-
-                } else {
-                    Toast.makeText(this, ""+BBDD.buscarCorreo(txtmail.text.toString()), Toast.LENGTH_SHORT)
-                        .show()
-
-                }
-            }else {
-                Toast.makeText(this, "Ambas contraseñas deben ser iguales", Toast.LENGTH_SHORT)
+            println(BBDD.buscarCorreo(txtmail.text.toString()))
+            if (txtmail.text.trim().isEmpty() || txtpsw.text.trim().isEmpty() || txtreppaswd.text.trim().isEmpty() ){
+                Toast.makeText(this, "Los campos no pueden estar vacios", Toast.LENGTH_SHORT)
                     .show()
+            }else{
+                if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
+                    if (BBDD.buscarCorreo(txtmail.text.toString())) {
+                        BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
+
+
+                        val intent=Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+
+                    } else {
+                        Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT)
+                            .show()
+
+                    }
+                }else {
+                    Toast.makeText(this, "Ambas contraseñas deben ser iguales", Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
+
         }
         
 
