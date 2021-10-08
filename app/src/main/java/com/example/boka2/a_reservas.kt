@@ -9,8 +9,13 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.LatLng
 
-class a_reservas : AppCompatActivity() {
+class a_reservas : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
@@ -59,7 +64,9 @@ class a_reservas : AppCompatActivity() {
 
         return true
     }
-
+    private var mapView: MapView? = null
+    private var gmap: GoogleMap? = null
+    private val MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey"
     override fun onCreate(savedInstanceState: Bundle?) {
 
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
@@ -69,9 +76,59 @@ class a_reservas : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_reservas)
-
+        var mapViewBundle: Bundle? = null
+        if (savedInstanceState != null) {
+            mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
+        }
+        mapView = findViewById(R.id.mapView3)
+        mapView!!.onCreate(mapViewBundle)
+        mapView!!.getMapAsync(this)
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        var mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY)
+        if (mapViewBundle == null) {
+            mapViewBundle = Bundle()
+            outState.putBundle(MAP_VIEW_BUNDLE_KEY, mapViewBundle)
+        }
+        mapView!!.onSaveInstanceState(mapViewBundle)
+    }
+    override fun onResume() {
+        super.onResume()
+        mapView!!.onResume()
     }
 
+    override fun onStart() {
+        super.onStart()
+        mapView!!.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mapView!!.onStop()
+    }
+
+    override fun onPause() {
+        mapView!!.onPause()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        mapView!!.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView!!.onLowMemory()
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        gmap = googleMap
+        gmap!!.setMinZoomPreference(12f)
+        val ny = LatLng(40.7143528, -74.0059731)
+        gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
+    }
 
 
 }

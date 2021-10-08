@@ -1,26 +1,34 @@
 package com.example.boka2
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 
 import com.google.android.gms.maps.model.MarkerOptions
 
-import com.google.android.gms.maps.GoogleMap
 import kotlinx.android.synthetic.main.p_localizacion.*
 
 
-class a_localizacion : AppCompatActivity() {
+class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
+    private lateinit var map:GoogleMap
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
+
         val inflater = menuInflater
         inflater.inflate(R.menu.menu, menu)
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val iditem = item.getItemId()
 
@@ -63,6 +71,9 @@ class a_localizacion : AppCompatActivity() {
 
         return true
     }
+    private var mapView: MapView? = null
+    private var gmap: GoogleMap? = null
+    private val MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey"
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -70,18 +81,62 @@ class a_localizacion : AppCompatActivity() {
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_localizacion)
+        var mapViewBundle: Bundle? = null
+        if (savedInstanceState != null) {
+            mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
+        }
 
-       // mapLocalizacion.onStart()
+        mapView = findViewById(R.id.mapView2)
+        mapView!!.onCreate(mapViewBundle)
+        mapView!!.getMapAsync(this)
 
     }
-     fun onMapReady(googleMap: GoogleMap) {
-        googleMap.addMarker(
-            MarkerOptions()
-                .position(LatLng(0.0, 0.0))
-                .title("Marker")
-        )
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        var mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY)
+        if (mapViewBundle == null) {
+            mapViewBundle = Bundle()
+            outState.putBundle(MAP_VIEW_BUNDLE_KEY, mapViewBundle)
+        }
+        mapView!!.onSaveInstanceState(mapViewBundle)
+    }
+    override fun onResume() {
+        super.onResume()
+        mapView!!.onResume()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mapView!!.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mapView!!.onStop()
+    }
+
+    override fun onPause() {
+        mapView!!.onPause()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        mapView!!.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView!!.onLowMemory()
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        gmap = googleMap
+        gmap!!.setMinZoomPreference(12f)
+        val ny = LatLng(40.7143528, -74.0059731)
+        gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
     }
 }
+

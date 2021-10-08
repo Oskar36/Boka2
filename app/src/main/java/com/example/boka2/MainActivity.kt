@@ -1,6 +1,9 @@
 package com.example.boka2
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -9,18 +12,18 @@ import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.p_event_ofe.*
 import kotlinx.android.synthetic.main.p_event_ofe.llprincipal
+import java.security.AccessController.getContext
 
 class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
+                 
         val inflater = menuInflater
         inflater.inflate(R.menu.menu, menu)
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val iditem = item.getItemId()
-
-
 
         if (iditem==R.id.carta){
             val intent=Intent(this, a_carta::class.java)

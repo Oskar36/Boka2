@@ -3,6 +3,8 @@ package com.example.boka2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ClickableSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
