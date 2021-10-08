@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_calendario.xml" value="0.25" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-sw600dp/p_calendario.xml" value="0.190625" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-sw600dp/p_event_ofe.xml" value="0.1" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_calendario.xml" value="0.1" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="1.0" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.176" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_event_ofe.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_localizacion.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_login.xml" value="0.264" />

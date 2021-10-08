@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".a_calendario">
+    tools:context=".MainActivity"
+    android:accessibilityPaneTitle="@string/app_name">
 
     <LinearLayout
         android:id="@+id/l_layout"
@@ -14,15 +15,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:context="com.example.boka2.a_calendario">
+        tools:context="com.example.boka2.MainActivity">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="SpeakableTextPresentCheck">
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/llcalendario"
+                android:id="@+id/llprincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"></LinearLayout>

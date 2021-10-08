@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import kotlinx.android.synthetic.main.p_carta.*
 import kotlinx.android.synthetic.main.p_event_ofe.*
 import kotlinx.android.synthetic.main.p_event_ofe.llprincipal
 
@@ -76,8 +75,9 @@ class MainActivity : AppCompatActivity() {
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
-            //LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams(1125, 700)
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            //LinearLayout.LayoutParams(1125, 700)
         )
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,

@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.p_event_ofe.*
+import kotlinx.android.synthetic.main.p_calendario.*
 
 class a_calendario : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -74,13 +74,15 @@ class a_calendario : AppCompatActivity() {
 
 
 
-        val llBotonera = findViewById<View>(R.id.llprincipal) as LinearLayout
+        val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
 
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
-            //LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams(1125, 700)
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+
+            //LinearLayout.LayoutParams(1125, 700)
         )
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -89,7 +91,7 @@ class a_calendario : AppCompatActivity() {
 
             )
 
-        val layout: LinearLayout =llprincipal
+        val layout: LinearLayout =llcalendario
 
         //Creamos los botones en bucle
         for (i in 0 until numBotones) {
