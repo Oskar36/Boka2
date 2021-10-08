@@ -37,13 +37,13 @@ class a_registro : AppCompatActivity() {
                         startActivity(intent)
 
                     } else {
-                        Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT)
-                            .show()
+                        txterror.text = "El usuario ya existe"
+
 
                     }
                 }else {
-                    Toast.makeText(this, "Ambas contraseñas deben ser iguales", Toast.LENGTH_SHORT)
-                        .show()
+                    txterror.text = "Ambas contraseñas deben ser iguales"
+
                 }
             }
 

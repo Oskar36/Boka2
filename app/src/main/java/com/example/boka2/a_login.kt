@@ -34,7 +34,7 @@ class a_login : AppCompatActivity() {
                startActivity(intent)
 
             } else {
-                txterror.text = "El usuario o la contraseña no son correctos"
+                Login_txt_error.text = "El usuario o la contraseña no son correctos"
             }
         }
     }
