@@ -34,7 +34,7 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
 
         if (iditem==R.id.carta){
             val intent=Intent(this, a_carta::class.java)
-            finishAffinity()
+            finish()
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
@@ -43,22 +43,22 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
         }
         if (iditem==R.id.Reservar){
             val intent= Intent(this, a_reservas::class.java)
-            finishAffinity()
+            finish()
             startActivity(intent)
         }
         if (iditem==R.id.Calendario){
                val intent=Intent(this, a_calendario::class.java)
-            finishAffinity()
+            finish()
                startActivity(intent)
            }
         if (iditem==R.id.Quienes){
             val intent=Intent(this, a_quienesSomos::class.java)
-            finishAffinity()
+            finish()
             startActivity(intent)
         }
         if (iditem==R.id.Perfil){
             val intent= Intent(this, a_perfil::class.java)
-            finishAffinity()
+            finish()
             startActivity(intent)
         }
         if (iditem==R.id.sesion){
