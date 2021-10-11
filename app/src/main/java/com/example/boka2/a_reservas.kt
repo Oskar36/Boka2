@@ -77,7 +77,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
         }
-        mapView = findViewById(R.id.mapView2)
+        mapView = findViewById(R.id.mapView3)
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
     }

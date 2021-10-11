@@ -42,7 +42,7 @@
                         android:orientation="vertical">
 
                         <com.google.android.gms.maps.MapView
-                            android:id="@+id/mapView2"
+                            android:id="@+id/mapView3"
                             android:layout_width="212dp"
                             android:layout_height="136dp"
                             app:layout_constraintBottom_toBottomOf="parent"
