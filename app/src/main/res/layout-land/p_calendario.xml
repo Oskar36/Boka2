@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <LinearLayout
@@ -28,12 +29,14 @@
                 <ScrollView
                     android:layout_width="705dp"
                     android:layout_height="374dp"
+                    android:layout_gravity="center"
                     tools:ignore="SpeakableTextPresentCheck">
 
                     <LinearLayout
                         android:id="@+id/llcalendario"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
                         android:orientation="vertical"></LinearLayout>
                 </ScrollView>
             </LinearLayout>
