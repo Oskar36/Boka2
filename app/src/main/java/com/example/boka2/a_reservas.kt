@@ -83,7 +83,13 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
         }
         mapView = findViewById(R.id.mapView3)
-        mapView!!.onCreate(mapViewBundle)
+        try {
+            mapView!!.onCreate(mapViewBundle)
+        }
+        catch (e: Exception){
+            Toast.makeText(this, "Error al cargar el mapa.", Toast.LENGTH_SHORT).show()
+        }
+
         mapView!!.getMapAsync(this)
     }
 
