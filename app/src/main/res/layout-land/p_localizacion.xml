@@ -9,35 +9,63 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_gravity="clip_vertical">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
+
+                android:gravity="center">
 
                 <TextView
-                    android:id="@+id/txtcalle"
-                    android:layout_width="350dp"
+                    android:id="@+id/titulo6"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="72dp"
-                    android:layout_marginBottom="30dp"
-                    android:hint="Direccion" />
+                    android:layout_marginStart="161dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="164dp"
+                    android:layout_marginBottom="72dp"
+                    android:text="LOCALIZACIÓN DE LA FOOD TRUCK"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txtcalle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/mapView2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.gms.maps.MapView
                     android:id="@+id/mapView2"
-                    android:layout_width="568dp"
-                    android:layout_height="261dp"
-                    android:layout_marginBottom="44dp"
+                    android:layout_width="632dp"
+                    android:layout_height="285dp"
+                    android:layout_marginStart="81dp"
+                    android:layout_marginEnd="81dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.507"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtcalle"
                     tools:ignore="SpeakableTextPresentCheck" />
-            </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtcalle"
+                    android:layout_width="411dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="135dp"
+                    android:hint="Direccion"
+                    app:layout_constraintBottom_toTopOf="@+id/mapView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.496"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
     </LinearLayout>

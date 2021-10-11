@@ -19,18 +19,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="34dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="28dp"
-        android:foregroundGravity="center_horizontal"
-        app:layout_constraintEnd_toStartOf="@+id/txtFacebook"
-        app:layout_constraintHorizontal_bias="1.0"
+    <TextView
+        android:id="@+id/QuienesSomos"
+        style="@style/texto"
+        android:layout_width="343dp"
+        android:layout_height="214dp"
+        android:layout_marginTop="44dp"
+        android:gravity="center"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInstagram"
-        app:srcCompat="@drawable/facebook1" />
+        app:layout_constraintTop_toBottomOf="@+id/imgFurgoneta" />
+
+    <TextView
+        android:id="@+id/txtTwitter"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="12dp"
+        android:foregroundGravity="center_horizontal"
+        android:text="boka2_Bilbao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGmail"
+        app:layout_constraintVertical_bias="0.02" />
 
     <ImageView
         android:id="@+id/instagramIcono"
@@ -48,44 +62,6 @@
         app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/instagram" />
 
-    <TextView
-        android:id="@+id/QuienesSomos"
-        style="@style/texto"
-        android:layout_width="343dp"
-        android:layout_height="214dp"
-        android:layout_marginTop="44dp"
-        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgFurgoneta" />
-
-    <TextView
-        android:id="@+id/txtTwitter"
-        android:layout_width="135dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="12dp"
-        android:foregroundGravity="center_horizontal"
-        android:text="boka2_Bilbao"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGmail"
-        app:layout_constraintVertical_bias="0.01" />
-
-    <TextView
-        android:id="@+id/txtFacebook"
-        android:layout_width="135dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="36dp"
-        android:foregroundGravity="center_horizontal"
-        android:text="boka2_Bilbao"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTwitter" />
-
     <ImageView
         android:id="@+id/gmailIcono"
         android:layout_width="36dp"
@@ -94,7 +70,7 @@
         android:layout_marginEnd="20dp"
         android:foregroundGravity="center_horizontal"
         app:layout_constraintEnd_toStartOf="@+id/txtGmail"
-        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintHorizontal_bias="0.99"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/QuienesSomos"
         app:srcCompat="@drawable/gmail" />
@@ -124,21 +100,10 @@
         android:text="boka2@gmail.com"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/QuienesSomos"
         app:layout_constraintVertical_bias="0.013" />
-
-    <ImageView
-        android:id="@+id/imgFurgoneta"
-        android:layout_width="253dp"
-        android:layout_height="163dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
-        app:srcCompat="@drawable/furgoneta" />
 
     <TextView
         android:id="@+id/txtTelefono"
@@ -150,7 +115,7 @@
         android:text="666 666 666"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintHorizontal_bias="0.264"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/QuienesSomos"
         app:layout_constraintVertical_bias="0.006" />
@@ -166,7 +131,7 @@
 "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTelefono"
         app:layout_constraintVertical_bias="0.01" />
@@ -180,10 +145,45 @@
         android:foregroundGravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txtTwitter"
-        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintHorizontal_bias="0.985"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gmailIcono"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/twitter" />
+
+    <TextView
+        android:id="@+id/txtFacebook"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="32dp"
+        android:foregroundGravity="center_horizontal"
+        android:text="boka2_Bilbao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTwitter" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="34dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
+        android:foregroundGravity="center_horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/txtFacebook"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInstagram"
+        app:srcCompat="@drawable/facebook1" />
+
+    <ImageView
+        android:id="@+id/imgFurgoneta"
+        android:layout_width="253dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:srcCompat="@drawable/furgoneta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

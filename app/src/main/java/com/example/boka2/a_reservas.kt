@@ -22,6 +22,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         inflater.inflate(R.menu.menu, menu)
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val iditem = item.getItemId()
 
@@ -64,6 +65,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
 
         return true
     }
+
     private var mapView: MapView? = null
     private var gmap: GoogleMap? = null
     private val MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey"
@@ -84,6 +86,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
     }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         var mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY)
@@ -93,6 +96,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         }
         mapView!!.onSaveInstanceState(mapViewBundle)
     }
+
     override fun onResume() {
         super.onResume()
         mapView!!.onResume()
@@ -122,6 +126,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         super.onLowMemory()
         mapView!!.onLowMemory()
     }
+
 //prueba
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
@@ -133,6 +138,4 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
     marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
     gmap!!.addMarker(marker)
     }
-
-
 }
