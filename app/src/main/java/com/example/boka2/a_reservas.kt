@@ -1,6 +1,7 @@
 package com.example.boka2
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -10,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
@@ -127,7 +129,9 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         val location = LatLng(43.267010, -2.942118)
         val ny = LatLng(43.267010, -2.942118)
         gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
-    gmap!!.addMarker(MarkerOptions().position(location))
+    val marker = MarkerOptions().position(ny)
+    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
+    gmap!!.addMarker(marker)
     }
 
 
