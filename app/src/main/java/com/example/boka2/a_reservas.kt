@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -80,7 +77,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
         }
-        mapView = findViewById(R.id.mapView3)
+        mapView = findViewById(R.id.mapView2)
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
     }

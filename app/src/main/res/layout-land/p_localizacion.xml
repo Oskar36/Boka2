@@ -6,24 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".a_localizacion">
 
-    <TextView
-        android:id="@+id/txtcalle"
-        android:layout_width="350dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="36dp"
-        android:hint="Direccion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="396dp"
-        android:layout_height="282dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcalle"
-        app:srcCompat="@drawable/mapa" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtcalle"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="72dp"
+                    android:layout_marginBottom="30dp"
+                    android:hint="Direccion" />
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapView2"
+                    android:layout_width="568dp"
+                    android:layout_height="261dp"
+                    android:layout_marginBottom="44dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
