@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:name="com.google.android.gms.maps.MapFragment"
-    tools:context=".a_localizacion">
+    tools:context=".a_localizacion"
+    tools:ignore="ExtraText">
 
 
     <TextView
