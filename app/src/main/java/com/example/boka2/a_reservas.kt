@@ -122,7 +122,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
         super.onLowMemory()
         mapView!!.onLowMemory()
     }
-
+//prueba
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
         gmap!!.setMinZoomPreference(12f)
