@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 
 import com.google.android.gms.maps.model.MarkerOptions
@@ -76,19 +77,18 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
     private val MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.p_localizacion)
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.p_localizacion)
         var mapViewBundle: Bundle? = null
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
         }
 
-        mapView = findViewById(R.id.mapView2)
+        mapView = mapView2
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
 
@@ -118,13 +118,13 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onPause() {
-        mapView!!.onPause()
         super.onPause()
+        mapView!!.onPause()
     }
 
     override fun onDestroy() {
-        mapView!!.onDestroy()
         super.onDestroy()
+        mapView!!.onDestroy()
     }
 
     override fun onLowMemory() {
@@ -138,7 +138,9 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
         val ny = LatLng(43.267010, -2.942118)
         val location = LatLng(43.267010, -2.942118)
         gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
-        gmap!!.addMarker(MarkerOptions().position(location))
+        val marker = MarkerOptions().position(ny)
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
+        gmap!!.addMarker(marker)
     }
 }
 
