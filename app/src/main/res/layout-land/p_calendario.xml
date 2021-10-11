@@ -27,8 +27,8 @@
                 tools:context="com.example.boka2.a_calendario">
 
                 <ScrollView
-                    android:layout_width="705dp"
-                    android:layout_height="374dp"
+                    android:layout_width="728dp"
+                    android:layout_height="390dp"
                     android:layout_gravity="center"
                     tools:ignore="SpeakableTextPresentCheck">
 
