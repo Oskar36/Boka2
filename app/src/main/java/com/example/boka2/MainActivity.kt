@@ -78,9 +78,9 @@ class MainActivity : AppCompatActivity() {
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
-            //LinearLayout.LayoutParams.WRAP_CONTENT,
-            //LinearLayout.LayoutParams.WRAP_CONTENT,
-            LinearLayout.LayoutParams(1125, 700)
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            //LinearLayout.LayoutParams(1125, 700)
         )
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
             txt.setLayoutParams(lp2)
             img.setLayoutParams(lp)
             //Asignamos Texto al botón
-            img.setBackgroundResource(R.drawable.oferta)
+            img.setBackgroundResource(R.drawable.oferta1)
             //Añadimos el botón a la botonera
             llBotonera.addView(img)
             llBotonera.addView(txt)

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Boka2">
         <activity
+            android:name=".a_localizaradmin"
+            android:exported="true" />
+        <activity
             android:name=".a_localizacionAdmin"
             android:exported="true" />
 
