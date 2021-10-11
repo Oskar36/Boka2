@@ -11,6 +11,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class a_reservas : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -123,8 +124,10 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
         gmap!!.setMinZoomPreference(12f)
+        val location = LatLng(43.267010, -2.942118)
         val ny = LatLng(43.267010, -2.942118)
         gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
+    gmap!!.addMarker(MarkerOptions().position(location))
     }
 
 

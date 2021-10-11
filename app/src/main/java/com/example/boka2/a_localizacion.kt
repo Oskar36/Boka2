@@ -136,7 +136,9 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
         gmap = googleMap
         gmap!!.setMinZoomPreference(12f)
         val ny = LatLng(43.267010, -2.942118)
+        val location = LatLng(43.267010, -2.942118)
         gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
+        gmap!!.addMarker(MarkerOptions().position(location))
     }
 }
 
