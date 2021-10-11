@@ -1,16 +1,11 @@
 package com.example.boka2
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
@@ -88,7 +83,7 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
         }
 
-        mapView = mapView2
+        mapView = mapView4
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
 
@@ -135,12 +130,20 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
         gmap!!.setMinZoomPreference(12f)
-        val ny = LatLng(43.267010, -2.942118)
+        var ny = LatLng(43.267010, -2.942118)
         val location = LatLng(43.267010, -2.942118)
         gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
         val marker = MarkerOptions().position(ny)
         marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
+        ny=LatLng(43.265869, -2.947557)
+        val marker2 = MarkerOptions().position(ny)
+        marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
+        ny=LatLng(43.265627, -2.944349)
+        val marker3 = MarkerOptions().position(ny)
+        marker3.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
         gmap!!.addMarker(marker)
+        gmap!!.addMarker(marker2)
+        gmap!!.addMarker(marker3)
     }
 }
 

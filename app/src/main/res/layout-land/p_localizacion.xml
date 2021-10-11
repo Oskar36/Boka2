@@ -38,11 +38,11 @@
                     app:layout_constraintBottom_toTopOf="@+id/txtcalle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/mapView2"
+                    app:layout_constraintStart_toStartOf="@+id/mapView4"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.gms.maps.MapView
-                    android:id="@+id/mapView2"
+                    android:id="@+id/mapView4"
                     android:layout_width="632dp"
                     android:layout_height="285dp"
                     android:layout_marginStart="81dp"
@@ -60,7 +60,7 @@
                     android:layout_height="46dp"
                     android:layout_marginTop="135dp"
                     android:hint="Direccion"
-                    app:layout_constraintBottom_toTopOf="@+id/mapView2"
+                    app:layout_constraintBottom_toTopOf="@+id/mapView4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.496"
                     app:layout_constraintStart_toStartOf="parent"

@@ -1,16 +1,11 @@
 package com.example.boka2
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
@@ -88,9 +83,10 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
         }
 
-        mapView = mapView2
+        mapView = mapView4
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
+
 
     }
     override fun onSaveInstanceState(outState: Bundle) {

@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         if (iditem==R.id.Localizar){
-            val intent= Intent(this, a_localizacion::class.java)
+            val intent= Intent(this, a_localizaradmin::class.java)
             startActivity(intent)
         }
         if (iditem==R.id.Reservar){
