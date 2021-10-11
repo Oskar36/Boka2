@@ -32,9 +32,14 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
-            val intent= Intent(this, a_localizacion::class.java)
-            finish()
-            startActivity(intent)
+            if (Sharedapp.prefs.tipousu.equals("admin")){
+                val intent= Intent(this, a_localizaradmin::class.java)
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_localizacion::class.java)
+                startActivity(intent)
+            }
+
         }
         if (iditem==R.id.Reservar){
             Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()

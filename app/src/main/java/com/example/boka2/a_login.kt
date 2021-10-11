@@ -40,16 +40,13 @@ class a_login : AppCompatActivity() {
 
             if (login_correo.text.toString().toLowerCase().equals("admin") && login_contr.text.toString().toLowerCase().equals("admin")){
                 val intent=Intent(this, MainActivity::class.java)
+                Sharedapp.prefs.tipousu = login_correo.text.toString().toLowerCase()
                 finish()
                 startActivity(intent)
             }else {
-                if (BBDD.ComprobarUsuario(
-                        login_correo.text.toString(),
-                        login_contr.text.toString()
-                    )
-                ) {
-                    //tipousu = "invitado"
+                if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
                     val intent = Intent(this, MainActivity::class.java)
+                    Sharedapp.prefs.tipousu = "invitado"
                     finish()
                     startActivity(intent)
 

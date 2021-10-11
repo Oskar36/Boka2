@@ -3,6 +3,7 @@
     package="com.example.boka2">
 
     <application
+        android:name=".Sharedapp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_boka2"
         android:label="@string/app_name"
@@ -11,9 +12,6 @@
         android:theme="@style/Theme.Boka2">
         <activity
             android:name=".a_localizaradmin"
-            android:exported="true" />
-        <activity
-            android:name=".a_localizacionAdmin"
             android:exported="true" />
 
         <meta-data

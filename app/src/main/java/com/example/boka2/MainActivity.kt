@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.p_event_ofe.*
 import kotlinx.android.synthetic.main.p_event_ofe.llprincipal
 import java.security.AccessController.getContext
@@ -33,8 +34,14 @@ class MainActivity : AppCompatActivity() {
 
         }
         if (iditem==R.id.Localizar){
-            val intent= Intent(this, a_localizaradmin::class.java)
-            startActivity(intent)
+            if (Sharedapp.prefs.tipousu.equals("admin")){
+                val intent= Intent(this, a_localizaradmin::class.java)
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_localizacion::class.java)
+                startActivity(intent)
+            }
+
         }
         if (iditem==R.id.Reservar){
             val intent= Intent(this, a_reservas::class.java)
