@@ -84,9 +84,9 @@ class a_carta : AppCompatActivity() {
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-            //LinearLayout.LayoutParams(1125, 700)
+            //LinearLayout.LayoutParams.MATCH_PARENT,
+            //LinearLayout.LayoutParams.WRAP_CONTENT
+            LinearLayout.LayoutParams(1125, 700)
         )
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -119,10 +119,16 @@ class a_carta : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 llBotonera.removeAllViews()
                 if (tablay.selectedTabPosition==0){
+                    var numBotones = BBDDcarta.Carta("general").size
                     for (i in 0 until numBotones) {
+                        var carta:String = BBDDcarta.Carta("general").get(i).nombre
+                        if(carta.equals("smoothie boll")){
+                            carta="smoothieboll"
+                        }
+                        val resID = resources.getIdentifier(carta, "drawable", packageName)
                         val img = ImageView(context)
                         img.setLayoutParams(lp)
-                        img.setBackgroundResource(R.drawable.carta1)
+                        img.setBackgroundResource(resID)
                         llBotonera.addView(img)
                     }
 
