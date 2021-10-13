@@ -1,5 +1,6 @@
 package com.example.boka2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,11 +11,9 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.p_calendario.*
 import kotlinx.android.synthetic.main.p_carta.*
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-
 
 class a_carta : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -79,21 +78,8 @@ class a_carta : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_carta)
-
-        tablay.addOnTabSelectedListener(object : OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-            if (tablay.selectedTabPosition==0){
-            }else{
-            }
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab) {}
-        })
         val llBotonera = findViewById<View>(R.id.llcarta) as LinearLayout
+        var context:Context?=null
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
@@ -112,17 +98,45 @@ class a_carta : AppCompatActivity() {
 
         //Creamos los botones en bucle
         for (i in 0 until numBotones) {
+            context=this
             val img = ImageView(this)
-            val txt = TextView(this)
-            txt.setLayoutParams(lp2)
+            val img1 = ImageView(this)
             img.setLayoutParams(lp)
-            //Asignamos Texto al botón
-            img.setBackgroundResource(R.drawable.carta1)
-            //Añadimos el botón a la botonera
-            llBotonera.addView(img)
-            llBotonera.addView(txt)
-
+            img1.setLayoutParams(lp2)
+            img1.setBackgroundResource(R.drawable.carta1)
+            llBotonera.addView(img1)
         }
+
+
+
+
+        tablay.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                llBotonera.removeAllViews()
+                if (tablay.selectedTabPosition==0){
+                    for (i in 0 until numBotones) {
+                        val img = ImageView(context)
+                        img.setLayoutParams(lp)
+                        img.setBackgroundResource(R.drawable.carta1)
+                        llBotonera.addView(img)
+                    }
+
+                }else{
+                    for (i in 0 until numBotones) {
+                        val img1 = ImageView(context)
+                        img1.setLayoutParams(lp2)
+                        img1.setBackgroundResource(R.drawable.oferta1)
+                        llBotonera.addView(img1)
+                    }
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
     }
 
     companion object {

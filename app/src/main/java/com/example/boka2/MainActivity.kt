@@ -103,14 +103,15 @@ class MainActivity : AppCompatActivity() {
         //Creamos los botones en bucle
         for (i in 0 until numBotones) {
             val img = ImageView(this)
-            val txt = TextView(this)
-            txt.setLayoutParams(lp2)
+            val img1 = ImageView(this)
+            img1.setLayoutParams(lp2)
             img.setLayoutParams(lp)
             //Asignamos Texto al botón
             img.setBackgroundResource(R.drawable.oferta1)
+            img1.setBackgroundResource(R.drawable.evento1)
             //Añadimos el botón a la botonera
             llBotonera.addView(img)
-            llBotonera.addView(txt)
+            llBotonera.addView(img1)
 
         }
     }
