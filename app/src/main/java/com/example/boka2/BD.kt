@@ -92,13 +92,14 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         }
         return fila
     }
-    fun Carta(carta:String):List<cartagen>{
+    fun Carta(tipo:String):List<cartagen>{
         val fila:MutableList<cartagen> = ArrayList()
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select nombre from carta where tipo=? ", arrayOf(carta))
+        val cursor:Cursor = db.rawQuery("select nombre from carta where tipo=? ", arrayOf(tipo))
         while (cursor.moveToNext()){
             val todo= cartagen(cursor.getString(0))
             fila.add(todo)
+            println(todo)
         }
         return fila
     }

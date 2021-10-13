@@ -99,19 +99,14 @@ class a_carta : AppCompatActivity() {
 
         //Creamos los botones en bucle
         var numBotones = BBDDcarta.Carta("general").size
-
         for (i in 0 until numBotones-1) {
-           var carta:String = BBDDcarta.Carta("general").get(i).toString()
-
+           var carta:String = BBDDcarta.Carta("general").get(i).nombre
             val resID = resources.getIdentifier(carta, "drawable", packageName)
-            Toast.makeText(this, "El tamaño de la select es: $resID", Toast.LENGTH_SHORT).show()
             context=this
             val img = ImageView(this)
-            val img1 = ImageView(this)
             img.setLayoutParams(lp)
-            img1.setLayoutParams(lp2)
-            img1.setBackgroundResource(resID)
-            llBotonera.addView(img1)
+            img.setBackgroundResource(resID)
+            llBotonera.addView(img)
         }
 
 
@@ -133,9 +128,6 @@ class a_carta : AppCompatActivity() {
                         val img1 = ImageView(context)
                         img1.setLayoutParams(lp2)
                         img1.setBackgroundResource(R.drawable.oferta1)
-                        for(u in 0..10000){
-                            println(R.drawable.oferta1)
-                        }
                         llBotonera.addView(img1)
                     }
                 }
