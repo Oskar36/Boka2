@@ -16,6 +16,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("create table eventos_ofertas ( titulo text,fecha text,tipo text, img text,primary key(titulo,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,precio real,info text,img text,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
+        //db!!.insert()
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {
