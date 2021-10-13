@@ -1,11 +1,13 @@
 package com.example.boka2
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import kotlinx.android.synthetic.main.p_quienes_somos.*
 
 class a_quienesSomos : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -70,9 +72,28 @@ class a_quienesSomos : AppCompatActivity() {
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_quienes_somos)
-
+        txtInstagram.setOnClickListener(){
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/?hl=es"))
+            startActivity(browserIntent)
+        }
+        txtFacebook.setOnClickListener(){
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://es-es.facebook.com/"))
+            startActivity(browserIntent)
+        }
+        txtGmail.setOnClickListener(){
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"))
+            startActivity(browserIntent)
+        }
+        txtTwitter.setOnClickListener(){
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/?lang=es"))
+            startActivity(browserIntent)
+        }
+        txtTelefono.setOnClickListener(){
+            val nTel= Uri.parse("tel:"+txtTelefono.text.toString())
+            val phone= Intent(Intent.ACTION_DIAL, nTel)
+            startActivity(phone)
+        }
     }
 }

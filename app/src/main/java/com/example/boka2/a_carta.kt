@@ -99,8 +99,11 @@ class a_carta : AppCompatActivity() {
 
         //Creamos los botones en bucle
         var numBotones = BBDDcarta.Carta("general").size
-        for (i in 0 until numBotones-1) {
+        for (i in 0 until numBotones) {
            var carta:String = BBDDcarta.Carta("general").get(i).nombre
+           if(carta.equals("smoothie boll")){
+               carta="smoothieboll"
+           }
             val resID = resources.getIdentifier(carta, "drawable", packageName)
             context=this
             val img = ImageView(this)
