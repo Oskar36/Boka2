@@ -12,6 +12,9 @@ import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_calendario.*
 import kotlinx.android.synthetic.main.p_carta.*
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+
 
 class a_carta : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -76,8 +79,23 @@ class a_carta : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_carta)
-        val llBotonera = findViewById<View>(R.id.llcarta) as LinearLayout
 
+        tablay.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+            if (tablay.selectedTabPosition==0){
+                println("ola")
+            }else{
+                println("adios")
+            }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
+        val llBotonera = findViewById<View>(R.id.llcarta) as LinearLayout
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
