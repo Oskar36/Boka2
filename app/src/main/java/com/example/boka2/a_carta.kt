@@ -83,9 +83,7 @@ class a_carta : AppCompatActivity() {
         tablay.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
             if (tablay.selectedTabPosition==0){
-                println("ola")
             }else{
-                println("adios")
             }
             }
 
