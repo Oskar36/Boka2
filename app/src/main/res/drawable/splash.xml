@@ -3,10 +3,12 @@
     <item android:drawable="@color/colorPrimaryDark"/>
     <item android:gravity="center"
         android:width="400dp"
-        android:height="300dp">
+        android:height="300dp"
+        >
         <bitmap
-            android:src="@drawable/logotrans2"
-            android:gravity="fill_horizontal|fill_vertical">
+            android:src="@drawable/logotrans"
+            android:gravity="fill_horizontal|fill_vertical"
+            >
         </bitmap>
     </item>
 </layer-list>
