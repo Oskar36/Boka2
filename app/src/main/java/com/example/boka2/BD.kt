@@ -14,9 +14,13 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
         db!!.execSQL("create table eventos_ofertas ( titulo text,fecha text,tipo text, img text,primary key(titulo,fecha))  ")
-        db!!.execSQL("create table carta (nombre text primary key, tipo text,img,alergias text)")
+        db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
-        insertarCarta("Ensalada","ensalada","ninguno")
+        insertarCarta("ensalada","general","ninguno")
+        insertarCarta("fajitas","general","ninguno")
+        insertarCarta("sandwich","general","ninguno")
+        insertarCarta("smoothie","general","ninguno")
+        insertarCarta("smoothie boll","general","ninguno")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {
