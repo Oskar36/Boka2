@@ -38,7 +38,7 @@
                             android:layout_width="196dp"
                             android:layout_height="155dp"
                             android:layout_marginTop="16dp"
-                            android:src="@drawable/logotrans" />
+                            android:src="@drawable/furgoneta" />
 
                         <EditText
                             android:id="@+id/login_correo"
