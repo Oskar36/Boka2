@@ -70,6 +70,7 @@ class a_carta : AppCompatActivity() {
         return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {
+        val BBDDcarta = Base_de_Datos(this, "carta", null, 1 )
 
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
@@ -97,13 +98,19 @@ class a_carta : AppCompatActivity() {
         val layout: LinearLayout =llcarta
 
         //Creamos los botones en bucle
-        for (i in 0 until 5) {
+        var numBotones = BBDDcarta.Carta("general").size
+
+        for (i in 0 until numBotones-1) {
+           var carta:String = BBDDcarta.Carta("general").get(i).toString()
+
+            val resID = resources.getIdentifier(carta, "drawable", packageName)
+            Toast.makeText(this, "El tamaño de la select es: $resID", Toast.LENGTH_SHORT).show()
             context=this
             val img = ImageView(this)
             val img1 = ImageView(this)
             img.setLayoutParams(lp)
             img1.setLayoutParams(lp2)
-            img1.setBackgroundResource(R.drawable.carta1)
+            img1.setBackgroundResource(resID)
             llBotonera.addView(img1)
         }
 
@@ -114,7 +121,7 @@ class a_carta : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 llBotonera.removeAllViews()
                 if (tablay.selectedTabPosition==0){
-                    for (i in 0 until 5) {
+                    for (i in 0 until numBotones) {
                         val img = ImageView(context)
                         img.setLayoutParams(lp)
                         img.setBackgroundResource(R.drawable.carta1)
@@ -122,10 +129,13 @@ class a_carta : AppCompatActivity() {
                     }
 
                 }else{
-                    for (i in 0 until 5) {
+                    for (i in 0 until numBotones) {
                         val img1 = ImageView(context)
                         img1.setLayoutParams(lp2)
                         img1.setBackgroundResource(R.drawable.oferta1)
+                        for(u in 0..10000){
+                            println(R.drawable.oferta1)
+                        }
                         llBotonera.addView(img1)
                     }
                 }
@@ -139,5 +149,5 @@ class a_carta : AppCompatActivity() {
         })
     }
 
+
     }
-//
