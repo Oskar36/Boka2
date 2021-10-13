@@ -97,7 +97,7 @@ class a_carta : AppCompatActivity() {
         val layout: LinearLayout =llcarta
 
         //Creamos los botones en bucle
-        for (i in 0 until numBotones) {
+        for (i in 0 until 5) {
             context=this
             val img = ImageView(this)
             val img1 = ImageView(this)
@@ -114,7 +114,7 @@ class a_carta : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 llBotonera.removeAllViews()
                 if (tablay.selectedTabPosition==0){
-                    for (i in 0 until numBotones) {
+                    for (i in 0 until 5) {
                         val img = ImageView(context)
                         img.setLayoutParams(lp)
                         img.setBackgroundResource(R.drawable.carta1)
@@ -122,7 +122,7 @@ class a_carta : AppCompatActivity() {
                     }
 
                 }else{
-                    for (i in 0 until numBotones) {
+                    for (i in 0 until 5) {
                         val img1 = ImageView(context)
                         img1.setLayoutParams(lp2)
                         img1.setBackgroundResource(R.drawable.oferta1)
@@ -139,8 +139,5 @@ class a_carta : AppCompatActivity() {
         })
     }
 
-    companion object {
-        var numBotones = 5
-    }
     }
 //

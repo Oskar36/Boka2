@@ -14,24 +14,24 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
         db!!.execSQL("create table eventos_ofertas ( titulo text,fecha text,tipo text, img text,primary key(titulo,fecha))  ")
-        db!!.execSQL("create table carta (nombre text primary key, tipo text,precio real,info text,img text,alergias text)")
+        db!!.execSQL("create table carta (nombre text primary key, tipo text,img,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
-        //db!!.insert()
+        insertarCarta("Ensalada","ensalada","ninguno")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {
-        db!!.execSQL("drop table if exists usuarios")
         db!!.execSQL("drop table if exists eventos_ofertas")
         db!!.execSQL("drop table if exists carta")
         db!!.execSQL("drop table if exists localizacion")
         onCreate(db)
     }
-    fun insertar(user:String, contrasena:String ){
+    fun insertarCarta(nombre1:String, tipo1:String,alergias1:String){
         val db=this.writableDatabase
         val registrar=ContentValues()
-        registrar.put("user",user)
-        registrar.put("contrasena",contrasena)
-        db.insert("usuarios",null,registrar)
+        registrar.put("nombre",nombre1)
+        registrar.put("tipo",tipo1)
+        registrar.put("alergias",alergias1)
+        db.insert("carta",null,registrar)
     }
     //
     fun buscarCorreo(user1:String):Boolean{
