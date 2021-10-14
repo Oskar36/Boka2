@@ -57,5 +57,11 @@ class a_login : AppCompatActivity() {
                 }
             }
         }
+        txtInvitado.setOnClickListener(){
+            val invitado = Intent(this, MainActivity::class.java)
+            Sharedapp.prefs.tipousu = "invitado"
+            finish()
+            startActivity(invitado)
+        }
     }
 }

@@ -75,6 +75,23 @@
         app:layout_constraintTop_toBottomOf="@+id/Login_but_entrar"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/txtInvitado"
+        style="@style/texto"
+        android:layout_width="230dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="41dp"
+        android:text="Entrar como invitado"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_but_entrar"
+        app:layout_constraintVertical_bias="0.376" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="196dp"

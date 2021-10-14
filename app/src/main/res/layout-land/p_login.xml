@@ -74,9 +74,20 @@
                             android:id="@+id/Login_txt_registro"
                             style="@style/texto"
                             android:layout_width="230dp"
-                            android:layout_height="52dp"
-                            android:layout_marginTop="41dp"
+                            android:textAlignment="center"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="15dp"
                             android:text="¿No tienes una cuenta? Regístrate"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtInvitado"
+                            style="@style/texto"
+                            android:textColor="@color/black"
+                            android:layout_width="230dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="0dp"
+                            android:textAlignment="center"
+                            android:text="Iniciar como invitado"
                             android:textStyle="bold" />
 
                     </LinearLayout>
