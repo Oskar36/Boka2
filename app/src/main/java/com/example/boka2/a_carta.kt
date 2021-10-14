@@ -113,7 +113,7 @@ class a_carta : AppCompatActivity() {
         }
 
 
-
+        //cargar fotos al cambiar la vista
 
         tablay.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
