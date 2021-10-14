@@ -19,6 +19,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
         insertarCarta("ensalada","general","ninguno",db)
         insertarCarta("fajitas","general","ninguno",db)
+        insertarCarta("boll","general","ninguno",db)
         insertarCarta("sandwich","general","ninguno",db)
         insertarCarta("smoothie","general","ninguno",db)
         insertarCarta("smoothieboll","general","ninguno",db)
@@ -30,20 +31,20 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("drop table if exists localizacion")
         onCreate(db)
     }
-    fun insertar(usuario:String, contraeña:String){
+    fun insertar(usuario:String, contraseña:String){
         val db=this.writableDatabase
         val registrar=ContentValues()
-        registrar.put("usuario",usuario)
-        registrar.put("contraseña",contraeña)
-        db.insert("usuario",null,registrar)
+        registrar.put("user",usuario)
+        registrar.put("contrasena",contraseña)
+        db.insert("usuarios",null,registrar)
     }
     fun insertarCarta(nombre1:String,tipo1:String,alergias1: String, db:SQLiteDatabase?){
 
-    val registrar=ContentValues()
-    registrar.put("nombre",nombre1)
-    registrar.put("tipo",tipo1)
-    registrar.put("alergias",alergias1)
-    db?.insert("carta",null,registrar)
+    val registrar2=ContentValues()
+    registrar2.put("nombre",nombre1)
+    registrar2.put("tipo",tipo1)
+    registrar2.put("alergias",alergias1)
+    db?.insert("carta",null,registrar2)
 }
     //
     fun buscarCorreo(user1:String):Boolean{
