@@ -49,14 +49,29 @@ class a_perfil : AppCompatActivity() {
             startActivity(intent)
         }
         if (iditem==R.id.Perfil){
-            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
+            if (!Sharedapp.prefs.tipousu.equals("invitado")){
+                val intent= Intent(this, a_perfil::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_login::class.java)
+                finish()
+                startActivity(intent)
+            }
+
         }
         if (iditem==R.id.sesion){
+            if (!Sharedapp.prefs.tipousu.equals("invitado")){
+                Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
 
-            Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, a_login::class.java)
-            finish()
-            startActivity(intent)
+                val intent= Intent(this, a_login::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_registro::class.java)
+                finish()
+                startActivity(intent)
+            }
 
 
         }

@@ -18,7 +18,11 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
+        if (Sharedapp.prefs.tipousu.equals("invitado")){
+            inflater.inflate(R.menu.menuinvitado, menu)
+        }else{
+            inflater.inflate(R.menu.menu, menu)
+        }
         return true
     }
 
@@ -54,17 +58,31 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
             startActivity(intent)
         }
         if (iditem==R.id.Perfil){
-            val intent= Intent(this, a_perfil::class.java)
-            finish()
-            startActivity(intent)
+            if (!Sharedapp.prefs.tipousu.equals("invitado")){
+                val intent= Intent(this, a_perfil::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_login::class.java)
+                finish()
+                startActivity(intent)
+            }
+
         }
         if (iditem==R.id.sesion){
+            if (!Sharedapp.prefs.tipousu.equals("invitado")){
+                Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+
+                val intent= Intent(this, a_login::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_registro::class.java)
+                finish()
+                startActivity(intent)
+            }
 
 
-            Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, a_login::class.java)
-            finish()
-            startActivity(intent)
         }
 
         return true

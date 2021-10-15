@@ -13,7 +13,11 @@ class a_quienesSomos : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
+        if (Sharedapp.prefs.tipousu.equals("invitado")){
+            inflater.inflate(R.menu.menuinvitado, menu)
+        }else{
+            inflater.inflate(R.menu.menu, menu)
+        }
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -48,17 +52,29 @@ class a_quienesSomos : AppCompatActivity() {
             Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
         }
         if (iditem==R.id.Perfil){
-            val intent= Intent(this, a_perfil::class.java)
-            finish()
-            startActivity(intent)
+            if (!Sharedapp.prefs.tipousu.equals("invitado")){
+                val intent= Intent(this, a_perfil::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_login::class.java)
+                finish()
+                startActivity(intent)
+            }
+
         }
         if (iditem==R.id.sesion){
+            if (!Sharedapp.prefs.tipousu.equals("invitado")){
+                Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
 
-
-            Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, a_login::class.java)
-            finish()
-            startActivity(intent)
+                val intent= Intent(this, a_login::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_registro::class.java)
+                finish()
+                startActivity(intent)
+            }
 
 
         }

@@ -22,7 +22,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         insertarCarta("fajitas","general","ninguno",db)
         insertarCarta("sandwich","general","ninguno",db)
         insertarCarta("smoothie","general","ninguno",db)
-        insertarCarta("smoothieboll","general","ninguno",db)
+        insertarCarta("smoothiebowl","general","ninguno",db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {

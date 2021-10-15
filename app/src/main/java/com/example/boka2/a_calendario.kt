@@ -15,13 +15,18 @@ import kotlinx.android.synthetic.main.p_calendario.*
 class a_calendario : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
+
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
+        if (Sharedapp.prefs.tipousu.equals("invitado")){
+            inflater.inflate(R.menu.menuinvitado, menu)
+        }else{
+            inflater.inflate(R.menu.menu, menu)
+        }
+        //inflater.inflate(R.menu.menu, menu)
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val iditem = item.getItemId()
-
         if (iditem==R.id.carta){
             val intent= Intent(this, a_carta::class.java)
             finish()
