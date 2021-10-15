@@ -30,7 +30,7 @@ class a_carta : AppCompatActivity() {
         val iditem = item.getItemId()
 
         if (iditem==R.id.carta){
-            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
         }
         if (iditem==R.id.Localizar){
             if (Sharedapp.prefs.tipousu.equals("admin")){
@@ -70,8 +70,8 @@ class a_carta : AppCompatActivity() {
 
         }
         if (iditem==R.id.sesion){
-            if (!Sharedapp.prefs.tipousu.equals("invitado")){
-                Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+
+            Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
 
                 val intent= Intent(this, a_login::class.java)
                 finish()
@@ -81,9 +81,6 @@ class a_carta : AppCompatActivity() {
                 finish()
                 startActivity(intent)
             }
-
-
-        }
 
         return true
     }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boka2</string>
+    <string name="tabcarta">Menu</string>
+    <string name="taboferta">Offers</string>
+    <string name="titulo_localizacion">Food truck location</string>
+    <string name="txtcalle_localizacion_hint">Address</string>
+    <string name="usuario">User</string>
+    <string name="contraseña">Password</string>
+    <string name="Login_but_entrar">Enter</string>
+    <string name="Login_txt_registro">You do not have an account? Register</string>
+    <string name="txtInvitado">Login as guest</string>
+    <string name="usuarioycontraseñaincorrectos">The username or password is not correct</string>
+    <string name="titulo_perfil">Profile</string>
+    <string name="btn_guardar">Save</string>
+    <string name="titulo_quienes">ABOUT US</string>
+    <string name="quienes_info">We are Susana Toro, Hendu Sid and Leire Galán, three classmates, we studied together in 2010, the degree in administration and finance, in that period we had to set up a simulated company all three, our business idea at that time was similar to this, it consisted of opening stores in Bizkaia where healthy food would be sold. Two years ago we got in touch with the objective of carrying out that idea since at the time it seemed like a great business idea, today in 2021 thanks to the three having an entrepreneurial spirit, we continue working on our project.</string>
+    <string name="btnRegistro">Register</string>
+    <string name="repetir_contraseña">Repeat password</string>
+    <string name="titulo_reserva">Reserve</string>
+    <string name="fecha">Date: DD/MM/AAAA</string>
+    <string name="hora">Hour: HH:mm</string>
+    <string name="municipio">Municipality</string>
+    <string name="calle">Street</string>
+    <string name="btnreserva">Reserve</string>
+    <string name="pagina_actual">You are already on this page</string>
+    <string name="cierre_sesion">Close session</string>
+    <string name="campos_vacios">Fields cannot be empty</string>
+    <string name="mapa_error">Error loading map</string>
+    <string name="menu_Carta">Menu</string>
+    <string name="menu_Localizar">Locate Food truck</string>
+    <string name="menu_Reservar">Reserve</string>
+    <string name="menu_Calendario">Calendar</string>
+    <string name="menu_Quienes_somos">About us</string>
+    <string name="menu_Perfil">Profile</string>
+    <string name="menu_Cerrar_sesion">Close session</string>
+    <string name="menu_inicio_sesion">Start session</string>
+    <string name="menu_salir">Exit</string>
+
+
+</resources>

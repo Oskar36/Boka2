@@ -59,7 +59,7 @@
                             android:layout_marginTop="62dp"
                             android:layout_marginEnd="35dp"
                             android:ems="10"
-                            android:hint="Fecha: DD/MM/AAAA"
+                            android:hint="@string/fecha"
                             android:inputType="date"
                             android:minHeight="48dp"
                             app:layout_constraintEnd_toStartOf="@+id/txtHora"
@@ -72,7 +72,7 @@
                             android:layout_marginTop="19dp"
                             android:layout_marginEnd="27dp"
                             android:ems="10"
-                            android:hint="Hora: HH:mm"
+                            android:hint="@string/hora"
                             android:inputType="time"
                             android:minHeight="48dp"
                             app:layout_constraintEnd_toStartOf="@+id/imageView2"
@@ -85,7 +85,7 @@
                             android:layout_marginStart="306dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="328dp"
-                            android:text="RESERVAR"
+                            android:text="@string/titulo_reserva"
                             android:textSize="20sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +139,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="26dp"
                             android:layout_marginEnd="210dp"
-                            android:text="Calle"
+                            android:text="@string/calle"
                             app:layout_constraintEnd_toStartOf="@+id/munitxt"
                             app:layout_constraintTop_toBottomOf="@+id/txtfecha" />
 
@@ -160,7 +160,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="19dp"
                             android:layout_marginEnd="377dp"
-                            android:text="Municipio"
+                            android:text="@string/municipio"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtHora" />
 
@@ -171,7 +171,7 @@
                             android:layout_height="0dp"
                             android:layout_marginTop="300dp"
                             android:layout_marginEnd="32dp"
-                            android:text="RESERVAR"
+                            android:text="@string/btnreserva"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtcomensales" />
 

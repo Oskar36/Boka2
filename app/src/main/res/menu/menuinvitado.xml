@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Carta"
+    <item android:title="@string/menu_Carta"
         android:id="@+id/carta">
     </item>
 
-    <item android:title="Localizar Food Truck"
+    <item android:title="@string/menu_Localizar"
         android:id="@+id/Localizar">
     </item>
 
-    <item android:title="Reservar"
+    <item android:title="@string/menu_Reservar"
         android:id="@+id/Reservar">
     </item>
 
-    <item android:title="Calendario"
+    <item android:title="@string/menu_Calendario"
         android:id="@+id/Calendario">
     </item>
 
-    <item android:title="Quienes somos"
+    <item android:title="@string/menu_Quienes_somos"
         android:id="@+id/Quienes">
     </item>
 
     <item
         android:id="@+id/Perfil"
-        android:title="Iniciar sesion"></item>
+        android:title="@string/menu_Cerrar_sesion"></item>
 
     <item
         android:id="@+id/sesion"
-        android:title="Salir"></item>
+        android:title="@string/menu_salir"></item>
 </menu>

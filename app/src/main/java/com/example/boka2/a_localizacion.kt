@@ -39,7 +39,7 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
-            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
 
         }
         if (iditem==R.id.Reservar){
@@ -70,19 +70,11 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
 
         }
         if (iditem==R.id.sesion){
-            if (!Sharedapp.prefs.tipousu.equals("invitado")){
-                Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
 
-                val intent= Intent(this, a_login::class.java)
-                finish()
-                startActivity(intent)
-            }else{
-                val intent= Intent(this, a_registro::class.java)
-                finish()
-                startActivity(intent)
-            }
-
-
+            Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+            val intent= Intent(this, a_login::class.java)
+            finish()
+            startActivity(intent)
         }
 
         return true

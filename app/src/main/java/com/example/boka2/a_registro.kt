@@ -23,29 +23,20 @@ class a_registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_registro)
         btnRegistro.setOnClickListener() {
-            //Si alguno de los campos estan vacios
+            println(BBDD.buscarCorreo(txtmail.text.toString()))
             if (txtmail.text.trim().isEmpty() || txtpsw.text.trim().isEmpty() || txtreppaswd.text.trim().isEmpty() ){
-                Toast.makeText(this, "Los campos no pueden estar vacios", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT)
                     .show()
-                //si no estan vacios
             }else{
-                //La primera de contraseña y la segunda deben ser iguales
                 if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
-                    //Si el usuario no existe en la BBDD
                     if (BBDD.buscarCorreo(txtmail.text.toString())) {
                         BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
 
 
                         val intent=Intent(this, MainActivity::class.java)
                         startActivity(intent)
-                    //Si el usuario ya existe
-                    } else {
-                        txterror.text = "El usuario ya existe"
-                     }
-                    //Si las contraseñas no son iguales
-                }else {
-                    txterror.text = "Ambas contraseñas deben ser iguales"
 
+                    }
                 }
             }
 

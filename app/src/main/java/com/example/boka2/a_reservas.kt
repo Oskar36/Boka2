@@ -70,19 +70,12 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
 
         }
         if (iditem==R.id.sesion){
-            if (!Sharedapp.prefs.tipousu.equals("invitado")){
-                Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
-
-                val intent= Intent(this, a_login::class.java)
-                finish()
-                startActivity(intent)
-            }else{
-                val intent= Intent(this, a_registro::class.java)
-                finish()
-                startActivity(intent)
-            }
 
 
+            Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+            val intent= Intent(this, a_login::class.java)
+            finish()
+            startActivity(intent)
         }
 
         return true
@@ -110,7 +103,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
             mapView!!.onCreate(mapViewBundle)
         }
         catch (e: Exception){
-            Toast.makeText(this, "Error al cargar el mapa.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${getResources().getString(R.string.mapa_error)}", Toast.LENGTH_SHORT).show()
         }
 
         mapView!!.getMapAsync(this)

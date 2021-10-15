@@ -35,7 +35,7 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
-            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
 
         }
         if (iditem==R.id.Reservar){
@@ -60,7 +60,7 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
         }
         if (iditem==R.id.sesion){
 
-            Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${getResources().getString(R.string.cierre_sesion)}", Toast.LENGTH_SHORT).show()
             val intent= Intent(this, a_login::class.java)
             finish()
             startActivity(intent)

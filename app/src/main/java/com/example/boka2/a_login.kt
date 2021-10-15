@@ -55,7 +55,7 @@ class a_login : AppCompatActivity() {
                     startActivity(intent)
                 //En caso de que los datos introducidos no correspondan a ningun usuario registrado
                 } else {
-                    Login_txt_error.text = "El usuario o la contraseña no son correctos"
+                    Login_txt_error.text = "${getResources().getString(R.string.usuarioycontraseñaincorrectos)}"
                 }
             }
         }

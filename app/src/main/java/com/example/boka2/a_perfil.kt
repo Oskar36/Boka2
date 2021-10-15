@@ -49,6 +49,7 @@ class a_perfil : AppCompatActivity() {
             startActivity(intent)
         }
         if (iditem==R.id.Perfil){
+            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
             if (!Sharedapp.prefs.tipousu.equals("invitado")){
                 val intent= Intent(this, a_perfil::class.java)
                 finish()
@@ -61,6 +62,11 @@ class a_perfil : AppCompatActivity() {
 
         }
         if (iditem==R.id.sesion){
+
+            Toast.makeText(this, "${getResources().getString(R.string.cierre_sesion)}", Toast.LENGTH_SHORT).show()
+            val intent= Intent(this, a_login::class.java)
+            finish()
+            startActivity(intent)
             if (!Sharedapp.prefs.tipousu.equals("invitado")){
                 Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show()
 

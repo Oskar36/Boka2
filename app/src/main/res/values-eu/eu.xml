@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boka2</string>
+    <string name="tabcarta">Menua</string>
+    <string name="taboferta">Eskaintzak</string>
+    <string name="titulo_localizacion">Food truck-ren kokapena</string>
+    <string name="txtcalle_localizacion_hint">Helbidea</string>
+    <string name="usuario">Erabiltzailea</string>
+    <string name="contraseña">Pasahitza</string>
+    <string name="Login_but_entrar">Sartu</string>
+    <string name="Login_txt_registro">Ez duzu konturik? Izena eman</string>
+    <string name="txtInvitado">Sartu gonbidatu gisa</string>
+    <string name="usuarioycontraseñaincorrectos">Erabiltzaile izena edo pasahitza ez dira zuzenak</string>
+    <string name="titulo_perfil">Perfila</string>
+    <string name="btn_guardar">Gorde</string>
+    <string name="titulo_quienes">GURI BURUZ</string>
+    <string name="quienes_info">Susana Toro, Hendu Sid eta Leire Galán gara, hiru ikaskide, elkarrekin ikasi genuen 2010ean, administrazioan eta finantzetan lizentziatua, aldi horretan hirurak simulatutako enpresa bat sortu behar izan genuen, garai hartako gure negozio ideia antzekoa zen hau, janari osasuntsuak salduko ziren Bizkaian dendak irekitzean datza. Duela bi urte ideia hori aurrera eramateko helburuarekin harremanetan jarri ginen, garai hartan negozio ideia bikaina iruditzen zitzaigunez, gaur 2021ean hirurek ekintzailetza izatearen ondorioz, gure proiektuan lanean jarraitzen dugu.</string>
+    <string name="btnRegistro">Izena eman</string>
+    <string name="repetir_contraseña">Pasahitza errepikatu</string>
+    <string name="titulo_reserva">Erreserba</string>
+    <string name="fecha">Data: DD/MM/AAAA</string>
+    <string name="hora">Ordua: HH:mm</string>
+    <string name="municipio">Udalerria</string>
+    <string name="calle">Kalea</string>
+    <string name="btnreserva">Erreserba</string>
+    <string name="pagina_actual">Orri honetan zaude <dagoeneko></dagoeneko></string>
+    <string name="cierre_sesion">saio itxita</string>
+    <string name="campos_vacios">Eremuak ezin dira hutsik egon</string>
+    <string name="mapa_error">Errorea mapa kargatzean</string>
+    <string name="menu_Carta">Menua</string>
+    <string name="menu_Localizar">Aurkitu Food truck</string>
+    <string name="menu_Reservar">Erreserba</string>
+    <string name="menu_Calendario">Egutegia</string>
+    <string name="menu_Quienes_somos">Guri buruz</string>
+    <string name="menu_Perfil">Profila</string>
+    <string name="menu_Cerrar_sesion">Saioa itxi</string>
+    <string name="menu_inicio_sesion">Saioa hasi</string>
+    <string name="menu_salir">Atera</string>
+
+</resources>

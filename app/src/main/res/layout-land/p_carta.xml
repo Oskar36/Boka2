@@ -27,13 +27,13 @@
                     android:id="@+id/tabcarta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Carta" />
+                    android:text="@string/tabcarta" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/taboferta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ofertas" />
+                    android:text="@string/taboferta" />
             </com.google.android.material.tabs.TabLayout>
 
             <LinearLayout

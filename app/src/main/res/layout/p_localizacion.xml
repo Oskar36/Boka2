@@ -14,7 +14,7 @@
         android:layout_height="27dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="36dp"
-        android:text="LOCALIZACIÓN DE LA FOOD TRUCK"
+        android:text="@string/titulo_localizacion"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
         android:layout_width="331dp"
         android:layout_height="58dp"
         android:layout_marginTop="140dp"
-        android:hint="Direccion"
+        android:hint="@string/txtcalle_localizacion_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
