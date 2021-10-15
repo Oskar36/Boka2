@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.p_localizacion.*
 
 class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map:GoogleMap
+    //Barra de tareas
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -74,10 +75,12 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_localizaradmin)
+        //Barra de tareas
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
+        //En caso de que haya problemas con el Bundle
         var mapViewBundle: Bundle? = null
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY)
@@ -88,6 +91,7 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
         mapView!!.getMapAsync(this)
 
     }
+    //En caso de que haya problemas con el Bundle
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         var mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY)
@@ -97,6 +101,7 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
         }
         mapView!!.onSaveInstanceState(mapViewBundle)
     }
+    //Funciones obligatorias de tener para que le mapa funcione
     override fun onResume() {
         super.onResume()
         mapView!!.onResume()
@@ -133,14 +138,15 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
         var ny = LatLng(43.267010, -2.942118)
         val location = LatLng(43.267010, -2.942118)
         gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
+        //Definición del marcador y ponerle la foto al marcador
         val marker = MarkerOptions().position(ny)
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
         ny=LatLng(43.265869, -2.947557)
         val marker2 = MarkerOptions().position(ny)
-        marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
+        marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
         ny=LatLng(43.265627, -2.944349)
         val marker3 = MarkerOptions().position(ny)
-        marker3.icon(BitmapDescriptorFactory.fromResource(R.drawable.a))
+        marker3.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
         gmap!!.addMarker(marker)
         gmap!!.addMarker(marker2)
         gmap!!.addMarker(marker3)

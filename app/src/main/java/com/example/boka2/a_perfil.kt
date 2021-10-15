@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.Toast
 
 class a_perfil : AppCompatActivity() {
+    //Barra de tareas
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
@@ -64,7 +65,7 @@ class a_perfil : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+//Barra de tareas
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
