@@ -19,7 +19,6 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
         insertarCarta("ensalada","general","ninguno",db)
         insertarCarta("fajitas","general","ninguno",db)
-        insertarCarta("boll","general","ninguno",db)
         insertarCarta("sandwich","general","ninguno",db)
         insertarCarta("smoothie","general","ninguno",db)
         insertarCarta("smoothieboll","general","ninguno",db)
