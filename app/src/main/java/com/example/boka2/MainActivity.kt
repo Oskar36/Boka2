@@ -106,10 +106,10 @@ class MainActivity : AppCompatActivity() {
             val img1 = ImageView(this)
             img1.setLayoutParams(lp2)
             img.setLayoutParams(lp)
-            //Asignamos Texto al botón
+            //Asignamos fotos
             img.setBackgroundResource(R.drawable.oferta1)
             img1.setBackgroundResource(R.drawable.evento1)
-            //Añadimos el botón a la botonera
+            //Añadimos la foto al layout
             llBotonera.addView(img)
             llBotonera.addView(img1)
 

@@ -81,11 +81,12 @@ class a_carta : AppCompatActivity() {
         setContentView(R.layout.p_carta)
         val llBotonera = findViewById<View>(R.id.llcarta) as LinearLayout
         var context:Context?=null
-        //Creamos las propiedades de layout que tendrán los botones.
-        //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
+        //Creamos las propiedades de layout que tendrán las imagenes.
+        //Son LinearLayout.LayoutParams porque las imagenes van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
             //LinearLayout.LayoutParams.MATCH_PARENT,
             //LinearLayout.LayoutParams.WRAP_CONTENT
+            //Asignamos un valor fijo para que las imagenes no se deformen
             LinearLayout.LayoutParams(1125, 700)
         )
         val lp2 = LinearLayout.LayoutParams(
@@ -100,10 +101,8 @@ class a_carta : AppCompatActivity() {
         //Creamos los botones en bucle
         var numBotones = BBDDcarta.Carta("general").size
         for (i in 0 until numBotones) {
+            //Cargamos las imagenes de la base de datos y las añadimos a la vista
            var carta:String = BBDDcarta.Carta("general").get(i).nombre
-           /*if(carta.equals("smoothie boll")){
-               carta="smoothieboll"
-           }*/
             val resID = resources.getIdentifier(carta, "drawable", packageName)
             context=this
             val img = ImageView(this)
@@ -118,20 +117,19 @@ class a_carta : AppCompatActivity() {
         tablay.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 llBotonera.removeAllViews()
+                //En caso de que nos posicionemos sobre carta
                 if (tablay.selectedTabPosition==0){
                     var numBotones = BBDDcarta.Carta("general").size
                     for (i in 0 until numBotones) {
+                        //Cargamos las imagenes de la base de datos y las añadimos a la vista
                         var carta:String = BBDDcarta.Carta("general").get(i).nombre
-                        /*if(carta.equals("smoothie boll")){
-                            carta="smoothieboll"
-                        }*/
                         val resID = resources.getIdentifier(carta, "drawable", packageName)
                         val img = ImageView(context)
                         img.setLayoutParams(lp)
                         img.setBackgroundResource(resID)
                         llBotonera.addView(img)
                     }
-
+                //En caso de posicionarnos sobre ofertas
                 }else{
                     for (i in 0 until numBotones) {
                         val img1 = ImageView(context)

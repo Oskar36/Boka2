@@ -82,8 +82,8 @@ class a_calendario : AppCompatActivity() {
 
         val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
 
-        //Creamos las propiedades de layout que tendrán los botones.
-        //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
+        //Creamos las propiedades de layout que tendrán las imagenes.
+        //Son LinearLayout.LayoutParams porque las imagenes van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT

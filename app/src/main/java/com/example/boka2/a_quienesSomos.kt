@@ -74,6 +74,7 @@ class a_quienesSomos : AppCompatActivity() {
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_quienes_somos)
+        //Al pulsar los diferentes txt nos redirige a sus correspondientes formas de contacto (Telefono, instagram.....)
         txtInstagram.setOnClickListener(){
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/?hl=es"))
             startActivity(browserIntent)
