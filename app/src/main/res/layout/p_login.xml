@@ -52,6 +52,7 @@
         android:id="@+id/Login_txt_error"
         android:layout_width="208dp"
         android:layout_height="45dp"
+        android:textAlignment="center"
         android:textColor="#E31D1D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

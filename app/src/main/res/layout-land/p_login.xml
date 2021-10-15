@@ -61,7 +61,9 @@
                         <TextView
                             android:id="@+id/Login_txt_error"
                             android:layout_width="204dp"
-                            android:layout_height="20dp" />
+                            android:layout_height="20dp"
+                            android:textAlignment="center"
+                            android:textColor="#A61616" />
 
                         <Button
                             android:id="@+id/Login_but_entrar"
