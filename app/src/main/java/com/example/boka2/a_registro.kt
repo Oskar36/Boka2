@@ -23,20 +23,43 @@ class a_registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_registro)
         btnRegistro.setOnClickListener() {
-            println(BBDD.buscarCorreo(txtmail.text.toString()))
+            //Comprobamos que no hay ningun campo vacio
             if (txtmail.text.trim().isEmpty() || txtpsw.text.trim().isEmpty() || txtreppaswd.text.trim().isEmpty() ){
                 Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT)
                     .show()
             }else{
+                //comprobamos que ambas contraseñas sean iguales
                 if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
-                    if (BBDD.buscarCorreo(txtmail.text.toString())) {
-                        BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
+                    //comprobamos la contraseña
+                    var ok = 0
+                    for (i in 0 until txtpsw.length()){
+                        val g = txtpsw.text.toString()
+                        val c = g[0]
+                        if(c in 'a'..'z' || c in 'A'..'Z' || c in '0'..'9') {
+                            ok++
+                            if(txtpsw.length()>=6 && ok == 3) {
+                                //comprobamos que el usuario no existe
+                                if (BBDD.buscarCorreo(txtmail.text.toString())) {
+                                    BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
 
 
-                        val intent=Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+                                    val intent = Intent(this, MainActivity::class.java)
+                                    startActivity(intent)
 
+                                }else{
+                                    Toast.makeText(this, "${getResources().getString(R.string.usuario_existente)}", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                            }
+                        }else{
+                            Toast.makeText(this, "${getResources().getString(R.string.Contraseña_incorrecta)}", Toast.LENGTH_SHORT)
+                                .show()
+                        }
                     }
+
+                }else{
+                    Toast.makeText(this, "${getResources().getString(R.string.contraseñas_distintas)}", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
 
