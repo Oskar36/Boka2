@@ -33,8 +33,8 @@
     <string name="menu_Calendario">Calendar</string>
     <string name="menu_Quienes_somos">About us</string>
     <string name="menu_Perfil">Profile</string>
-    <string name="menu_Cerrar_sesion">Close session</string>
-    <string name="menu_inicio_sesion">Start session</string>
+    <string name="menu_Cerrar_sesion">Sign up</string>
+    <string name="menu_inicio_sesion">Sign in</string>
     <string name="menu_salir">Exit</string>
     <string name="usuario_existente">User already exist</string>
     <string name="contraseñas_distintas">passwords are differents</string>

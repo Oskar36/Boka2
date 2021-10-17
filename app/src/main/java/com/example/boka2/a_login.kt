@@ -21,6 +21,11 @@ class a_login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_login)
+        if (Sharedapp.prefs.tipousu.equals("cliente") || Sharedapp.prefs.tipousu.equals("admin")){
+            val persistencia = Intent(this, MainActivity::class.java)
+            finish()
+            startActivity(persistencia)
+        }
 
 
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
