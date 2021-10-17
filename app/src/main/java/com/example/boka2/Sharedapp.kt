@@ -12,6 +12,9 @@ class Sharedapp : Application() {
     override fun onCreate() {
         super.onCreate()
         prefs = Prefs(applicationContext)
+        user = User(applicationContext)
+        paswd = Paswd(applicationContext)
+
     }
 
 }
