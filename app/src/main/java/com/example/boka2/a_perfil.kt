@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import kotlinx.android.synthetic.main.p_perfil.*
 
 class a_perfil : AppCompatActivity() {
     //Barra de tareas
@@ -94,6 +95,10 @@ class a_perfil : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_perfil)
+        prefil_txt_correo.setText(Sharedapp.user.user)
+        Perfil_contra.setText(Sharedapp.paswd.paswd)
+
+
 
     }
 }

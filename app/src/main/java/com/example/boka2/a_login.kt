@@ -10,7 +10,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_login.*
-import kotlinx.android.synthetic.main.p_registro.*
 import android.content.SharedPreferences
 
 
@@ -51,6 +50,8 @@ class a_login : AppCompatActivity() {
                 if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
                     val intent = Intent(this, MainActivity::class.java)
                     Sharedapp.prefs.tipousu = "cliente"
+                    Sharedapp.user.user = login_correo.text.toString()
+                    Sharedapp.paswd.paswd = login_contr.text.toString()
                     finish()
                     startActivity(intent)
                 //En caso de que los datos introducidos no correspondan a ningun usuario registrado

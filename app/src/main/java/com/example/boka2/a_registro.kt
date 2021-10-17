@@ -7,6 +7,7 @@ import android.util.Log.i
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import kotlinx.android.synthetic.main.p_login.*
 import kotlinx.android.synthetic.main.p_registro.*
 
 
@@ -44,6 +45,8 @@ class a_registro : AppCompatActivity() {
 
 
                                     val intent = Intent(this, MainActivity::class.java)
+                                    Sharedapp.user.user = txtmail.text.toString()
+                                    Sharedapp.paswd.paswd = txtpsw.text.toString()
                                     startActivity(intent)
 
                                 }else{
