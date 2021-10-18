@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.NumberPicker
 import android.widget.Toast
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -13,8 +14,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.p_reservas.*
 
-class a_reservas : AppCompatActivity(), OnMapReadyCallback {
+class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValueChangeListener {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
@@ -159,14 +161,29 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback {
 
 //prueba
     override fun onMapReady(googleMap: GoogleMap) {
-        gmap = googleMap
-        gmap!!.setMinZoomPreference(12f)
-        val location = LatLng(43.267010, -2.942118)
-        val ny = LatLng(43.267010, -2.942118)
-        gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
+    gmap = googleMap
+    gmap!!.setMinZoomPreference(12f)
+    val location = LatLng(43.267010, -2.942118)
+    val ny = LatLng(43.267010, -2.942118)
+    gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
     //Definición del marcador y ponerle la foto al marcador
     val marker = MarkerOptions().position(ny)
     marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
     gmap!!.addMarker(marker)
+
+
+    //numbrerpicker
+
+    numberPicker?.wrapSelectorWheel = false
+    if (numberPicker != null) {
+        numberPicker.minValue = 0
+        numberPicker.maxValue = 20
+    }
+
+
+}
+
+    override fun onValueChange(p0: NumberPicker?, p1: Int, p2: Int) {
+        TODO("Not yet implemented")
     }
 }

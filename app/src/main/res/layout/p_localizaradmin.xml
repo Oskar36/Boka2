@@ -11,12 +11,12 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView4"
-        android:layout_width="391dp"
-        android:layout_height="687dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="734dp"
+        android:layout_height="383dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
