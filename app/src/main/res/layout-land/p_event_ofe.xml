@@ -27,7 +27,7 @@
                 tools:context="com.example.boka2.MainActivity">
 
                 <ScrollView
-                    android:layout_width="420dp"
+                    android:layout_width="421dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
