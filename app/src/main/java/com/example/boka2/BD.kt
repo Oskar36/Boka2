@@ -17,6 +17,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("create table eveofe ( nombre text,fecha real,tipo text,primary key(nombre,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
+      //  db!!.execSQL("create table reserva (id text  primary key AUTOINCREMENT, fecha text,hora text,comensales text,municipio text, calle text)")
         //Insercciones de la tabla carta
         insertarCarta("ensalada","general","ninguno",db)
         insertarCarta("fajitas","general","ninguno",db)

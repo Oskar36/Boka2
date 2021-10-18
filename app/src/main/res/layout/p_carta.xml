@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/l_layout1"
+    android:id="@+id/clayout"
     tools:context=".a_carta">
 
 
@@ -42,16 +42,22 @@
         app:layout_constraintTop_toBottomOf="@+id/tablay"
         tools:context="com.example.boka2.a_carta">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="SpeakableTextPresentCheck">
-
-            <LinearLayout
-                android:id="@+id/llcarta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
-        </ScrollView>
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="413dp"
+        android:layout_height="676dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablay"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:id="@+id/llcarta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/tablay"></LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
