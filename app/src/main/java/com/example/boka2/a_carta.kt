@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -110,10 +111,13 @@ class a_carta : AppCompatActivity() {
             //LinearLayout.LayoutParams.WRAP_CONTENT
             //Asignamos un valor fijo para que las imagenes no se deformen
             LinearLayout.LayoutParams(1125, 700)
+
         )
+
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT,
+
 
 
             )
