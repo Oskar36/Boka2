@@ -14,7 +14,7 @@ data class localizacion (val calle: String, val municipio: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
-        db!!.execSQL("create table eveofe ( nombre text,fecha text,tipo text,primary key(nombre,fecha))  ")
+        db!!.execSQL("create table eveofe ( nombre text,fecha real,tipo text,primary key(nombre,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
         //Insercciones de la tabla carta
@@ -23,13 +23,13 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         insertarCarta("sandwich","general","ninguno",db)
         insertarCarta("smoothie","general","ninguno",db)
         insertarCarta("smoothieboll","general","ninguno",db)
-        insertarEventoOfe("aitana","16-10-2022","evento",db)
-        insertarEventoOfe("alejandro","11-10-2022","evento",db)
-        insertarEventoOfe("bbk","07-10-2022","evento",db)
-        insertarEventoOfe("espiritus","08-01-2022","evento",db)
-        insertarEventoOfe("gatibu","19-01-2022","evento",db)
-        insertarEventoOfe("justin","20-10-2022","evento",db)
-        insertarEventoOfe("manuel","12-02-2022","evento",db)
+        insertarEventoOfe("aitana","2022-10-16","evento",db)
+        insertarEventoOfe("bbk","2022-10-07","evento",db)
+        insertarEventoOfe("espiritus","2022-01-08","evento",db)
+        insertarEventoOfe("gatibu","2022-01-19","evento",db)
+        insertarEventoOfe("justin","2022-10-22","evento",db)
+        insertarEventoOfe("alejandro","2022-10-11","evento",db)
+        insertarEventoOfe("manuel","2022-02-12","evento",db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {
@@ -92,7 +92,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     fun Evento_ofe(tipo:String):List<eve_ofe>{
         val fila:MutableList<eve_ofe> = ArrayList()
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select nombre from eveofe where tipo=? ", arrayOf(tipo))
+        val cursor:Cursor = db.rawQuery("select nombre from eveofe where tipo=? order by fecha", arrayOf(tipo))
         while (cursor.moveToNext()){
             val todo= eve_ofe(cursor.getString(0))
             fila.add(todo)

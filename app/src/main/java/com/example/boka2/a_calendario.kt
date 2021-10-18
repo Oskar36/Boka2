@@ -9,7 +9,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_calendario.*
 import kotlinx.android.synthetic.main.p_carta.*
@@ -126,10 +125,10 @@ class a_calendario : AppCompatActivity() {
             var eveofe:String = BBDDcarta.Evento_ofe("evento").get(i).nombre
             val resID = resources.getIdentifier(eveofe, "drawable", packageName)
             context=this
-            val img = ImageView(this)
-            img.setLayoutParams(lp)
-            img.setBackgroundResource(resID)
-            llBotonera.addView(img)
+                val img = ImageView(this)
+                img.setLayoutParams(lp)
+                img.setBackgroundResource(resID)
+                llBotonera.addView(img)
         }
     }
     }
