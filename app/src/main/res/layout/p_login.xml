@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319" />
+        app:layout_constraintVertical_bias="0.319"/>
 
     <EditText
         android:id="@+id/login_contr"
@@ -46,7 +46,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_txt_error"
         app:layout_constraintVertical_bias="0.077"
-        style="@style/botones"/>
+        style="@style/botones"
+        />
 
     <TextView
         android:id="@+id/Login_txt_error"

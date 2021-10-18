@@ -44,6 +44,7 @@
                             android:id="@+id/login_correo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
                             android:ems="10"
                             android:hint="@string/usuario"
                             android:inputType="textPersonName"
@@ -53,6 +54,7 @@
                             android:id="@+id/login_contr"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
                             android:ems="10"
                             android:hint="@string/contraseña"
                             android:inputType="textPassword"
@@ -60,8 +62,10 @@
 
                         <TextView
                             android:id="@+id/Login_txt_error"
-                            android:layout_width="204dp"
-                            android:layout_height="20dp"
+                            android:layout_width="210dp"
+                            android:layout_height="31dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
                             android:textAlignment="center"
                             android:textColor="#A61616" />
 
@@ -70,24 +74,27 @@
                             style="@style/botones"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
                             android:text="@string/Login_but_entrar" />
 
                         <TextView
                             android:id="@+id/txtInvitado"
                             style="@style/texto"
-                            android:textColor="@color/black"
                             android:layout_width="230dp"
                             android:layout_height="30dp"
-                            android:layout_marginTop="0dp"
-                            android:textAlignment="center"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginBottom="5dp"
                             android:text="@string/txtInvitado"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
+
                         <TextView
                             android:id="@+id/Login_txt_registro"
                             style="@style/texto"
                             android:layout_width="230dp"
                             android:layout_height="52dp"
-                            android:layout_marginTop="41dp"
+                            android:layout_marginTop="40dp"
                             android:text="@string/Login_txt_registro"
                             android:textAlignment="center"
                             android:textColor="#2979FF"

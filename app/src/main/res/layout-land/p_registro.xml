@@ -37,6 +37,8 @@
                             android:id="@+id/imageView"
                             android:layout_width="222dp"
                             android:layout_height="176dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
                             app:srcCompat="@drawable/furgoneta" />
 
                         <EditText
@@ -46,7 +48,9 @@
                             android:ems="10"
                             android:hint="@string/usuario"
                             android:inputType="textEmailAddress"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"/>
 
                         <EditText
                             android:id="@+id/txtpsw"
@@ -55,7 +59,9 @@
                             android:ems="10"
                             android:hint="@string/contraseña"
                             android:inputType="textPassword"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"/>
 
                         <EditText
                             android:id="@+id/txtreppaswd"
@@ -64,14 +70,18 @@
                             android:ems="10"
                             android:hint="@string/repetir_contraseña"
                             android:inputType="textPassword"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"/>
 
                         <Button
                             android:id="@+id/btnRegistro"
                             style="@style/botones"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/btnRegistro" />
+                            android:text="@string/btnRegistro"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"/>
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>
