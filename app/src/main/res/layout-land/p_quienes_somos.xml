@@ -58,114 +58,116 @@
                             android:id="@+id/txtTelefono"
                             android:layout_width="120dp"
                             android:layout_height="36dp"
-                            android:layout_marginTop="28dp"
-                            android:layout_marginEnd="164dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginBottom="12dp"
                             android:gravity="center_vertical"
                             android:text="666 666 666"
-                            app:layout_constraintEnd_toStartOf="@+id/gmailIcono"
-                            app:layout_constraintTop_toBottomOf="@+id/imgFurgoneta" />
+                            app:layout_constraintBottom_toTopOf="@+id/txtInstagram"
+                            app:layout_constraintStart_toEndOf="@+id/telefonoIcono" />
 
                         <ImageView
                             android:id="@+id/gmailIcono"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="4dp"
-                            app:layout_constraintEnd_toStartOf="@+id/txtGmail"
+                            android:layout_marginStart="76dp"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginBottom="12dp"
+                            app:layout_constraintBottom_toTopOf="@+id/imageView10"
+                            app:layout_constraintStart_toEndOf="@+id/txtTelefono"
                             app:layout_constraintTop_toBottomOf="@+id/QuienesSomos"
+                            app:layout_constraintVertical_bias="0.965"
                             app:srcCompat="@drawable/gmail" />
 
                         <TextView
                             android:id="@+id/txtGmail"
                             android:layout_width="120dp"
                             android:layout_height="36dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="128dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="12dp"
                             android:gravity="center_vertical"
                             android:text="boka2@gmail.com"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/QuienesSomos" />
+                            app:layout_constraintBottom_toTopOf="@+id/txtFacebook"
+                            app:layout_constraintStart_toEndOf="@+id/gmailIcono" />
 
                         <TextView
                             android:id="@+id/txtTwitter"
                             android:layout_width="108dp"
                             android:layout_height="35dp"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="42dp"
+                            android:layout_marginEnd="44dp"
+                            android:layout_marginBottom="52dp"
                             android:gravity="center_vertical"
                             android:text="boka2_Bilbao"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toEndOf="@+id/twitterIcono"
-                            app:layout_constraintTop_toBottomOf="@+id/txtGmail" />
+                            app:layout_constraintTop_toBottomOf="@+id/QuienesSomos"
+                            app:layout_constraintVertical_bias="0.933" />
 
                         <ImageView
                             android:id="@+id/twitterIcono"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:layout_marginStart="92dp"
-                            android:layout_marginTop="16dp"
-                            app:layout_constraintStart_toEndOf="@+id/txtFacebook"
-                            app:layout_constraintTop_toBottomOf="@+id/txtGmail"
+                            android:layout_marginStart="72dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="52dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/txtTwitter"
+                            app:layout_constraintStart_toEndOf="@+id/txtGmail"
+                            app:layout_constraintTop_toBottomOf="@+id/QuienesSomos"
+                            app:layout_constraintVertical_bias="1.0"
                             app:srcCompat="@drawable/twitter" />
 
                         <TextView
                             android:id="@+id/txtFacebook"
                             android:layout_width="108dp"
                             android:layout_height="37dp"
-                            android:layout_marginStart="4dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="75dp"
+                            android:layout_marginStart="16dp"
                             android:gravity="center_vertical"
                             android:text="boka2_Bilbao"
-                            app:layout_constraintEnd_toStartOf="@+id/twitterIcono"
-                            app:layout_constraintStart_toEndOf="@+id/imageView10"
-                            app:layout_constraintTop_toBottomOf="@+id/gmailIcono" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageView10" />
 
                         <ImageView
                             android:id="@+id/imageView10"
-                            android:layout_width="34dp"
-                            android:layout_height="31dp"
-                            android:layout_marginStart="116dp"
-                            android:layout_marginTop="72dp"
+                            android:layout_width="36dp"
+                            android:layout_height="37dp"
+                            android:layout_marginStart="96dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/txtInstagram"
-                            app:layout_constraintTop_toBottomOf="@+id/QuienesSomos"
                             app:srcCompat="@drawable/facebook1" />
 
                         <TextView
                             android:id="@+id/txtInstagram"
                             android:layout_width="100dp"
                             android:layout_height="39dp"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginEnd="100dp"
+                            android:layout_marginStart="8dp"
                             android:gravity="center_vertical"
                             android:text="boka2_Bilbao"
-                            app:layout_constraintEnd_toStartOf="@+id/imageView10"
-                            app:layout_constraintStart_toEndOf="@+id/instagramIcono"
-                            app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/instagramIcono" />
 
                         <ImageView
                             android:id="@+id/instagramIcono"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="76dp"
-                            android:layout_marginEnd="3dp"
-                            app:layout_constraintEnd_toStartOf="@+id/txtInstagram"
+                            android:layout_marginStart="52dp"
+                            android:layout_marginBottom="4dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/imgFurgoneta"
                             app:srcCompat="@drawable/instagram" />
 
                         <ImageView
                             android:id="@+id/telefonoIcono"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:layout_marginTop="28dp"
-                            android:layout_marginEnd="12dp"
-                            app:layout_constraintEnd_toStartOf="@+id/txtTelefono"
+                            android:layout_marginStart="52dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="12dp"
+                            app:layout_constraintBottom_toTopOf="@+id/instagramIcono"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imgFurgoneta"
+                            app:layout_constraintVertical_bias="1.0"
                             app:srcCompat="@android:drawable/ic_menu_call" />
 
                         <ImageView
@@ -185,7 +187,8 @@
                             android:layout_height="191dp"
                             android:layout_marginTop="32dp"
                             android:layout_marginEnd="36dp"
-                            android:text="@string/quienes_info"                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/quienes_info"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/titulo" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </ScrollView>

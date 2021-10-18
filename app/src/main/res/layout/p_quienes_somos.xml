@@ -25,8 +25,10 @@
         android:layout_width="351dp"
         android:layout_height="214dp"
         android:layout_marginTop="44dp"
+        android:layout_marginBottom="32dp"
         android:gravity="center"
         android:text="@string/quienes_info"
+        app:layout_constraintBottom_toTopOf="@+id/gmailIcono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,25 +157,28 @@
         android:id="@+id/txtFacebook"
         android:layout_width="135dp"
         android:layout_height="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:foregroundGravity="center_horizontal"
         android:text="boka2_Bilbao"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTwitter" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTwitter"
+        app:layout_constraintVertical_bias="0.026" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="34dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="28dp"
         android:foregroundGravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txtFacebook"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtInstagram"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/facebook1" />
 
     <ImageView
