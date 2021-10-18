@@ -154,7 +154,7 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
-        gmap!!.setMinZoomPreference(12f)
+        gmap!!.setMinZoomPreference(15f)
         val ny = LatLng(43.267010, -2.942118)
         val location = LatLng(43.267010, -2.942118)
         gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))

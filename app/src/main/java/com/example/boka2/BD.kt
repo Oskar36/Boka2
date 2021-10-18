@@ -7,14 +7,14 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 //Clases para almacenar los datos de la base de datos
 data class usuario (val correo: String, val contraseña: String)
-data class eve_ofe(val titulo:String,val fecha:String,val tipo: String,val info:String, val img:String)
 data class carta (val nombre:String, val tipo:String,val alergias:String)
 data class cartagen(val nombre:String)
+data class eve_ofe(val nombre:String)
 data class localizacion (val calle: String, val municipio: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
-        db!!.execSQL("create table eventos_ofertas ( titulo text,fecha text,tipo text, img text,primary key(titulo,fecha))  ")
+        db!!.execSQL("create table eveofe ( nombre text,fecha text,tipo text,primary key(nombre,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
         //Insercciones de la tabla carta
@@ -22,11 +22,18 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         insertarCarta("fajitas","general","ninguno",db)
         insertarCarta("sandwich","general","ninguno",db)
         insertarCarta("smoothie","general","ninguno",db)
-        insertarCarta("smoothiebowl","general","ninguno",db)
+        insertarCarta("smoothieboll","general","ninguno",db)
+        insertarEventoOfe("aitana","16-10-2022","evento",db)
+        insertarEventoOfe("alejandro","11-10-2022","evento",db)
+        insertarEventoOfe("bbk","07-10-2022","evento",db)
+        insertarEventoOfe("espiritus","08-01-2022","evento",db)
+        insertarEventoOfe("gatibu","19-01-2022","evento",db)
+        insertarEventoOfe("justin","20-10-2022","evento",db)
+        insertarEventoOfe("manuel","12-02-2022","evento",db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {
-        db!!.execSQL("drop table if exists eventos_ofertas")
+        db!!.execSQL("drop table if exists eveofe")
         db!!.execSQL("drop table if exists carta")
         db!!.execSQL("drop table if exists localizacion")
         onCreate(db)
@@ -41,13 +48,20 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     }
     //Insercción de elemento de la carta en la base de datos
     fun insertarCarta(nombre1:String,tipo1:String,alergias1: String, db:SQLiteDatabase?){
-
     val registrar2=ContentValues()
     registrar2.put("nombre",nombre1)
     registrar2.put("tipo",tipo1)
     registrar2.put("alergias",alergias1)
     db?.insert("carta",null,registrar2)
 }
+    //Insercción de ofertas y eventos en la base de datos
+    fun insertarEventoOfe(titulo:String,fecha:String,tipo: String, db:SQLiteDatabase?){
+        val registrar2=ContentValues()
+        registrar2.put("nombre",titulo)
+        registrar2.put("fecha",fecha)
+        registrar2.put("tipo",tipo)
+        db?.insert("eveofe",null,registrar2)
+    }
     //Funcion para buscar el correo
     fun buscarCorreo(user1:String):Boolean{
         val fila:MutableList<usuario> = ArrayList()
@@ -74,22 +88,13 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
             return false
         }
     }
-    fun Eventos(evento:String):List<eve_ofe>{
+    //Funcion para recoger en una lista todos los  eventos o ofertas que hay en la carta
+    fun Evento_ofe(tipo:String):List<eve_ofe>{
         val fila:MutableList<eve_ofe> = ArrayList()
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select * where tipo='Evento' ", arrayOf(evento))
+        val cursor:Cursor = db.rawQuery("select nombre from eveofe where tipo=? ", arrayOf(tipo))
         while (cursor.moveToNext()){
-            val todo= eve_ofe(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4))
-            fila.add(todo)
-        }
-        return fila
-    }
-    fun Ofertas(oferta:String):List<eve_ofe>{
-        val fila:MutableList<eve_ofe> = ArrayList()
-        val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select * where tipo='Oferta' ", arrayOf(oferta))
-        while (cursor.moveToNext()){
-            val todo= eve_ofe(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4))
+            val todo= eve_ofe(cursor.getString(0))
             fila.add(todo)
         }
         return fila

@@ -1,5 +1,6 @@
 package com.example.boka2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_calendario.*
+import kotlinx.android.synthetic.main.p_carta.*
+import kotlinx.android.synthetic.main.p_event_ofe.*
 
 class a_calendario : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -96,17 +99,16 @@ class a_calendario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_calendario)
 
-
-
-
+        val BBDDcarta = Base_de_Datos(this, "eve_ofe", null, 1 )
         val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
-
+        var context: Context?=null
         //Creamos las propiedades de layout que tendrán las imagenes.
         //Son LinearLayout.LayoutParams porque las imagenes van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-            //LinearLayout.LayoutParams(1125, 700)
+            //LinearLayout.LayoutParams.MATCH_PARENT,
+            //LinearLayout.LayoutParams.WRAP_CONTENT
+            //Asignamos un valor fijo para que las imagenes no se deformen
+            LinearLayout.LayoutParams(1125, 700)
         )
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -118,22 +120,16 @@ class a_calendario : AppCompatActivity() {
         val layout: LinearLayout =llcalendario
 
         //Creamos los botones en bucle
+        var numBotones = BBDDcarta.Evento_ofe("evento").size
         for (i in 0 until numBotones) {
+            //Cargamos las imagenes de la base de datos y las añadimos a la vista
+            var eveofe:String = BBDDcarta.Evento_ofe("evento").get(i).nombre
+            val resID = resources.getIdentifier(eveofe, "drawable", packageName)
+            context=this
             val img = ImageView(this)
-            val txt = TextView(this)
-            txt.setLayoutParams(lp2)
             img.setLayoutParams(lp)
-            //Asignamos Texto al botón
-            img.setBackgroundResource(R.drawable.evento1)
-            //Añadimos el botón a la botonera
+            img.setBackgroundResource(resID)
             llBotonera.addView(img)
-            llBotonera.addView(txt)
-
         }
     }
-
-    companion object {
-        var numBotones = 5
-    }
-
     }

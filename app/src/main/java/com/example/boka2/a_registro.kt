@@ -40,7 +40,7 @@ class a_registro : AppCompatActivity() {
                             ok++
                             if(txtpsw.length()>=6 && ok == 3) {
                                 //comprobamos que el usuario no existe
-                                if (BBDD.buscarCorreo(txtmail.text.toString())) {
+                                if (BBDD.buscarCorreo(txtmail.text.toString())){
                                     BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
 
 
