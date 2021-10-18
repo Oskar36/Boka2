@@ -5,4 +5,17 @@
             @drawable/splash
         </item>
     </style>
+
+    <style name="texto">
+        <item name="fontFamily">roboto</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="botones">
+        <item name="android:backgroundTint">#36622B</item>
+        <item name="android:height">50dp</item>
+        <item name="android:width">120dp</item>
+    </style>
+
 </resources>
