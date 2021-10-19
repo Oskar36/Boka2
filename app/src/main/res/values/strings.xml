@@ -38,6 +38,8 @@
     <string name="usuario_existente">El usuario ya existe</string>
     <string name="contraseñas_distintas">Las contraseñas son distintas</string>
     <string name="Contraseña_incorrecta">Las contraseñas tienen que ser mayusculas, minusculas y numericas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

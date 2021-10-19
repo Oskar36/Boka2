@@ -5,6 +5,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.widget.Toast
+
 //Clases para almacenar los datos de la base de datos
 data class usuario (val correo: String, val contraseña: String)
 data class carta (val nombre:String, val tipo:String,val alergias:String)
@@ -17,13 +19,14 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("create table eveofe ( nombre text,fecha real,tipo text,primary key(nombre,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")
         db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
+        db!!.execSQL("create table reserva (id text primary key,fecha text, hora text,comensales text,municipio text,calle text)")
       //  db!!.execSQL("create table reserva (id text  primary key AUTOINCREMENT, fecha text,hora text,comensales text,municipio text, calle text)")
         //Insercciones de la tabla carta
         insertarCarta("ensalada","general","ninguno",db)
         insertarCarta("fajitas","general","ninguno",db)
         insertarCarta("sandwich","general","ninguno",db)
         insertarCarta("smoothie","general","ninguno",db)
-        insertarCarta("smoothieboll","general","ninguno",db)
+        insertarCarta("smoothiebowl","general","ninguno",db)
         insertarEventoOfe("aitana","2022-10-16","evento",db)
         insertarEventoOfe("bbk","2022-10-07","evento",db)
         insertarEventoOfe("espiritus","2022-01-08","evento",db)
@@ -31,6 +34,12 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         insertarEventoOfe("justin","2022-10-22","evento",db)
         insertarEventoOfe("alejandro","2022-10-11","evento",db)
         insertarEventoOfe("manuel","2022-02-12","evento",db)
+        insertarEventoOfe("ofertaa","2022-01-17","oferta",db)
+        insertarEventoOfe("ofertab","2022-01-18","oferta",db)
+        insertarEventoOfe("ofertac","2022-01-14","oferta",db)
+        insertarEventoOfe("ofertad","2022-01-13","oferta",db)
+        insertarEventoOfe("ofertae","2022-01-12","oferta",db)
+        insertarEventoOfe("ofertaf","2022-01-29","oferta",db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {
@@ -76,7 +85,6 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
             return false
 
         }
-
     }
     //Funcion para comprobar usuario
     fun ComprobarUsuario(user1:String,contrasena1:String):Boolean{
@@ -93,13 +101,16 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     fun Evento_ofe(tipo:String):List<eve_ofe>{
         val fila:MutableList<eve_ofe> = ArrayList()
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select nombre from eveofe where tipo=? order by fecha", arrayOf(tipo))
-        while (cursor.moveToNext()){
-            val todo= eve_ofe(cursor.getString(0))
-            fila.add(todo)
+            val cursor:Cursor = db.rawQuery("select nombre from eveofe where tipo=? order by fecha", arrayOf(tipo))
+            while (cursor.moveToNext()){
+                val todo= eve_ofe(cursor.getString(0))
+                fila.add(todo)
+
         }
+
         return fila
     }
+
     //Funcion para recoger en una lista todos los tipo de alimentos que hay en la carta
     fun Carta(tipo:String):List<cartagen>{
         val fila:MutableList<cartagen> = ArrayList()

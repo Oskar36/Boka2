@@ -132,6 +132,7 @@ class a_carta : AppCompatActivity() {
             val resID = resources.getIdentifier(carta, "drawable", packageName)
             context=this
             val img = ImageView(this)
+            lp.setMargins(0,0,0,0)
             img.setLayoutParams(lp)
             img.setBackgroundResource(resID)
             llBotonera.addView(img)
@@ -151,17 +152,24 @@ class a_carta : AppCompatActivity() {
                         var carta:String = BBDDcarta.Carta("general").get(i).nombre
                         val resID = resources.getIdentifier(carta, "drawable", packageName)
                         val img = ImageView(context)
-                        img.setLayoutParams(lp)
+                        lp.setMargins(0,0,0,0)
+                        img.layoutParams = lp
                         img.setBackgroundResource(resID)
                         llBotonera.addView(img)
                     }
                 //En caso de posicionarnos sobre ofertas
                 }else{
+                llBotonera.removeAllViews()
+                    var numBotones = BBDDcarta.Evento_ofe("oferta").size
                     for (i in 0 until numBotones) {
-                        val img1 = ImageView(context)
-                        img1.setLayoutParams(lp2)
-                        img1.setBackgroundResource(R.drawable.oferta1)
-                        llBotonera.addView(img1)
+                        //Cargamos las imagenes de la base de datos y las añadimos a la vista
+                        var carta:String = BBDDcarta.Evento_ofe("oferta").get(i).nombre
+                        val resID = resources.getIdentifier(carta, "drawable", packageName)
+                        val img = ImageView(context)
+                        lp.setMargins(0,30,0,0)
+                        img.setLayoutParams(lp)
+                        img.setBackgroundResource(resID)
+                        llBotonera.addView(img)
                     }
                 }
             }

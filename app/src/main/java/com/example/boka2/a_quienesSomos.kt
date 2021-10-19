@@ -2,22 +2,21 @@ package com.example.boka2
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.p_quienes_somos.*
 
 class a_quienesSomos : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
+
         val inflater = menuInflater
-        if (Sharedapp.prefs.tipousu.equals("invitado")){
-            inflater.inflate(R.menu.menuinvitado, menu)
-        }else{
-            inflater.inflate(R.menu.menu, menu)
-        }
+        inflater.inflate(R.menu.menu, menu)
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -29,13 +28,7 @@ class a_quienesSomos : AppCompatActivity() {
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
-            if (Sharedapp.prefs.tipousu.equals("admin")){
-                val intent= Intent(this, a_localizaradmin::class.java)
-                startActivity(intent)
-            }else{
-                val intent= Intent(this, a_localizacion::class.java)
-                startActivity(intent)
-            }
+            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
 
         }
         if (iditem==R.id.Reservar){
@@ -44,47 +37,31 @@ class a_quienesSomos : AppCompatActivity() {
             startActivity(intent)
         }
         if (iditem==R.id.Calendario){
-               val intent=Intent(this, a_calendario::class.java)
+            val intent=Intent(this, a_calendario::class.java)
             finish()
-               startActivity(intent)
-           }
+            startActivity(intent)
+        }
         if (iditem==R.id.Quienes){
-            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
+            val intent=Intent(this, a_quienesSomos::class.java)
+            finish()
+            startActivity(intent)
         }
         if (iditem==R.id.Perfil){
-            if (!Sharedapp.prefs.tipousu.equals("invitado")){
-                val intent= Intent(this, a_perfil::class.java)
-                finish()
-                startActivity(intent)
-            }else{
-                val intent= Intent(this, a_login::class.java)
-                finish()
-                startActivity(intent)
-            }
-
+            val intent= Intent(this, a_perfil::class.java)
+            finish()
+            startActivity(intent)
         }
         if (iditem==R.id.sesion){
 
-
-            if (!Sharedapp.prefs.tipousu.equals("invitado")){
-                Toast.makeText(this,  "${getResources().getString(R.string.cierre_sesion)}", Toast.LENGTH_SHORT).show()
-                Sharedapp.prefs.tipousu = "invitado"
-                val intent= Intent(this, a_login::class.java)
-                finish()
-                startActivity(intent)
-            }else{
-                val intent= Intent(this, a_registro::class.java)
-                Sharedapp.prefs.tipousu = "invitado"
-                finish()
-                startActivity(intent)
-            }
-
-
+            Toast.makeText(this, "${getResources().getString(R.string.cierre_sesion)}", Toast.LENGTH_SHORT).show()
+            Sharedapp.prefs.tipousu = "invitado"
+            val intent= Intent(this, a_login::class.java)
+            finish()
+            startActivity(intent)
         }
 
         return true
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)

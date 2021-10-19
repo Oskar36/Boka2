@@ -115,8 +115,21 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
         catch (e: Exception){
             Toast.makeText(this, "${getResources().getString(R.string.mapa_error)}", Toast.LENGTH_SHORT).show()
         }
-
         mapView!!.getMapAsync(this)
+        //numbrerpicker
+
+        numberPicker?.wrapSelectorWheel = false
+        if (numberPicker != null) {
+            numberPicker.minValue = 0
+            numberPicker.maxValue = 20
+        }
+        txtFechaRes.setOnClickListener(){
+            showDatePickerDialog(1)
+        }
+        txtHoraRes.setOnClickListener(){
+
+            showTimePickerDialog(1)
+        }
     }
     //En caso de que haya problemas con el Bundle
     override fun onSaveInstanceState(outState: Bundle) {
@@ -172,17 +185,28 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     gmap!!.addMarker(marker)
 
 
-    //numbrerpicker
 
-    numberPicker?.wrapSelectorWheel = false
-    if (numberPicker != null) {
-        numberPicker.minValue = 0
-        numberPicker.maxValue = 20
-    }
 
 
 }
-
+    private fun showTimePickerDialog(elementId: Int) {
+        val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }
+        timePicker.show(supportFragmentManager, "timePicker")
+    }
+    private fun showDatePickerDialog(elementId: Int) {
+        val datePicker = DatePickerFragment { day, month, year ->
+            onDateSelected(day, month, year,elementId) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+    private fun onTimeSelected(time: String, elementoPicker: Int) {
+        if (elementoPicker == 1) {
+            txtHoraRes.setText("$time")
+        }
+    }
+    private fun onDateSelected(day: Int, month: Int, year: Int,
+                               elementoPicker: Int) {
+            txtFechaRes.setText("$day/$month/$year")
+    }
     override fun onValueChange(p0: NumberPicker?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
     }

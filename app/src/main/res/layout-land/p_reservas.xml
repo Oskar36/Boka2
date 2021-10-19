@@ -62,7 +62,7 @@
                             android:hint="@string/fecha"
                             android:inputType="date"
                             android:minHeight="48dp"
-                            app:layout_constraintEnd_toStartOf="@+id/txtHora"
+                            app:layout_constraintEnd_toStartOf="@+id/txtHoraRes"
                             app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />

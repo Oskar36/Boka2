@@ -1,9 +1,6 @@
 package com.example.boka2
 
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -11,10 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.p_event_ofe.*
-import kotlinx.android.synthetic.main.p_event_ofe.llprincipal
-import java.security.AccessController.getContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -127,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             img1.setLayoutParams(lp2)
             img.setLayoutParams(lp)
             //Asignamos fotos
-            img.setBackgroundResource(R.drawable.oferta1)
+            img.setBackgroundResource(R.drawable.ofertaa)
             img1.setBackgroundResource(R.drawable.evento1)
             //Añadimos la foto al layout
             llBotonera.addView(img)

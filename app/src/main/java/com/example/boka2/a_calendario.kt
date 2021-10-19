@@ -126,6 +126,7 @@ class a_calendario : AppCompatActivity() {
             val resID = resources.getIdentifier(eveofe, "drawable", packageName)
             context=this
                 val img = ImageView(this)
+            lp.setMargins(0,30,0,0)
                 img.setLayoutParams(lp)
                 img.setBackgroundResource(resID)
                 llBotonera.addView(img)
