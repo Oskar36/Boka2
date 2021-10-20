@@ -1,10 +1,12 @@
 package com.example.boka2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
@@ -13,6 +15,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 import kotlinx.android.synthetic.main.p_localizacion.*
+import kotlinx.android.synthetic.main.p_reservas.*
 
 
 class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
@@ -108,9 +111,9 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
         mapView = mapView4
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
-
-
     }
+
+
     //En caso de que haya problemas con el Bundle
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -155,13 +158,21 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
         gmap!!.setMinZoomPreference(15f)
-        val ny = LatLng(43.267010, -2.942118)
-        val location = LatLng(43.267010, -2.942118)
-        gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
+        val bd = Base_de_Datos(this, "localizacion", null, 1)
+        val lista3 = bd.Coordenadas2()
+
+
+        val random:Int =(0 until lista3.size).random()
+        gmap!!.clear()
+        val location = LatLng(lista3.get(random).coorde1.toDouble(),lista3.get(random).coorde2.toDouble())
+
         //Definición del marcador y ponerle la foto al marcador
-        val marker = MarkerOptions().position(ny)
+        val marker = MarkerOptions().position(location)
         marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
+
+        gmap!!.moveCamera(CameraUpdateFactory.newLatLng(location))
         gmap!!.addMarker(marker)
+        txtcalle.setText(lista3.get(random).calle)
     }
 }
 
