@@ -13,9 +13,11 @@
         android:roundIcon="@mipmap/ic_boka2_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Boka2">
+
         <activity
             android:name=".a_alimentos"
             android:exported="false" />
+
         <activity
             android:name=".splash"
             android:exported="true"
@@ -25,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".a_localizaradmin"
             android:exported="true" />
@@ -32,6 +35,7 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD_7Moi9uDVjtGa6XLtPL8nYeGQJrwjz2U" />
@@ -39,29 +43,37 @@
         <activity
             android:name=".a_calendario"
             android:exported="true" />
+
         <activity
             android:name=".a_carta"
             android:exported="true" />
+
         <activity
             android:name=".a_quienesSomos"
             android:exported="true" />
+
         <activity
             android:name=".a_reservas"
             android:exported="true"
             android:hardwareAccelerated="true" />
+
         <activity
             android:name=".a_perfil"
             android:exported="true" />
+
         <activity
             android:name=".a_localizacion"
             android:exported="true"
             android:hardwareAccelerated="true" />
+
         <activity
             android:name=".a_registro"
             android:exported="true" />
+
         <activity
             android:name=".a_login"
             android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />

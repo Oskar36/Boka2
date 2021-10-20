@@ -1,13 +1,17 @@
 package com.example.boka2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.NumberPicker
 import android.widget.Toast
+import androidx.core.view.get
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
@@ -96,7 +100,8 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     private var gmap: GoogleMap? = null
     private val MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey"
     override fun onCreate(savedInstanceState: Bundle?) {
-//Barra de tareas
+
+        //Barra de tareas
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
@@ -134,15 +139,31 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
 
 
 
-        // spinercalle
-        val BBDDcarta = Base_de_Datos(this, "localizacion", null, 1)
-        val lista:List<muni> = BBDDcarta.Municipio("")
-        val adaptador = ArrayAdapter(this,R.layout.p_reservas,R.id.spinermunicipio,lista)
+        // spinners
+        val bd = Base_de_Datos(this, "localizacion", null, 1)
+        val lista1 = bd.Municipio()
+        val context:Context = this
+        val adaptador1 = ArrayAdapter (this, android.R.layout.simple_spinner_item, lista1)
+        spinermunicipio.adapter=adaptador1
 
 
+        spinermunicipio.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            ) {
+                val municipio = spinermunicipio.getSelectedItem().toString()
+                val sacarCalle = bd.Calle(municipio)
+                val adaptador2 = ArrayAdapter (context, android.R.layout.simple_spinner_item, sacarCalle)
+                spinercalle.adapter=adaptador2
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
 
+            }
+        }
     }
-
 
 
 
