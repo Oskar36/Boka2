@@ -113,7 +113,11 @@ class a_carta : AppCompatActivity() {
             LinearLayout.LayoutParams(1125, 700)
 
         )
-
+    botoncito.setOnClickListener(){
+        val intent= Intent(this, a_alimentos::class.java)
+        finish()
+        startActivity(intent)
+    }
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT,

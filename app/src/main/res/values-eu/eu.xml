@@ -33,11 +33,11 @@
     <string name="menu_Calendario">Egutegia</string>
     <string name="menu_Quienes_somos">Guri buruz</string>
     <string name="menu_Perfil">Profila</string>
+    <string name="menu_Cerrar_sesion">Registratu</string>
     <string name="menu_inicio_sesion">Saioa hasi</string>
-    <string name="menu_salir">Registratu</string>
+    <string name="menu_salir">Atera</string>
     <string name="usuario_existente">"Erabiltzailea existitzen da "</string>
-    <string name="contraseñas_distintas">Pasaitzak ezberdinak dira</string>
-    <string name="Contraseña_incorrecta">Pasahitzek maiuskulak, minuskulak eta zenbakizkoak izan behar dute</string>
-    <string name="menu_Cerrar_sesion">Atera</string>
+    <string name="contraseñas_distintas">Pasahitzak ezberdinak dira</string>
+    <string name="Contraseña_incorrecta">Pasahitza minuskula bat eta zenbaki bat izan behar du. 6 letra edo gehiago izan behar ditu</string>
 
 </resources>
