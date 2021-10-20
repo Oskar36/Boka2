@@ -14,6 +14,7 @@ data class cartagen(val nombre:String)
 data class eve_ofe(val nombre:String)
 data class muni(val muni: String)
 data class callemain(val c: String,val co1: String,val co2: String)
+data class coordenadas(val coorde1:String,val coorde2:String)
 data class localizacion (val calle: String, val municipio: String, val coordenada1: String, val coordenada2: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
@@ -165,16 +166,22 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         }
         return fila
     }
-
-
-
-
     fun Calle(municip:String):MutableList<String>{
         val fila:MutableList<String> = ArrayList()
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select calle, coordenada1, coordenada2 from localizacion where municipio=? ", arrayOf(municip))
+        val cursor:Cursor = db.rawQuery("select calle from localizacion where municipio=? ", arrayOf(municip))
         while (cursor.moveToNext()){
             val todo= cursor.getString(0)
+            fila.add(todo)
+        }
+        return fila
+    }
+    fun Coordenadas(calle:String):MutableList<coordenadas>{
+        val fila:MutableList<coordenadas> = ArrayList()
+        val db=this.readableDatabase
+        val cursor:Cursor = db.rawQuery("select coordenada1,coordenada2 from localizacion where calle=? ", arrayOf(calle))
+        while (cursor.moveToNext()){
+            val todo= coordenadas(cursor.getString(0),cursor.getString(1))
             fila.add(todo)
         }
         return fila

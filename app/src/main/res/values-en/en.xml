@@ -38,7 +38,7 @@
     <string name="menu_salir">Exit</string>
     <string name="usuario_existente">User already exist</string>
     <string name="contraseñas_distintas">passwords are differents</string>
-    <string name="Contraseña_incorrecta">Passwords must be uppercase, lowercase and numeric</string>
+    <string name="Contraseña_incorrecta">Passwords must have one uppercase, one number and have 6 characters or more</string>
 
 
 </resources>

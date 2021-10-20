@@ -163,6 +163,24 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
 
             }
         }
+        spinercalle.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            ) {
+               // bd.Coordenadas()
+                val location = LatLng(43.267010, -2.942118)
+                val ny = LatLng(43.267010, -2.942118)
+                val marker = MarkerOptions().position(ny)
+                marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
+                gmap!!.addMarker(marker)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
     }
 
 
@@ -215,15 +233,6 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     val location = LatLng(43.267010, -2.942118)
     val ny = LatLng(43.267010, -2.942118)
     gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
-    //Definición del marcador y ponerle la foto al marcador
-    val marker = MarkerOptions().position(ny)
-    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
-    gmap!!.addMarker(marker)
-
-
-
-
-
 }
     private fun showTimePickerDialog(elementId: Int) {
         val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }

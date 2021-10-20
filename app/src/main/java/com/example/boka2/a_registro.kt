@@ -25,47 +25,58 @@ class a_registro : AppCompatActivity() {
         setContentView(R.layout.p_registro)
         btnRegistro.setOnClickListener() {
             //Comprobamos que no hay ningun campo vacio
-            if (txtmail.text.trim().isEmpty() || txtpsw.text.trim().isEmpty() || txtreppaswd.text.trim().isEmpty() ){
-                Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT)
-                    .show()
-            }else{
-                //comprobamos que ambas contraseñas sean iguales
+            if (!txtmail.text.trim().isEmpty() || !txtpsw.text.trim().isEmpty() || !txtreppaswd.text.trim().isEmpty() ){
                 if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
                     //comprobamos la contraseña
                     var ok = 0
-                    for (i in 0 until txtpsw.length()){
-                        val g = txtpsw.text.toString()
-                        val c = g[0]
-                        if(c in 'a'..'z' || c in 'A'..'Z' || c in '0'..'9') {
-                            ok++
-                            if(txtpsw.length()>=6 && ok == 3) {
-                                //comprobamos que el usuario no existe
+                    var i=0
+                    var mayus=false
+                    var numero=false
+                    if(txtpsw.text.toString().length>=6){
+                            while(i<txtpsw.text.toString().length || (!mayus && !numero)){
+                                val g = txtpsw.text.toString()
+                                val c = g.get(index = i)
+                                if(c in 'A'..'Z') {
+                                    mayus=true
+                                }
+                                if( c in '0'..'9'){
+                                    numero=true
+                                }
+
+                                i++
+                            }
+                            if(mayus && numero){
                                 if (BBDD.buscarCorreo(txtmail.text.toString())){
                                     BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
-
-
                                     val intent = Intent(this, MainActivity::class.java)
                                     Sharedapp.user.user = txtmail.text.toString()
                                     Sharedapp.paswd.paswd = txtpsw.text.toString()
+                                    Sharedapp.prefs.tipousu = "cliente"
                                     startActivity(intent)
-
-                                }else{
+                                }
+                                else{
                                     Toast.makeText(this, "${getResources().getString(R.string.usuario_existente)}", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                        }else{
-                            Toast.makeText(this, "${getResources().getString(R.string.Contraseña_incorrecta)}", Toast.LENGTH_SHORT)
-                                .show()
-                        }
+                            else{
+                                Toast.makeText(this, "${getResources().getString(R.string.Contraseña_incorrecta)}", Toast.LENGTH_SHORT)
+                                    .show()
+                            }
                     }
-
+                    else{
+                        Toast.makeText(this, "${getResources().getString(R.string.Contraseña_incorrecta)}", Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }else{
                     Toast.makeText(this, "${getResources().getString(R.string.contraseñas_distintas)}", Toast.LENGTH_SHORT)
                         .show()
                 }
+            }else{
+                //comprobamos que ambas contraseñas sean iguales
+                Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT)
+                    .show()
             }
-
         }
         
 
