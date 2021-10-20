@@ -12,13 +12,15 @@ data class usuario (val correo: String, val contraseña: String)
 data class carta (val nombre:String, val tipo:String,val alergias:String)
 data class cartagen(val nombre:String)
 data class eve_ofe(val nombre:String)
-data class localizacion (val calle: String, val municipio: String)
+data class muni(val muni: String)
+data class callemain(val c: String,val co1: String,val co2: String)
+data class localizacion (val calle: String, val municipio: String, val coordenada1: String, val coordenada2: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
         db!!.execSQL("create table eveofe ( nombre text,fecha real,tipo text,primary key(nombre,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")
-        db!!.execSQL("create table localizacion (calle text primary key, municipio text)")
+        db!!.execSQL("create table localizacion (calle text primary key, municipio text,coordenada1 text, coordenada2 text)")
         db!!.execSQL("create table reserva (id text primary key,fecha text, hora text,comensales text,municipio text,calle text)")
       //  db!!.execSQL("create table reserva (id text  primary key AUTOINCREMENT, fecha text,hora text,comensales text,municipio text, calle text)")
         //Insercciones de la tabla carta
@@ -40,6 +42,22 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         insertarEventoOfe("ofertad","2022-01-13","oferta",db)
         insertarEventoOfe("ofertae","2022-01-12","oferta",db)
         insertarEventoOfe("ofertaf","2022-01-29","oferta",db)
+
+        insertarLocalizacion ("Bilbao","Pl. del Arriaga","43.259572","-2.925205",db)
+        insertarLocalizacion ("Bilbao","Av. Abandoibarra","43.268270","-2.933497",db)
+        insertarLocalizacion ("Bilbao","Indautxu Plaza","43.260.181","-2.940444",db)
+        insertarLocalizacion ("Bilbao","Av. Askatasuna","43.251758","-2.926630",db)
+        insertarLocalizacion ("Bilbao","Calle Luis Briñas","43.263514","-2.947154",db)
+        insertarLocalizacion ("Barakaldo","C. el Retiro","43.290490","-2.988381",db)
+        insertarLocalizacion ("Barakaldo","Av. la Ribera","43.292164","-3.006629",db)
+        insertarLocalizacion ("Barakaldo","La Torre Kalea","43.291513","-2.999470",db)
+        insertarLocalizacion ("Barakaldo","P.º El Ferrocarril","43.302406","-2.987386",db)
+        insertarLocalizacion ("Basauri","Artunduaga Etxadia","43.233101","-2.881716",db)
+        insertarLocalizacion ("Basauri","C. Basozelai","43.235204","-2.891742",db)
+        insertarLocalizacion ("Portugalete","Mlle. Tomás Olabarri","43.323773","-3.015552",db)
+        insertarLocalizacion ("Getxo","Mlle. de Las Arenas","43.328535","-3.015255",db)
+        insertarLocalizacion ("Getxo","C. P.º Marqués de Arriluce e Ibarra","43.340554","-3.014086",db)
+        insertarLocalizacion ("Sopelana","Solondota Kalea","43.383942","-3.001411",db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, OldVersion: Int, NewVersion: Int) {
@@ -71,6 +89,14 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         registrar2.put("fecha",fecha)
         registrar2.put("tipo",tipo)
         db?.insert("eveofe",null,registrar2)
+    }
+    fun insertarLocalizacion(calle1:String,municipio1:String,coordenada1:String,coordenada2:String, db:SQLiteDatabase?){
+        val registrar2=ContentValues()
+        registrar2.put("calle",calle1)
+        registrar2.put("municipio",municipio1)
+        registrar2.put("coordenada1",coordenada1)
+        registrar2.put("coordenada2",coordenada2)
+        db?.insert("localizacion",null,registrar2)
     }
     //Funcion para buscar el correo
     fun buscarCorreo(user1:String):Boolean{
@@ -122,24 +148,27 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         }
         return fila
     }
-    fun Municipio(municip:String):List<localizacion>{
-        val fila:MutableList<localizacion> = ArrayList()
+    fun Municipio(municip:String):List<muni>{
+        val fila:MutableList<muni> = ArrayList()
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select * where municipio=? ", arrayOf(municip))
+        val cursor:Cursor = db.1
         while (cursor.moveToNext()){
-            val todo= localizacion(cursor.getString(0),cursor.getString(1))
+            val todo= muni(cursor.getString(0))
             fila.add(todo)
         }
         return fila
     }
-    fun Calle(municip:String,calle:String):List<localizacion>{
-        val fila:MutableList<localizacion> = ArrayList()
+    fun Calle(municip:String,calle:String):List<callemain>{
+        val fila:MutableList<callemain> = ArrayList()
         val db=this.readableDatabase
-        val cursor:Cursor = db.rawQuery("select * where municipio=municip ", arrayOf(calle))
+        val cursor:Cursor = db.rawQuery("select calle,coordenada1,coordenada2 from localizacion where municipio=municip ", arrayOf(calle))
         while (cursor.moveToNext()){
-            val todo= localizacion(cursor.getString(0),cursor.getString(1))
+            val todo= callemain(cursor.getString(0),cursor.getString(1),cursor.getString(2))
             fila.add(todo)
         }
         return fila
+
+
+
     }
 }

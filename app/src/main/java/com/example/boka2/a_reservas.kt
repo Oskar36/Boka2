@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.NumberPicker
 import android.widget.Toast
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -130,7 +131,21 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
 
             showTimePickerDialog(1)
         }
+
+
+
+        // spinercalle
+        val BBDDcarta = Base_de_Datos(this, "localizacion", null, 1)
+        val lista:List<muni> = BBDDcarta.Municipio("")
+        val adaptador = ArrayAdapter(this,R.layout.p_reservas,R.id.spinermunicipio,lista)
+
+
+
     }
+
+
+
+
     //En caso de que haya problemas con el Bundle
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -210,4 +225,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     override fun onValueChange(p0: NumberPicker?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
     }
+
+
+
 }
