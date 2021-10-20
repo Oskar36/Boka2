@@ -7,6 +7,7 @@ class Sharedapp : Application() {
         lateinit var prefs: Prefs
         lateinit var user: User
         lateinit var paswd: Paswd
+        lateinit var tipo: tipo
     }
 
     override fun onCreate() {

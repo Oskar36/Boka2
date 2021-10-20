@@ -73,6 +73,7 @@ class a_perfil : AppCompatActivity() {
 
         return true
     }
+    private val BBDD = Base_de_Datos(this, "usuarios", null, 2 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
 //Barra de tareas
@@ -85,6 +86,11 @@ class a_perfil : AppCompatActivity() {
         setContentView(R.layout.p_perfil)
         prefil_txt_correo.setText(Sharedapp.user.user)
         Perfil_contra.setText(Sharedapp.paswd.paswd)
+
+        Perfil_btn_guardar.setOnClickListener {
+           // BBDD.actualizar(prefil_txt_correo.text.toString(), Perfil_contra.text.toString(), Sharedapp.user.user)
+
+        }
 
 
 

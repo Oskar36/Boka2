@@ -170,6 +170,8 @@ class a_carta : AppCompatActivity() {
                         img.setLayoutParams(lp)
                         img.setBackgroundResource(resID)
                         llBotonera.addView(img)
+                        img.tag = "img $i"
+
                     }
                 }
             }
@@ -180,6 +182,13 @@ class a_carta : AppCompatActivity() {
 
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+        class OnClickListener : View.OnClickListener {
+            override fun onClick(v: View) {
+                val b: TabLayout = v as TabLayout
+                Toast.makeText(applicationContext, "la imagen pulsada es: " + b.tag.toString(), Toast.LENGTH_SHORT).show()
+                println(b)
+            }
+        }
     }
 
 
