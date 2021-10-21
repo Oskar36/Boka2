@@ -94,10 +94,10 @@ class a_platos : AppCompatActivity() {
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.p_calendario)
+        setContentView(R.layout.p_platos)
 
         val BBDDplatos = Base_de_Datos(this, "carta", null, 1 )
-        val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
+        val llBotonera = findViewById<View>(R.id.llplatos) as LinearLayout
         var context: Context?=null
         //Creamos las propiedades de layout que tendrán las imagenes.
         //Son LinearLayout.LayoutParams porque las imagenes van a estar en un LinearLayout.
@@ -121,7 +121,7 @@ class a_platos : AppCompatActivity() {
         var numBotones = BBDDplatos.Carta(tipo).size
         for (i in 0 until numBotones) {
             //Cargamos las imagenes de la base de datos y las añadimos a la vista
-            var plato:String = BBDDplatos.Evento_ofe(tipo).get(i).nombre
+            var plato:String = BBDDplatos.Carta(tipo).get(i).nombre
             val resID = resources.getIdentifier(plato, "drawable", packageName)
             context=this
             val img = ImageView(this)

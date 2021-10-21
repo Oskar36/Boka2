@@ -15,6 +15,7 @@ class Sharedapp : Application() {
         prefs = Prefs(applicationContext)
         user = User(applicationContext)
         paswd = Paswd(applicationContext)
+        tipo = tipo(applicationContext)
 
     }
 

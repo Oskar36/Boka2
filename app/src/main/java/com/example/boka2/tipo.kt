@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class tipo (context: Context) {
-    val PREFS_NAME = "com.example.boka2.sharedpreferencespaswd"
+    val PREFS_NAME = "com.example.boka2.sharedpreferences.tipo"
     val SHARED_NAME = "shared_name"
     val prefs: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
     var tipo: String
