@@ -44,6 +44,7 @@
         android:clickable="false"
         android:editable="false"
         android:focusable="false"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -56,7 +57,7 @@
         android:id="@+id/spinermunicipio"
         android:layout_width="315dp"
         android:layout_height="48dp"
-
+        style="@style/fechahora"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/spinercalle"
@@ -86,6 +87,7 @@
     <Spinner
         android:id="@+id/spinercalle"
         android:layout_width="315dp"
+        style="@style/fechahora"
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,6 +140,7 @@
         android:ems="10"
         android:focusable="false"
         android:hint="@string/hora"
+        android:gravity="center"
         android:inputType="time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
