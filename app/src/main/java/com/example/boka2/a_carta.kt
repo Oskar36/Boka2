@@ -37,9 +37,11 @@ class a_carta : AppCompatActivity() {
         if (iditem==R.id.Localizar){
             if (Sharedapp.prefs.tipousu.equals("admin")){
                 val intent= Intent(this, a_localizaradmin::class.java)
+                finish()
                 startActivity(intent)
             }else{
                 val intent= Intent(this, a_localizacion::class.java)
+                finish()
                 startActivity(intent)
             }
 

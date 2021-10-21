@@ -16,7 +16,7 @@ import android.content.SharedPreferences
 
 
 class a_login : AppCompatActivity() {
-    private val BBDD = Base_de_Datos(this, "usuarios", null, 2 )
+    private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

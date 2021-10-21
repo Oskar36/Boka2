@@ -28,7 +28,15 @@ class a_quienesSomos : AppCompatActivity() {
             startActivity(intent)
         }
         if (iditem==R.id.Localizar){
-            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
+            if (Sharedapp.prefs.tipousu.equals("admin")){
+                val intent= Intent(this, a_localizaradmin::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                val intent= Intent(this, a_localizacion::class.java)
+                finish()
+                startActivity(intent)
+            }
 
         }
         if (iditem==R.id.Reservar){

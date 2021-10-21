@@ -63,6 +63,7 @@
 
     <Button
         android:id="@+id/Perfil_btn_guardar"
+        style="@style/botones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_guardar"
@@ -71,6 +72,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Perfil_contra"
-        app:layout_constraintVertical_bias="0.279"
-        style="@style/botones"/>
+        app:layout_constraintVertical_bias="0.564" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/activity_pruebacalendario.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_calendario.xml" value="0.176" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.41660201706749417" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.2" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_event_ofe.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_localizacion.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_localizaradmin.xml" value="0.25416666666666665" />
@@ -29,14 +29,6 @@
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_reservas.xml" value="0.536" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/menu/menu.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/menu/menuinvitado.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_calendario.xml" value="0.21981981981981982" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_platos.xml" value="0.21981981981981982" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_alimentos.xml" value="0.25" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_perfil.xml" value="0.25" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_platos.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/menu/menu.xml" value="0.25" />
-        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/menu/menuinvitado.xml" value="0.25" />
       </map>
     </option>
   </component>

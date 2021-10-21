@@ -9,8 +9,6 @@ import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_login.*
 import kotlinx.android.synthetic.main.p_registro.*
-
-
 class a_registro : AppCompatActivity() {
     internal val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
 

@@ -27,9 +27,11 @@ class a_perfil : AppCompatActivity() {
         if (iditem==R.id.Localizar){
             if (Sharedapp.prefs.tipousu.equals("admin")){
                 val intent= Intent(this, a_localizaradmin::class.java)
+                finish()
                 startActivity(intent)
             }else{
                 val intent= Intent(this, a_localizacion::class.java)
+                finish()
                 startActivity(intent)
             }
 
@@ -88,7 +90,7 @@ class a_perfil : AppCompatActivity() {
         Perfil_contra.setText(Sharedapp.paswd.paswd)
 
         Perfil_btn_guardar.setOnClickListener {
-           // BBDD.actualizar(prefil_txt_correo.text.toString(), Perfil_contra.text.toString(), Sharedapp.user.user)
+           //BBDD.actualizar(prefil_txt_correo.text.toString(), Perfil_contra.text.toString(), Sharedapp.user.user)
 
         }
 
