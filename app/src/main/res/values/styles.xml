@@ -20,4 +20,9 @@
     <style name="fondo">
         <item name="android:background">@color/claro</item>
     </style>
+
+    <style name="fechahora">
+        <item name="android:background">@drawable/border</item>
+
+    </style>
 </resources>

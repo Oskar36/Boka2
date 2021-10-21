@@ -7,10 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.NumberPicker
-import android.widget.Toast
+import android.widget.*
 import androidx.core.view.get
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -20,6 +17,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.p_reservas.*
+import android.widget.TextView
+
+
+
 
 class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValueChangeListener {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -250,12 +251,14 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     }
     private fun onTimeSelected(time: String, elementoPicker: Int) {
         if (elementoPicker == 1) {
+            val txtHoraRes = findViewById<View>(R.id.txtHoraRes) as TextView
             txtHoraRes.setText("$time")
         }
     }
     private fun onDateSelected(day: Int, month: Int, year: Int,
                                elementoPicker: Int) {
-            txtFechaRes.setText("$day/$month/$year")
+        val txtFechaRes = findViewById<View>(R.id.txtFechaRes) as TextView
+        txtFechaRes.setText("$day/$month/$year")
     }
     override fun onValueChange(p0: NumberPicker?, p1: Int, p2: Int) {
         TODO("Not yet implemented")

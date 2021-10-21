@@ -15,7 +15,8 @@
         android:theme="@style/Theme.Boka2">
         <activity
             android:name=".a_platos"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".splash"
             android:exported="true"
@@ -28,7 +29,8 @@
         </activity>
         <activity
             android:name=".a_localizaradmin"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -39,13 +41,16 @@
 
         <activity
             android:name=".a_calendario"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_carta"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_quienesSomos"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_reservas"
             android:exported="true"
@@ -53,7 +58,8 @@
             android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_perfil"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_localizacion"
             android:exported="true"
@@ -61,13 +67,16 @@
             android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_registro"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_login"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
     </application>
 
 </manifest>
