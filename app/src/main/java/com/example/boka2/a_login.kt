@@ -11,14 +11,14 @@ import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_login.*
 import android.content.SharedPreferences
-
-
+import android.os.SystemClock
 
 
 class a_login : AppCompatActivity() {
     private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        SystemClock.sleep(1000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_login)
         if (Sharedapp.prefs.tipousu.equals("cliente") || Sharedapp.prefs.tipousu.equals("admin")){

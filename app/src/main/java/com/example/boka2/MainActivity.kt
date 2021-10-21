@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        SystemClock.sleep(1000)
+
         val BBDDcarta = Base_de_Datos(this, "carta", null, 1 )
         var context: Context?=null
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
