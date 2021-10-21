@@ -51,6 +51,8 @@ class a_registro : AppCompatActivity() {
                                     Sharedapp.paswd.paswd = txtpsw.text.toString()
                                     Sharedapp.prefs.tipousu = "cliente"
                                     startActivity(intent)
+                                    Toast.makeText(this, "Usuario creado con exito", Toast.LENGTH_SHORT)
+                                        .show()
                                 }
                                 else{
                                     Toast.makeText(this, "${getResources().getString(R.string.usuario_existente)}", Toast.LENGTH_SHORT)

@@ -89,8 +89,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        SystemClock.sleep(1000)
-        val BBDDeven = Base_de_Datos(this, "eve_ofe", null, 1 )
+
+        val BBDDcarta = Base_de_Datos(this, "carta", null, 1 )
         var context: Context?=null
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
@@ -119,10 +119,10 @@ class MainActivity : AppCompatActivity() {
         val layout: LinearLayout =llprincipal
 
         //Creamos los botones en bucle
-        var numBotones = BBDDeven.Main().size
+        var numBotones = BBDDcarta.Main().size
         for (i in 0 until numBotones) {
             //Cargamos las imagenes de la base de datos y las añadimos a la vista
-            var eveofe:String = BBDDeven.Main().get(i).nombre
+            var eveofe:String = BBDDcarta.Main().get(i).nombre
             val resID = resources.getIdentifier(eveofe, "drawable", packageName)
             context=this
             val img = ImageView(this)
