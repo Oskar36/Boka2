@@ -17,9 +17,6 @@
             android:name=".a_platos"
             android:exported="false" />
         <activity
-            android:name=".a_alimentos"
-            android:exported="false" />
-        <activity
             android:name=".splash"
             android:exported="true"
             android:theme="@style/SplasScreen">
@@ -52,14 +49,16 @@
         <activity
             android:name=".a_reservas"
             android:exported="true"
-            android:hardwareAccelerated="true" />
+            android:hardwareAccelerated="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_perfil"
             android:exported="true" />
         <activity
             android:name=".a_localizacion"
             android:exported="true"
-            android:hardwareAccelerated="true" />
+            android:hardwareAccelerated="true"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_registro"
             android:exported="true" />
