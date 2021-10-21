@@ -64,7 +64,8 @@
         app:layout_constraintBottom_toTopOf="@+id/spinercalle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/calletxt"
@@ -140,6 +141,7 @@
         style="@style/fechahora"
         android:editable="false"
         android:ems="10"
+        android:textAlignment="center"
         android:focusable="false"
         android:hint="@string/hora"
         android:gravity="center"
