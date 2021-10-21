@@ -235,6 +235,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     override fun onMapReady(googleMap: GoogleMap) {
     gmap = googleMap
     gmap!!.setMinZoomPreference(12f)
+    val location = LatLng(43.267010, -2.942118)
     val ny = LatLng(43.267010, -2.942118)
     gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
 }

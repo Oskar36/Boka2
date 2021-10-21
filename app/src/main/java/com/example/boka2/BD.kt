@@ -12,7 +12,7 @@ data class usuario (val correo: String, val contraseña: String)
 data class carta (val nombre:String, val tipo:String,val alergias:String)
 data class cartagen(val nombre:String)
 data class eve_ofe(val nombre:String)
-data class coordenadas(val coorde1:String,val coorde2:String)
+data class coordenadas(val coorde1:Double,val coorde2:Double)
 data class coordenadas2(val calle:String,val coorde1:String,val coorde2:String)
 data class localizacion (val calle: String, val municipio: String, val coordenada1: String, val coordenada2: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
@@ -220,7 +220,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         val db=this.readableDatabase
         val cursor:Cursor = db.rawQuery("select coordenada1,coordenada2 from localizacion where calle=? ", arrayOf(calle))
         while (cursor.moveToNext()){
-            val todo= coordenadas(cursor.getString(0),cursor.getString(1))
+            val todo= coordenadas(cursor.getDouble(0),cursor.getDouble(1))
             fila.add(todo)
         }
         return fila
