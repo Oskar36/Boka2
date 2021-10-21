@@ -3,33 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/drawable/border.xml" value="0.2703125" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/drawable/splash.xml" value="0.2703125" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_calendario.xml" value="0.19215686274509805" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_carta.xml" value="0.536" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_event_ofe.xml" value="0.2796875" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_localizacion.xml" value="0.16201117318435754" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_login.xml" value="0.38501628664495113" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_login.xml" value="0.27801911381407474" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_perfil.xml" value="0.3772455089820359" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_quienes_somos.xml" value="0.6506666666666666" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_registro.xml" value="0.2085889570552147" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_quienes_somos.xml" value="0.4" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_registro.xml" value="0.2796875" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_reservas.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout-sw600dp/p_event_ofe.xml" value="0.190625" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/activity_pruebacalendario.xml" value="0.16770833333333332" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/card_view_design.xml" value="0.13645833333333332" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_alimentos.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_calendario.xml" value="0.176" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.41660201706749417" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_event_ofe.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_localizacion.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_login.xml" value="0.72" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_localizaradmin.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_login.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_pantalla_principal.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_perfil.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_quienes_somos.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_quienes_somos.xml" value="0.536" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_registro.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_reservas.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/menu/menu.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_reservas.xml" value="0.536" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/menu/menu.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Boka2/app/src/main/res/menu/menuinvitado.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_calendario.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout-land/p_platos.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_alimentos.xml" value="0.25" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_carta.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_perfil.xml" value="0.25" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/layout/p_platos.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Users/josum/AndroidStudioProjects/Boka2/app/src/main/res/menu/menuinvitado.xml" value="0.25" />
       </map>
     </option>
   </component>

@@ -25,10 +25,38 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
       //  db!!.execSQL("create table reserva (id text  primary key AUTOINCREMENT, fecha text,hora text,comensales text,municipio text, calle text)")
         //Insercciones de la tabla carta
         insertarCarta("ensalada","general","ninguno",db)
+        insertarCarta("tormenta","ensalada","ninguno",db)
+        insertarCarta("tata_doc","ensalada","ninguno",db)
+        insertarCarta("salvaje","ensalada","ninguno",db)
+        insertarCarta("okinawa","ensalada","ninguno",db)
+        insertarCarta("natural","ensalada","ninguno",db)
+        insertarCarta("alabama","ensalada","ninguno",db)
         insertarCarta("fajitas","general","ninguno",db)
+        insertarCarta("vegetal","fajita","ninguno",db)
+        insertarCarta("espinacas","fajita","ninguno",db)
+        insertarCarta("arroz","fajita","ninguno",db)
+        insertarCarta("aguacate","fajita","ninguno",db)
         insertarCarta("sandwich","general","ninguno",db)
+        insertarCarta("sueco","sandwich","ninguno",db)
+        insertarCarta("noruega","sandwich","ninguno",db)
+        insertarCarta("mixto","sandwich","ninguno",db)
+        insertarCarta("mexico","sandwich","ninguno",db)
+        insertarCarta("huerta","sandwich","ninguno",db)
+        insertarCarta("guayana","sandwich","ninguno",db)
         insertarCarta("smoothie","general","ninguno",db)
+        insertarCarta("vitaly","smoothie","ninguno",db)
+        insertarCarta("pineapple","smoothie","ninguno",db)
+        insertarCarta("colada_jungle","smoothie","ninguno",db)
+        insertarCarta("caribbean","smoothie","ninguno",db)
         insertarCarta("smoothiebowl","general","ninguno",db)
+        insertarCarta("tropical","smoothiebowl","ninguno",db)
+        insertarCarta("holi","smoothiebowl","ninguno",db)
+        insertarCarta("green","smoothiebowl","ninguno",db)
+        insertarCarta("banana","smoothiebowl","ninguno",db)
+
+
+
+        //inserciones de eventos y ofertas
         insertarEventoOfe("aitana","2022-10-16","evento",db)
         insertarEventoOfe("bbk","2022-10-07","evento",db)
         insertarEventoOfe("espiritus","2022-01-08","evento",db)
@@ -135,6 +163,18 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
             while (cursor.moveToNext()){
                 val todo= eve_ofe(cursor.getString(0))
                 fila.add(todo)
+
+        }
+
+        return fila
+    }
+    fun Main():List<eve_ofe>{
+        val fila:MutableList<eve_ofe> = ArrayList()
+        val db=this.readableDatabase
+        val cursor:Cursor = db.rawQuery("select nombre from eveofe order by fecha", arrayOf())
+        while (cursor.moveToNext()){
+            val todo= eve_ofe(cursor.getString(0))
+            fila.add(todo)
 
         }
 

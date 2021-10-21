@@ -10,11 +10,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
-import kotlinx.android.synthetic.main.p_calendario.*
-import kotlinx.android.synthetic.main.p_carta.*
-import kotlinx.android.synthetic.main.p_event_ofe.*
+import kotlinx.android.synthetic.main.p_platos.*
 
-class a_calendario : AppCompatActivity() {
+class a_platos : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -98,7 +96,7 @@ class a_calendario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_calendario)
 
-        val BBDDeven = Base_de_Datos(this, "eve_ofe", null, 1 )
+        val BBDDplatos = Base_de_Datos(this, "carta", null, 1 )
         val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
         var context: Context?=null
         //Creamos las propiedades de layout que tendrán las imagenes.
@@ -116,20 +114,21 @@ class a_calendario : AppCompatActivity() {
 
             )
 
-        val layout: LinearLayout =llcalendario
+        val layout: LinearLayout =llplatos
 
         //Creamos los botones en bucle
-        var numBotones = BBDDeven.Evento_ofe("evento").size
+        var tipo = Sharedapp.tipo.tipo
+        var numBotones = BBDDplatos.Carta(tipo).size
         for (i in 0 until numBotones) {
             //Cargamos las imagenes de la base de datos y las añadimos a la vista
-            var eveofe:String = BBDDeven.Evento_ofe("evento").get(i).nombre
-            val resID = resources.getIdentifier(eveofe, "drawable", packageName)
+            var plato:String = BBDDplatos.Evento_ofe(tipo).get(i).nombre
+            val resID = resources.getIdentifier(plato, "drawable", packageName)
             context=this
-                val img = ImageView(this)
+            val img = ImageView(this)
             lp.setMargins(0,30,0,0)
-                img.setLayoutParams(lp)
-                img.setBackgroundResource(resID)
-                llBotonera.addView(img)
+            img.setLayoutParams(lp)
+            img.setBackgroundResource(resID)
+            llBotonera.addView(img)
         }
     }
-    }
+}

@@ -1,5 +1,6 @@
 package com.example.boka2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -87,7 +88,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         SystemClock.sleep(1000)
+        val BBDDeven = Base_de_Datos(this, "eve_ofe", null, 1 )
+        var context: Context?=null
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
@@ -101,38 +105,35 @@ class MainActivity : AppCompatActivity() {
         //Creamos las propiedades de layout que tendrán los botones.
         //Son LinearLayout.LayoutParams porque los botones van a estar en un LinearLayout.
         val lp = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-            //LinearLayout.LayoutParams(1125, 700)
+            //LinearLayout.LayoutParams.WRAP_CONTENT,
+            //LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams(1125, 700)
         )
         val lp2 = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-
+            //LinearLayout.LayoutParams.MATCH_PARENT,
+            //LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams(1125, 700)
 
             )
 
         val layout: LinearLayout =llprincipal
 
         //Creamos los botones en bucle
+        var numBotones = BBDDeven.Main().size
         for (i in 0 until numBotones) {
+            //Cargamos las imagenes de la base de datos y las añadimos a la vista
+            var eveofe:String = BBDDeven.Main().get(i).nombre
+            val resID = resources.getIdentifier(eveofe, "drawable", packageName)
+            context=this
             val img = ImageView(this)
-            val img1 = ImageView(this)
-            img1.setLayoutParams(lp2)
+            lp.setMargins(0,30,0,0)
             img.setLayoutParams(lp)
-            //Asignamos fotos
-            img.setBackgroundResource(R.drawable.ofertaa)
-            img1.setBackgroundResource(R.drawable.evento1)
-            //Añadimos la foto al layout
+            img.setBackgroundResource(resID)
             llBotonera.addView(img)
-            llBotonera.addView(img1)
+        }
 
         }
-    }
 
-    companion object {
-        var numBotones = 5
-    }
 
     }
 

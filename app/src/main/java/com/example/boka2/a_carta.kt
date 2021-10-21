@@ -2,6 +2,7 @@ package com.example.boka2
 
 import android.content.Context
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -113,11 +114,6 @@ class a_carta : AppCompatActivity() {
             LinearLayout.LayoutParams(1125, 700)
 
         )
-    botoncito.setOnClickListener(){
-        val intent= Intent(this, a_alimentos::class.java)
-        finish()
-        startActivity(intent)
-    }
         val lp2 = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -174,6 +170,8 @@ class a_carta : AppCompatActivity() {
                         img.setLayoutParams(lp)
                         img.setBackgroundResource(resID)
                         llBotonera.addView(img)
+                        img.tag = "img $i"
+
                     }
                 }
             }
@@ -184,6 +182,13 @@ class a_carta : AppCompatActivity() {
 
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+        class OnClickListener : View.OnClickListener {
+            override fun onClick(v: View) {
+                val b: Image = v as Image
+                Toast.makeText(applicationContext, "la imagen pulsada es: ", Toast.LENGTH_SHORT).show()
+                println(b)
+            }
+        }
     }
 
 

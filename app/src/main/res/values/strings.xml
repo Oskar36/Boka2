@@ -32,9 +32,9 @@
     <string name="menu_Calendario">Calendario</string>
     <string name="menu_Quienes_somos">Quienes somos</string>
     <string name="menu_Perfil">Perfil</string>
-    <string name="menu_Cerrar_sesion">Registro</string>
+    <string name="menu_Cerrar_sesion">Cerrar sesion</string>
     <string name="menu_inicio_sesion">Inicio sesion</string>
-    <string name="menu_salir">salir</string>
+    <string name="menu_salir">Registro</string>
     <string name="usuario_existente">El usuario ya existe</string>
     <string name="contraseñas_distintas">Las contraseñas son distintas</string>
     <string name="Contraseña_incorrecta">Las contraseñas debe tener una mayuscula y un número y debe tener como mínimo 6 carácteres</string>
