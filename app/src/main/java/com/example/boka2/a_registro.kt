@@ -23,7 +23,7 @@ class a_registro : AppCompatActivity() {
         setContentView(R.layout.p_registro)
         btnRegistro.setOnClickListener() {
             //Comprobamos que no hay ningun campo vacio
-            if (!txtmail.text.trim().isEmpty() || !txtpsw.text.trim().isEmpty() || !txtreppaswd.text.trim().isEmpty() ){
+            if (!txtmail.text.trim().isEmpty() && !txtpsw.text.trim().isEmpty() && !txtreppaswd.text.trim().isEmpty() ){
                 if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
                     //comprobamos la contraseña
                     var ok = 0

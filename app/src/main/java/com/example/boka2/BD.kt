@@ -92,9 +92,10 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("drop table if exists eveofe")
         db!!.execSQL("drop table if exists carta")
         db!!.execSQL("drop table if exists localizacion")
+        db!!.execSQL("drop table if exists usuarios")
+        db!!.execSQL("drop table if exists reserva")
         onCreate(db)
     }
-
     //Insercción del usuario en la base de datos
     fun insertar(usuario:String, contraseña:String){
         val db=this.writableDatabase
@@ -235,5 +236,12 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
             fila.add(todo)
         }
         return fila
+    }
+    fun actualizar(usuarioold:String,usuarionew:String,contraseña:String){
+        val db=this.writableDatabase
+        val fila=ContentValues()
+        fila.put("user",usuarionew)
+        fila.put("contrasena",contraseña)
+        db.update("usuarios",fila,"user=?", arrayOf(usuarioold))
     }
 }
