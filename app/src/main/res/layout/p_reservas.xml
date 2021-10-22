@@ -89,9 +89,10 @@
 
     <Spinner
         android:id="@+id/spinercalle"
-        android:layout_width="315dp"
         style="@style/fechahora"
+        android:layout_width="315dp"
         android:layout_height="48dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.551"
