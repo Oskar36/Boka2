@@ -73,18 +73,18 @@
         android:id="@+id/calletxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="68dp"
         android:text="@string/calle"
         app:layout_constraintBottom_toTopOf="@+id/spinercalle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinermunicipio"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/munitxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="68dp"
         android:text="@string/municipio"
         app:layout_constraintBottom_toTopOf="@+id/spinermunicipio"
         app:layout_constraintStart_toStartOf="parent" />

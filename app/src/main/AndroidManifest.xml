@@ -53,7 +53,7 @@
             android:name=".a_reservas"
             android:exported="true"
             android:hardwareAccelerated="true"
-            android:configChanges="orientation|screenSize"/>
+            android:screenOrientation = "portrait"/>
         <activity
             android:name=".a_perfil"
             android:exported="true"

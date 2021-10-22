@@ -46,111 +46,125 @@
                             android:id="@+id/mapView3"
                             android:layout_width="535dp"
                             android:layout_height="240dp"
-                            android:layout_marginTop="28dp"
+                            android:layout_marginStart="37dp"
+                            android:layout_marginTop="20dp"
                             android:layout_marginEnd="24dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/btnreserva"
-                            app:layout_constraintTop_toBottomOf="@+id/spinercalle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spinermunicipio"
                             tools:ignore="SpeakableTextPresentCheck" />
 
                         <EditText
                             android:id="@+id/txtFechaRes"
+                            style="@style/Contenedores"
                             android:layout_width="210dp"
                             android:layout_height="50dp"
-                            style="@style/Contenedores"
-                            android:layout_marginTop="64dp"
-                            android:layout_marginEnd="36dp"
                             android:ems="10"
                             android:hint="@string/fecha"
                             android:inputType="date"
                             android:minHeight="48dp"
-                            app:layout_constraintEnd_toStartOf="@+id/txtHoraRes"
-                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.097"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.147" />
 
                         <EditText
                             android:id="@+id/txtHoraRes"
+                            style="@style/Contenedores"
                             android:layout_width="210dp"
                             android:layout_height="50dp"
-                            style="@style/Contenedores"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="20dp"
                             android:ems="10"
                             android:hint="@string/hora"
                             android:inputType="time"
                             android:minHeight="48dp"
-                            app:layout_constraintEnd_toStartOf="@+id/imageView2"
-                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.529"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/titulo3" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.149" />
 
                         <TextView
                             android:id="@+id/titulo3"
                             android:layout_width="wrap_content"
                             android:layout_height="27dp"
                             android:layout_marginStart="306dp"
-                            android:layout_marginTop="16dp"
                             android:layout_marginEnd="328dp"
                             android:text="@string/titulo_reserva"
                             android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.035" />
 
                         <NumberPicker
                             android:id="@+id/numberPicker"
                             style="@style/texto"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.416"
-                            app:layout_constraintStart_toEndOf="@+id/imageView2"
-                            app:layout_constraintTop_toTopOf="parent">
+                            app:layout_constraintHorizontal_bias="0.976"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0">
 
                         </NumberPicker>
 
                         <Spinner
                             android:id="@+id/spinercalle"
+                            style="@style/Contenedores"
                             android:layout_width="210dp"
                             android:layout_height="50dp"
-                            style="@style/Contenedores"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginEnd="35dp"
-                            app:layout_constraintEnd_toStartOf="@+id/spinermunicipio"
-                            app:layout_constraintTop_toBottomOf="@+id/calletxt"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.097"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.395"
                             tools:ignore="SpeakableTextPresentCheck" />
 
                         <TextView
                             android:id="@+id/calletxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="26dp"
-                            android:layout_marginEnd="210dp"
                             android:text="@string/calle"
-                            app:layout_constraintEnd_toStartOf="@+id/munitxt"
-                            app:layout_constraintTop_toBottomOf="@+id/txtFechaRes" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.328" />
 
                         <Spinner
                             android:id="@+id/spinermunicipio"
+                            style="@style/Contenedores"
                             android:layout_width="210dp"
                             android:layout_height="50dp"
-                            style="@style/Contenedores"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="226dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/munitxt"
+                            app:layout_constraintHorizontal_bias="0.527"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.397"
                             tools:ignore="SpeakableTextPresentCheck" />
 
                         <TextView
                             android:id="@+id/munitxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginEnd="377dp"
                             android:text="@string/municipio"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/txtHoraRes" />
+                            app:layout_constraintHorizontal_bias="0.441"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.326" />
 
                         <Button
                             android:id="@+id/btnreserva"
@@ -167,9 +181,12 @@
                             android:layout_width="69dp"
                             android:layout_height="64dp"
                             android:layout_marginStart="20dp"
-                            android:layout_marginTop="64dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/numberPicker"
+                            app:layout_constraintHorizontal_bias="0.684"
                             app:layout_constraintStart_toEndOf="@+id/spinermunicipio"
                             app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.121"
                             app:srcCompat="@drawable/iconousuarioverde" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
