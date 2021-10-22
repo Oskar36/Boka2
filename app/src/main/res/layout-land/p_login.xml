@@ -42,23 +42,26 @@
 
                         <EditText
                             android:id="@+id/login_correo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="210dp"
+                            android:layout_height="45dp"
                             android:layout_marginTop="5dp"
                             android:ems="10"
                             android:hint="@string/usuario"
                             android:inputType="textPersonName"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            style="@style/Contenedores"
+                            />
 
                         <EditText
                             android:id="@+id/login_contr"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/Contenedores"
                             android:layout_marginTop="15dp"
                             android:ems="10"
                             android:hint="@string/contraseña"
                             android:inputType="textPassword"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:layout_width="210dp"
+                            android:layout_height="45dp"/>
 
                         <TextView
                             android:id="@+id/Login_txt_error"

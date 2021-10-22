@@ -31,8 +31,9 @@
 
     <EditText
         android:id="@+id/prefil_txt_correo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        style="@style/Contenedores"
         android:ems="10"
         android:hint="@string/usuario"
         android:inputType="textPersonName"
@@ -47,8 +48,9 @@
 
     <EditText
         android:id="@+id/Perfil_contra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        style="@style/Contenedores"
         android:ems="10"
         android:hint="@string/contraseña"
         android:inputType="textPassword"

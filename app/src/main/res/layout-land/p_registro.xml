@@ -43,8 +43,9 @@
 
                         <EditText
                             android:id="@+id/txtmail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="220dp"
+                            android:layout_height="45dp"
+                            style="@style/Contenedores"
                             android:ems="10"
                             android:hint="@string/usuario"
                             android:inputType="textEmailAddress"
@@ -54,8 +55,9 @@
 
                         <EditText
                             android:id="@+id/txtpsw"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="220dp"
+                            android:layout_height="45dp"
+                            style="@style/Contenedores"
                             android:ems="10"
                             android:hint="@string/contraseña"
                             android:inputType="textPassword"
@@ -65,8 +67,9 @@
 
                         <EditText
                             android:id="@+id/txtreppaswd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="220dp"
+                            android:layout_height="45dp"
+                            style="@style/Contenedores"
                             android:ems="10"
                             android:hint="@string/repetir_contraseña"
                             android:inputType="textPassword"

@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/txtcalle"
-        style="@style/fechahora"
+        style="@style/Contenedores"
         android:layout_width="331dp"
         android:layout_height="58dp"
         android:layout_marginTop="100dp"

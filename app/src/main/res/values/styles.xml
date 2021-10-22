@@ -9,7 +9,7 @@
     <style name="texto">
         <item name="fontFamily">roboto</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14sp</item>c
     </style>
 
     <style name="botones">
@@ -21,9 +21,10 @@
         <item name="android:background">@color/claro</item>
     </style>
 
-    <style name="fechahora">
+    <style name="Contenedores">
         <item name="android:background">@drawable/border</item>
         <item name="fontFamily">roboto</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
     </style>
 </resources>

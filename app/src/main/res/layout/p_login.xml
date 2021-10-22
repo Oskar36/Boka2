@@ -8,8 +8,9 @@
 
     <EditText
         android:id="@+id/login_correo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Contenedores"
+        android:layout_width="208dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:hint="@string/usuario"
         android:inputType="textPersonName"
@@ -19,14 +20,14 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319"
-        />
+        app:layout_constraintVertical_bias="0.319" />
 
     <EditText
         android:id="@+id/login_contr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
         android:ems="10"
+        android:layout_width="208dp"
+        android:layout_height="45dp"
         android:hint="@string/contraseña"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -35,7 +36,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_correo"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.043"
+        style="@style/Contenedores"/>
 
     <Button
         android:id="@+id/Login_but_entrar"
