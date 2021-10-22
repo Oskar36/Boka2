@@ -29,16 +29,13 @@
                     android:id="@+id/titulo6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="161dp"
                     android:layout_marginTop="36dp"
-                    android:layout_marginEnd="164dp"
                     android:layout_marginBottom="72dp"
                     android:text="@string/titulo_localizacion"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toTopOf="@+id/txtcalle"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/mapView4"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.gms.maps.MapView
@@ -60,6 +57,7 @@
                     android:layout_height="46dp"
                     style="@style/Contenedores"
                     android:layout_marginTop="135dp"
+                    android:gravity="center"
                     android:hint="@string/txtcalle_localizacion_hint"
                     app:layout_constraintBottom_toTopOf="@+id/mapView4"
                     app:layout_constraintEnd_toEndOf="parent"

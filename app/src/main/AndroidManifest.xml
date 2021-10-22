@@ -47,8 +47,7 @@
             android:exported="true" />
         <activity
             android:name=".a_quienesSomos"
-            android:exported="true"
-            android:configChanges="orientation|screenSize"/>
+            android:exported="true"/>
         <activity
             android:name=".a_reservas"
             android:exported="true"
@@ -56,8 +55,7 @@
             android:screenOrientation = "portrait"/>
         <activity
             android:name=".a_perfil"
-            android:exported="true"
-            android:configChanges="orientation|screenSize"/>
+            android:exported="true" />
         <activity
             android:name=".a_localizacion"
             android:exported="true"
@@ -65,12 +63,10 @@
             android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".a_registro"
-            android:exported="true"
-            android:configChanges="orientation|screenSize"/>
+            android:exported="true"/>
         <activity
             android:name=".a_login"
-            android:exported="true"
-            android:configChanges="orientation|screenSize"/>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
