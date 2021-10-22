@@ -245,4 +245,14 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         fila.put("contrasena",contraseña)
         db.update("usuarios",fila,"user=?", arrayOf(usuarioold))
     }
+    fun insertReserva(fecha: String,hora:String,comensales:String,municipio:String,calle:String){
+        val db=this.writableDatabase
+        val fila=ContentValues()
+        fila.put("fecha",fecha)
+        fila.put("hora",hora)
+        fila.put("comensales",comensales)
+        fila.put("municipio",municipio)
+        fila.put("calle",calle)
+        db?.insert("reserva",null,fila)
+    }
 }

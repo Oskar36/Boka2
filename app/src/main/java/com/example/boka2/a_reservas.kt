@@ -177,15 +177,20 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
                 id: Long
             ) {
                // bd.Coordenadas()
-                val location = LatLng(43.267010, -2.942118)
-                val ny = LatLng(43.267010, -2.942118)
-                val marker = MarkerOptions().position(ny)
+                gmap!!.clear()
+                val location = LatLng(bd.Coordenadas(spinercalle.selectedItem.toString()).get(0).coorde1, bd.Coordenadas(spinercalle.selectedItem.toString()).get(0).coorde2)
+                val marker = MarkerOptions().position(location)
                 marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
+                gmap!!.moveCamera(CameraUpdateFactory.newLatLng(location))
                 gmap!!.addMarker(marker)
+
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
+        }
+        btnreserva.setOnClickListener(){
+
         }
     }
 
@@ -236,9 +241,6 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     override fun onMapReady(googleMap: GoogleMap) {
     gmap = googleMap
     gmap!!.setMinZoomPreference(12f)
-    val location = LatLng(43.267010, -2.942118)
-    val ny = LatLng(43.267010, -2.942118)
-    gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
 }
     private fun showTimePickerDialog(elementId: Int) {
         val timePicker = TimePickerFragment { onTimeSelected(it, elementId) }
