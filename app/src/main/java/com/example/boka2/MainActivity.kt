@@ -59,11 +59,9 @@ class MainActivity : AppCompatActivity() {
         if (iditem==R.id.Perfil){
             if (!Sharedapp.prefs.tipousu.equals("invitado")){
                 val intent= Intent(this, a_perfil::class.java)
-                finish()
                 startActivity(intent)
             }else{
                 val intent= Intent(this, a_login::class.java)
-                finish()
                 startActivity(intent)
             }
 

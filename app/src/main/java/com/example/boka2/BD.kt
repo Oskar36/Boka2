@@ -71,6 +71,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         insertarEventoOfe("ofertae","2022-01-12","oferta",db)
         insertarEventoOfe("ofertaf","2022-01-29","oferta",db)
 
+
         insertarLocalizacion ("Bilbao","Pl. del Arriaga","43.259572","-2.925205",db)
         insertarLocalizacion ("Bilbao","Av. Abandoibarra","43.268270","-2.933497",db)
         insertarLocalizacion ("Bilbao","Indautxu Plaza","43.260.181","-2.940444",db)
