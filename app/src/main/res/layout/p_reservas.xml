@@ -51,18 +51,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.094"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        android:textSize="14sp"/>
 
     <Spinner
         android:id="@+id/spinermunicipio"
+        style="@style/fechahora"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        style="@style/fechahora"
-        android:layout_marginEnd="44dp"
         android:layout_marginBottom="36dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/spinercalle"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/calletxt"
@@ -138,6 +141,7 @@
         style="@style/fechahora"
         android:editable="false"
         android:ems="10"
+        android:textAlignment="center"
         android:focusable="false"
         android:hint="@string/hora"
         android:gravity="center"
@@ -146,6 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintVertical_bias="0.171" /><![CDATA[
 
     app:layout_constraintBottom_toBottomOf="parent"

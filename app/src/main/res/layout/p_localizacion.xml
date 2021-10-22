@@ -21,9 +21,11 @@
 
     <TextView
         android:id="@+id/txtcalle"
+        style="@style/fechahora"
         android:layout_width="331dp"
         android:layout_height="58dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
         android:hint="@string/txtcalle_localizacion_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +35,7 @@
         android:id="@+id/mapView4"
         android:layout_width="328dp"
         android:layout_height="539dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

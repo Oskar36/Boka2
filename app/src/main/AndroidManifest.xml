@@ -16,7 +16,7 @@
         <activity
             android:name=".a_platos"
             android:exported="false"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize"  />
         <activity
             android:name=".splash"
             android:exported="true"
