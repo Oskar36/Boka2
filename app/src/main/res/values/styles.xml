@@ -27,4 +27,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textAlignment">center</item>
     </style>
+    <style name="PickerTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">#C6E377</item>
+    </style>
 </resources>

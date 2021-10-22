@@ -252,10 +252,8 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
         datePicker.show(supportFragmentManager, "datePicker")
     }
     private fun onTimeSelected(time: String, elementoPicker: Int) {
-        if (elementoPicker == 1) {
             val txtHoraRes = findViewById<View>(R.id.txtHoraRes) as TextView
             txtHoraRes.setText("$time")
-        }
     }
     private fun onDateSelected(day: Int, month: Int, year: Int,
                                elementoPicker: Int) {
