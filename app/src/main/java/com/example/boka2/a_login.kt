@@ -33,8 +33,6 @@ class a_login : AppCompatActivity() {
         getSupportActionBar()?.setTitle("")
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
 
-        Toast.makeText(this, "${BBDD.reservas().size}", Toast.LENGTH_SHORT).show()
-
         Login_txt_registro.setOnClickListener(){
             //En caso de pilsar el boton de registro  nos redirige a dicha activity
 
