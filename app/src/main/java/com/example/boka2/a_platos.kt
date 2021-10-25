@@ -96,7 +96,7 @@ class a_platos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_platos)
 
-        val BBDDplatos = Base_de_Datos(this, "carta", null, 1 )
+        val BBDDplatos = Base_de_Datos(this, "bd", null, 1 )
         val llBotonera = findViewById<View>(R.id.llplatos) as LinearLayout
         var context: Context?=null
         //Creamos las propiedades de layout que tendrán las imagenes.

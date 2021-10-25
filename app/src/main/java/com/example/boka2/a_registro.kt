@@ -10,7 +10,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.p_login.*
 import kotlinx.android.synthetic.main.p_registro.*
 class a_registro : AppCompatActivity() {
-    internal val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
+    internal val BBDD = Base_de_Datos(this, "bd", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

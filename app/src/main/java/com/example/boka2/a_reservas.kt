@@ -18,8 +18,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.p_reservas.*
 import android.widget.TextView
-
-
+import androidx.core.view.isEmpty
 
 
 class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValueChangeListener {
@@ -146,7 +145,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
 
 
         // spinners
-        val bd = Base_de_Datos(this, "localizacion", null, 1)
+        val bd = Base_de_Datos(this, "bd", null, 1)
         val lista1 = bd.Municipio()
         val context:Context = this
         val adaptador1 = ArrayAdapter (this, android.R.layout.simple_spinner_item, lista1)
@@ -190,7 +189,18 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
             }
         }
         btnreserva.setOnClickListener(){
+            val textofecha= findViewById<View>(R.id.txtFechaRes) as TextView
+            val textohora= findViewById<View>(R.id.txtHoraRes) as TextView
+            if(!textohora.text.toString().isEmpty() && !textofecha.text.toString().isEmpty()  && !numberPicker.isEmpty()){
+                Toast.makeText(this, "Reserva realizada correctamente", Toast.LENGTH_SHORT).show()
+                bd.insertReserva(textofecha.text.toString(),textohora.text.toString(),numberPicker.value.toString(),spinermunicipio.selectedItem.toString(),spinercalle.selectedItem.toString())
+                val intent= Intent(this, MainActivity::class.java)
+                finish()
+                startActivity(intent)
+            }else{
+                Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT)
 
+            }
         }
     }
 
@@ -261,7 +271,6 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
         txtFechaRes.setText("$day/$month/$year")
     }
     override fun onValueChange(p0: NumberPicker?, p1: Int, p2: Int) {
-        TODO("Not yet implemented")
     }
 
 

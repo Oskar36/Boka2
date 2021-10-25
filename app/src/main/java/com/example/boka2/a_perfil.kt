@@ -77,7 +77,7 @@ class a_perfil : AppCompatActivity() {
 
         return true
     }
-    private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
+    private val BBDD = Base_de_Datos(this, "bd", null, 1 )
     var usuario:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
 //Barra de tareas

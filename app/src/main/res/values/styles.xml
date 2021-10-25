@@ -27,7 +27,15 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textAlignment">center</item>
     </style>
-    <style name="PickerTheme" parent="android:Theme.Material.Light.Dialog">
+    <style name="PickerTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
         <item name="android:colorAccent">#C6E377</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerTheme.ButtonBarNegativeButtonStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerTheme.ButtonBarPositiveButtonStyle</item>
+    </style>
+    <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#C6E377</item>
+    </style>
+    <style name="DatePickerTheme.ButtonBarPositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#C6E377</item>
     </style>
 </resources>

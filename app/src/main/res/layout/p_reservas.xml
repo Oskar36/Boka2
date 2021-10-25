@@ -42,7 +42,6 @@
         android:hint="@string/fecha"
         android:inputType="date"
         android:clickable="false"
-        android:editable="false"
         android:focusable="false"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -90,7 +90,7 @@ class a_carta : AppCompatActivity() {
         return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-        val BBDDcarta = Base_de_Datos(this, "carta", null, 1 )
+        val BBDDcarta = Base_de_Datos(this, "bd", null, 1 )
 
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)

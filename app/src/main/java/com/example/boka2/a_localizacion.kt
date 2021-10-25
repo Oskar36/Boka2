@@ -158,7 +158,7 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
         gmap!!.setMinZoomPreference(15f)
-        val bd = Base_de_Datos(this, "localizacion", null, 1)
+        val bd = Base_de_Datos(this, "bd", null, 1)
         val lista3 = bd.Coordenadas2()
 
 //gtdfhtr

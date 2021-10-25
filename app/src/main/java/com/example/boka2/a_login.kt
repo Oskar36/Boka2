@@ -15,7 +15,7 @@ import android.os.SystemClock
 
 
 class a_login : AppCompatActivity() {
-    private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
+    private val BBDD = Base_de_Datos(this, "bd", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         SystemClock.sleep(1000)
@@ -33,7 +33,7 @@ class a_login : AppCompatActivity() {
         getSupportActionBar()?.setTitle("")
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
 
-
+        Toast.makeText(this, "${BBDD.reservas().size}", Toast.LENGTH_SHORT).show()
 
         Login_txt_registro.setOnClickListener(){
             //En caso de pilsar el boton de registro  nos redirige a dicha activity

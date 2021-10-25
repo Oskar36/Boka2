@@ -100,7 +100,7 @@ class a_calendario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_calendario)
 
-        val BBDDeven = Base_de_Datos(this, "eve_ofe", null, 1 )
+        val BBDDeven = Base_de_Datos(this, "bd", null, 1 )
         val llBotonera = findViewById<View>(R.id.llcalendario) as LinearLayout
         var context: Context?=null
         //Creamos las propiedades de layout que tendrán las imagenes.

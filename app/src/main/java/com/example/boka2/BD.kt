@@ -15,6 +15,7 @@ data class eve_ofe(val nombre:String)
 data class coordenadas(val coorde1:Double,val coorde2:Double)
 data class coordenadas2(val calle:String,val coorde1:String,val coorde2:String)
 data class localizacion (val calle: String, val municipio: String, val coordenada1: String, val coordenada2: String)
+data class reserva(val fecha: String,val hora: String,val comensales:String,val municipio: String,val calle: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
@@ -189,7 +190,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         val db=this.readableDatabase
         val cursor:Cursor = db.rawQuery("select nombre from carta where tipo=? ", arrayOf(tipo))
         while (cursor.moveToNext()){
-            val todo= cartagen(cursor.getString(0))
+            val todo= cartagen(cursor.getString(1))
             fila.add(todo)
         }
         return fila
@@ -254,5 +255,15 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         fila.put("municipio",municipio)
         fila.put("calle",calle)
         db?.insert("reserva",null,fila)
+    }
+    fun reservas():MutableList<reserva>{
+        val fila:MutableList<reserva> = ArrayList()
+        val db=this.readableDatabase
+        val cursor:Cursor = db.rawQuery("select * from reserva ", null)
+        while (cursor.moveToNext()){
+            val todo= reserva(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5))
+            fila.add(todo)
+        }
+        return fila
     }
 }
