@@ -19,6 +19,7 @@ import kotlinx.coroutines.runBlocking
 
 
 class a_login : AppCompatActivity() {
+    //1
     private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
