@@ -18,6 +18,9 @@ data class localizacion (val calle: String, val municipio: String, val coordenad
 data class reserva(val fecha: String,val hora: String,val comensales:String,val municipio: String,val calle: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
+        (0..10000).forEach{
+            println("funciona")
+        }
         db!!.execSQL("create table usuarios (user text primary key, contrasena text)")
         db!!.execSQL("create table eveofe ( nombre text,fecha real,tipo text,primary key(nombre,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")

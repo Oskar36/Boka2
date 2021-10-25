@@ -107,13 +107,6 @@ class MainActivity : AppCompatActivity() {
             //LinearLayout.LayoutParams.WRAP_CONTENT,
             LinearLayout.LayoutParams(1125, 700)
         )
-        val lp2 = LinearLayout.LayoutParams(
-            //LinearLayout.LayoutParams.MATCH_PARENT,
-            //LinearLayout.LayoutParams.WRAP_CONTENT,
-            LinearLayout.LayoutParams(1125, 700)
-
-            )
-
         val layout: LinearLayout =llprincipal
 
         //Creamos los botones en bucle
