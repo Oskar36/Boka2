@@ -57,6 +57,7 @@ class a_registro : AppCompatActivity() {
                                 if (BBDD.buscarCorreo(txtmail.text.toString())){
                                     val intent = Intent(this, MainActivity::class.java)
                                     registro()
+                                    startActivity(intent)
                                     Toast.makeText(this, "Usuario creado con exito", Toast.LENGTH_SHORT)
                                         .show()
                                 }
@@ -90,9 +91,9 @@ class a_registro : AppCompatActivity() {
     fun registro () = runBlocking {
         launch {
             delay(20L)
-            startActivity(intent)
+            BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
         }
-        BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
+
         Sharedapp.user.user = txtmail.text.toString()
         Sharedapp.paswd.paswd = txtpsw.text.toString()
         Sharedapp.prefs.tipousu = "cliente"
