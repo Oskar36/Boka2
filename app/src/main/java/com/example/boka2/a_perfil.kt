@@ -9,6 +9,9 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.p_perfil.*
 import kotlinx.android.synthetic.main.p_registro.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class a_perfil : AppCompatActivity() {
     //Barra de tareas
@@ -70,6 +73,8 @@ class a_perfil : AppCompatActivity() {
 
             Toast.makeText(this, "${getResources().getString(R.string.cierre_sesion)}", Toast.LENGTH_SHORT).show()
             Sharedapp.prefs.tipousu = "invitado"
+            Sharedapp.user.user = ""
+            Sharedapp.paswd.paswd = ""
             val intent= Intent(this, a_login::class.java)
             finish()
             startActivity(intent)
@@ -114,12 +119,8 @@ class a_perfil : AppCompatActivity() {
                             i++
                         }
                         if(mayus && numero){
-
-                                BBDD.actualizar(usuario,  prefil_txt_correo.text.toString(), Perfil_contra.text.toString())
-                                usuario= prefil_txt_correo.text.toString()
-                                Toast.makeText(this, "Datos del usuario actualizados", LENGTH_SHORT).show()
-                                Sharedapp.paswd.paswd = Perfil_contra.text.toString()
-                                Sharedapp.user.user = prefil_txt_correo.text.toString()
+                            actualizar()
+                            Toast.makeText(this, "Datos del usuario actualizados", LENGTH_SHORT).show()
                         }
                         else{
                             Toast.makeText(this, "${getResources().getString(R.string.Contraseña_incorrecta)}", Toast.LENGTH_SHORT)
@@ -135,8 +136,16 @@ class a_perfil : AppCompatActivity() {
                         .show()
                 }
         }
+    }
+    //corrutina para actualizar al usuario
+    fun actualizar () = runBlocking {
+        launch {
+            delay(20L)
+            BBDD.actualizar(usuario,  prefil_txt_correo.text.toString(), Perfil_contra.text.toString())
+            usuario= prefil_txt_correo.text.toString()
 
-
-
+        }
+        Sharedapp.paswd.paswd = Perfil_contra.text.toString()
+        Sharedapp.user.user = prefil_txt_correo.text.toString()
     }
 }

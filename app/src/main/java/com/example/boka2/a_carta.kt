@@ -76,6 +76,8 @@ class a_carta : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
                 Sharedapp.prefs.tipousu = "invitado"
+                Sharedapp.user.user = ""
+                Sharedapp.paswd.paswd = ""
                 val intent = Intent(this, a_login::class.java)
                 finish()
                 startActivity(intent)

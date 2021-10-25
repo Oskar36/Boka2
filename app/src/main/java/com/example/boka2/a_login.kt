@@ -65,8 +65,10 @@ class a_login : AppCompatActivity() {
         }
         //Si pulsamos el boton de entrar como invitado nos manda a la pantalla principal como invitados
         txtInvitado.setOnClickListener(){
-            val intent = Intent(this, MainActivity::class.java)
-            maininvitado()
+            val invitado = Intent(this, MainActivity::class.java)
+            Sharedapp.prefs.tipousu = "invitado"
+            finish()
+            startActivity(invitado)
         }
     }
     //creamos una corrutina para logear a un cliente
@@ -88,14 +90,5 @@ class a_login : AppCompatActivity() {
             startActivity(intent)
         }
         Sharedapp.prefs.tipousu = login_correo.text.toString().toLowerCase()
-    }
-    //creamos la corrutina para logear al invitado
-    fun maininvitado () = runBlocking {
-        launch {
-            delay(20L)
-            finish()
-            startActivity(intent)
-        }
-        Sharedapp.prefs.tipousu = "invitado"
     }
 }
