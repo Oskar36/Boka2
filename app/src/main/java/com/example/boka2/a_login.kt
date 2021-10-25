@@ -13,11 +13,12 @@ import kotlinx.android.synthetic.main.p_login.*
 import android.content.SharedPreferences
 import android.os.SystemClock
 import android.widget.TextView
-
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 
 class a_login : AppCompatActivity() {
-    //1
     private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,5 +74,28 @@ class a_login : AppCompatActivity() {
             finish()
             startActivity(invitado)
         }
+    }
+    fun main () = runBlocking {
+        launch {
+            delay(1000L)
+            finish()
+            startActivity(intent)
+        }
+        Sharedapp.prefs.tipousu = "cliente"
+        val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
+        val login_contr = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_contr) as TextView
+
+        Sharedapp.user.user = login_correo.text.toString()
+        Sharedapp.paswd.paswd = login_contr.text.toString()
+    }
+    //creamos la corrutina para logear al admin
+    fun mainadmin () = runBlocking {
+        launch {
+            delay(1000L)
+            finish()
+            startActivity(intent)
+        }
+        val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
+        Sharedapp.prefs.tipousu = login_correo.text.toString().toLowerCase()
     }
 }
