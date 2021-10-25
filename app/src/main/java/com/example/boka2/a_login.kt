@@ -75,6 +75,7 @@ class a_login : AppCompatActivity() {
             startActivity(invitado)
         }
     }
+    //Corrutina para loguear a un cliente
     fun maincliente () = runBlocking {
         launch {
             delay(1000L)
