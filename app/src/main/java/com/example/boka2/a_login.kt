@@ -56,11 +56,13 @@ class a_login : AppCompatActivity() {
             if (login_correo.text.toString().toLowerCase().equals("admin") && login_contr.text.toString().toLowerCase().equals("admin")){
                 val intent =Intent(this, MainActivity::class.java)
                 mainadmin()
+                startActivity(intent)
                 //Si iciamos sesion como cliente
             }else {
                 if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
                     val intent = Intent(this, MainActivity::class.java)
                     maincliente()
+                    startActivity(intent)
                     //En caso de que los datos introducidos no correspondan a ningun usuario registrado
                 } else {
                     Login_txt_error.text = "${getResources().getString(R.string.usuarioycontraseñaincorrectos)}"
@@ -70,8 +72,6 @@ class a_login : AppCompatActivity() {
         //Si pulsamos el boton de entrar como invitado nos manda a la pantalla principal como invitados
         txtInvitado.setOnClickListener(){
             val invitado = Intent(this, MainActivity::class.java)
-            Sharedapp.prefs.tipousu = "invitado"
-            finish()
             startActivity(invitado)
         }
     }
@@ -80,7 +80,6 @@ class a_login : AppCompatActivity() {
         launch {
             delay(1000L)
             finish()
-            startActivity(intent)
         }
         Sharedapp.prefs.tipousu = "cliente"
         val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
@@ -94,9 +93,15 @@ class a_login : AppCompatActivity() {
         launch {
             delay(1000L)
             finish()
-            startActivity(intent)
         }
         val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
         Sharedapp.prefs.tipousu = login_correo.text.toString().toLowerCase()
+    }
+    fun maininvitado () = runBlocking {
+        launch {
+            delay(1000L)
+            finish()
+        }
+        Sharedapp.prefs.tipousu = "invitado"
     }
 }
