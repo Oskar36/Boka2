@@ -10,6 +10,9 @@ import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_login.*
 import kotlinx.android.synthetic.main.p_registro.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 
 class a_registro : AppCompatActivity() {
@@ -53,7 +56,7 @@ class a_registro : AppCompatActivity() {
                             if(mayus && numero){
                                 if (BBDD.buscarCorreo(txtmail.text.toString())){
                                     val intent = Intent(this, MainActivity::class.java)
-
+                                    registro()
                                     Toast.makeText(this, "Usuario creado con exito", Toast.LENGTH_SHORT)
                                         .show()
                                 }
@@ -84,5 +87,14 @@ class a_registro : AppCompatActivity() {
         
 
     }
-
+    fun registro () = runBlocking {
+        launch {
+            delay(20L)
+            startActivity(intent)
+        }
+        BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
+        Sharedapp.user.user = txtmail.text.toString()
+        Sharedapp.paswd.paswd = txtpsw.text.toString()
+        Sharedapp.prefs.tipousu = "cliente"
+    }
 }
