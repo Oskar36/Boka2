@@ -19,7 +19,7 @@ import kotlinx.coroutines.runBlocking
 
 
 class a_login : AppCompatActivity() {
-    private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
+    private val BBDD = Base_de_Datos(this, "bd", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -54,15 +54,25 @@ class a_login : AppCompatActivity() {
 
             //Si introducimos los datos de inicio de sesion de un administrador
             if (login_correo.text.toString().toLowerCase().equals("admin") && login_contr.text.toString().toLowerCase().equals("admin")){
+
                 val intent =Intent(this, MainActivity::class.java)
                 mainadmin()
                 startActivity(intent)
                 //Si iciamos sesion como cliente
             }else {
                 if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
-                    val intent = Intent(this, MainActivity::class.java)
-                    maincliente()
-                    startActivity(intent)
+                    if(Sharedapp.Reserva.reserva.equals("si")){
+                        Sharedapp.Reserva.reserva="no"
+                        Sharedapp.prefs.tipousu="cliente"
+                        Sharedapp.user.user = login_correo.text.toString()
+                        Sharedapp.paswd.paswd = login_contr.text.toString()
+                        finish()
+                    }else{
+                        val intent = Intent(this, MainActivity::class.java)
+                        maincliente()
+                        startActivity(intent)
+                    }
+
                     //En caso de que los datos introducidos no correspondan a ningun usuario registrado
                 } else {
                     Login_txt_error.text = "${getResources().getString(R.string.usuarioycontraseñaincorrectos)}"

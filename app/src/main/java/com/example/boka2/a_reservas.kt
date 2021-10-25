@@ -19,6 +19,13 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.p_reservas.*
 import android.widget.TextView
 import androidx.core.view.isEmpty
+import kotlinx.android.synthetic.main.custom_dialog.*
+import android.app.Activity
+
+import android.content.ContextWrapper
+
+
+
 
 
 class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValueChangeListener {
@@ -191,6 +198,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
         btnreserva.setOnClickListener(){
             val textofecha= findViewById<View>(R.id.txtFechaRes) as TextView
             val textohora= findViewById<View>(R.id.txtHoraRes) as TextView
+          if(!Sharedapp.prefs.tipousu.equals("invitado")){
             if(!textohora.text.toString().isEmpty() && !textofecha.text.toString().isEmpty()  && !numberPicker.isEmpty()){
                 Toast.makeText(this, "Reserva realizada correctamente", Toast.LENGTH_SHORT).show()
                 bd.insertReserva(textofecha.text.toString(),textohora.text.toString(),numberPicker.value.toString(),spinermunicipio.selectedItem.toString(),spinercalle.selectedItem.toString())
@@ -198,13 +206,16 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
                 finish()
                 startActivity(intent)
             }else{
-                Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT)
+
+                Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT).show()
 
             }
+          }else{
+              CustomDialogClass(this).show()
+              Sharedapp.Reserva.reserva="si"
+          }
         }
     }
-
-
 
     //En caso de que haya problemas con el Bundle
     override fun onSaveInstanceState(outState: Bundle) {
@@ -246,6 +257,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
         super.onLowMemory()
         mapView!!.onLowMemory()
     }
+
 
 //prueba
     override fun onMapReady(googleMap: GoogleMap) {
