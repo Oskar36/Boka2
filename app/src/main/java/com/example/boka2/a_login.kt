@@ -55,12 +55,12 @@ class a_login : AppCompatActivity() {
             //Si introducimos los datos de inicio de sesion de un administrador
             if (login_correo.text.toString().toLowerCase().equals("admin") && login_contr.text.toString().toLowerCase().equals("admin")){
                 val intent =Intent(this, MainActivity::class.java)
-
+                mainadmin()
                 //Si iciamos sesion como cliente
             }else {
                 if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
                     val intent = Intent(this, MainActivity::class.java)
-
+                    maincliente()
                     //En caso de que los datos introducidos no correspondan a ningun usuario registrado
                 } else {
                     Login_txt_error.text = "${getResources().getString(R.string.usuarioycontraseñaincorrectos)}"
@@ -75,7 +75,7 @@ class a_login : AppCompatActivity() {
             startActivity(invitado)
         }
     }
-    fun main () = runBlocking {
+    fun maincliente () = runBlocking {
         launch {
             delay(1000L)
             finish()
