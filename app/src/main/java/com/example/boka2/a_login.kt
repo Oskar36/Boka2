@@ -21,7 +21,8 @@ import kotlinx.coroutines.runBlocking
 
 class a_login : AppCompatActivity() {
     private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
-
+    val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
+    val login_contr = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_contr) as TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         SystemClock.sleep(1000)
         super.onCreate(savedInstanceState)
@@ -48,8 +49,7 @@ class a_login : AppCompatActivity() {
 
         }
         Login_but_entrar.setOnClickListener() {
-            val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
-            val login_contr = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_contr) as TextView
+
 
             //Si introducimos los datos de inicio de sesion de un administrador
             if (login_correo.text.toString().toLowerCase().equals("admin") && login_contr.text.toString().toLowerCase().equals("admin")){

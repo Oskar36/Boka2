@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.main.p_registro.*
 
 
 class a_perfil : AppCompatActivity() {
+
+    val prefil_txt_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.prefil_txt_correo) as TextView
+    val Perfil_contra = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.Perfil_contra) as TextView
     //Barra de tareas
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
@@ -102,8 +105,6 @@ class a_perfil : AppCompatActivity() {
         Perfil_btn_guardar.setOnClickListener {
 
 
-            val prefil_txt_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.prefil_txt_correo) as TextView
-            val Perfil_contra = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.Perfil_contra) as TextView
 
             if (!prefil_txt_correo.text.isEmpty() &&  !Perfil_contra.text.isEmpty()){
                     //comprobamos la contraseña

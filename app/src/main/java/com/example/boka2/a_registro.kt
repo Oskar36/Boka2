@@ -15,6 +15,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class a_registro : AppCompatActivity() {
+    val txtmail = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.txtmail) as TextView
+    val txtpsw = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.txtpsw) as TextView
+    val txtreppaswd = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.txtreppaswd) as TextView
     internal val BBDD = Base_de_Datos(this, "bd", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
