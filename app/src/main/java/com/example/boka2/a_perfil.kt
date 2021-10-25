@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.p_perfil.*
 import kotlinx.android.synthetic.main.p_registro.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+
+
 
 class a_perfil : AppCompatActivity() {
+
+
     //Barra de tareas
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
@@ -22,6 +24,7 @@ class a_perfil : AppCompatActivity() {
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
         val iditem = item.getItemId()
 
         if (iditem==R.id.carta){
@@ -91,6 +94,8 @@ class a_perfil : AppCompatActivity() {
         getSupportActionBar()?.setTitle("")
         getSupportActionBar()?.setDisplayUseLogoEnabled(true)
 
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_perfil)
         //cargamos los datos del usuario desde las sharedpreferences
@@ -99,6 +104,10 @@ class a_perfil : AppCompatActivity() {
         //actualizamos los datos del usuario en caso de que pulse el boton guardar
         usuario= prefil_txt_correo.text.toString()
         Perfil_btn_guardar.setOnClickListener {
+
+            val prefil_txt_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.prefil_txt_correo) as TextView
+            val Perfil_contra = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.Perfil_contra) as TextView
+
             if (!prefil_txt_correo.text.isEmpty() &&  !Perfil_contra.text.isEmpty()){
                     //comprobamos la contraseña
                     var ok = 0
@@ -119,7 +128,7 @@ class a_perfil : AppCompatActivity() {
                             i++
                         }
                         if(mayus && numero){
-                            actualizar()
+
                             Toast.makeText(this, "Datos del usuario actualizados", LENGTH_SHORT).show()
                         }
                         else{
@@ -138,14 +147,4 @@ class a_perfil : AppCompatActivity() {
         }
     }
     //corrutina para actualizar al usuario
-    fun actualizar () = runBlocking {
-        launch {
-            delay(20L)
-            BBDD.actualizar(usuario,  prefil_txt_correo.text.toString(), Perfil_contra.text.toString())
-            usuario= prefil_txt_correo.text.toString()
-
-        }
-        Sharedapp.paswd.paswd = Perfil_contra.text.toString()
-        Sharedapp.user.user = prefil_txt_correo.text.toString()
-    }
 }

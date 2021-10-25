@@ -6,51 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".a_login">
 
-    <EditText
-        android:id="@+id/login_correo"
-        style="@style/Contenedores"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="196dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/furgoneta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_login"
         android:layout_width="208dp"
         android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/usuario"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:layout_marginTop="30dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
-    <EditText
-        android:id="@+id/login_contr"
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Contenedores"
+            android:layout_width="208dp"
+            android:layout_height="48dp"
+            android:hint="@string/usuario"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:inputType="textPersonName"
+            android:id="@+id/login_correo"
+            android:gravity="left"
+            android:textAlignment="gravity"/>
 
-        style="@style/Contenedores"
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="208dp"
         android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/contraseña"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_correo"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_login"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="30dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
-    <Button
-        android:id="@+id/Login_but_entrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Login_but_entrar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_txt_error"
-        app:layout_constraintVertical_bias="0.077"
-        style="@style/botones"
-        />
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Contenedores"
+            android:layout_width="208dp"
+            android:layout_height="48dp"
+            android:hint="@string/contraseña"
+            android:inputType="textPassword"
+            android:id="@+id/login_contr"
+            android:gravity="left"
+            android:textAlignment="gravity"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/Login_txt_error"
@@ -58,79 +72,50 @@
         android:layout_height="45dp"
         android:textAlignment="center"
         android:textColor="#E31D1D"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_contr"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/Login_but_entrar"
+        style="@style/botones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Login_but_entrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_txt_error"
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:id="@+id/Login_txt_registro"
         style="@style/texto"
         android:layout_width="231dp"
         android:layout_height="32dp"
-        android:layout_marginTop="41dp"
         android:text="@string/Login_txt_registro"
         android:textAlignment="center"
         android:textColor="#2979FF"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_but_entrar"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginTop="30dp"/>
+
 
     <TextView
         android:id="@+id/txtInvitado"
         style="@style/texto"
         android:layout_width="230dp"
         android:layout_height="33dp"
-        android:layout_marginTop="41dp"
         android:text="@string/txtInvitado"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_but_entrar"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_txt_registro"
+        android:layout_marginTop="30dp"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="196dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/furgoneta"
-        app:layout_constraintBottom_toTopOf="@+id/login_correo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/mostrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ver"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

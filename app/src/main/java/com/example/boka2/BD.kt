@@ -186,7 +186,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         val db=this.readableDatabase
         val cursor:Cursor = db.rawQuery("select nombre from carta where tipo=? ", arrayOf(tipo))
         while (cursor.moveToNext()){
-            val todo= cartagen(cursor.getString(1))
+            val todo = cartagen(cursor.getString(0))
             fila.add(todo)
         }
         return fila

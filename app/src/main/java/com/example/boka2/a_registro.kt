@@ -6,14 +6,14 @@ import android.os.Bundle
 import android.util.Log.i
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.p_login.*
 import kotlinx.android.synthetic.main.p_registro.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+
 
 class a_registro : AppCompatActivity() {
+
     internal val BBDD = Base_de_Datos(this, "bd", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +26,9 @@ class a_registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_registro)
         btnRegistro.setOnClickListener() {
+            val txtmail = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.txtmail) as TextView
+            val txtpsw = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.txtpsw) as TextView
+            val txtreppaswd = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.txtreppaswd) as TextView
             //Comprobamos que no hay ningun campo vacio
             if (!txtmail.text.trim().isEmpty() && !txtpsw.text.trim().isEmpty() && !txtreppaswd.text.trim().isEmpty() ){
                 if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
@@ -50,7 +53,7 @@ class a_registro : AppCompatActivity() {
                             if(mayus && numero){
                                 if (BBDD.buscarCorreo(txtmail.text.toString())){
                                     val intent = Intent(this, MainActivity::class.java)
-                                    registro()
+
                                     Toast.makeText(this, "Usuario creado con exito", Toast.LENGTH_SHORT)
                                         .show()
                                 }
@@ -81,15 +84,5 @@ class a_registro : AppCompatActivity() {
         
 
     }
-    //creamos una corrutina para registrar al usuario
-    fun registro () = runBlocking {
-        launch {
-            delay(20L)
-            startActivity(intent)
-        }
-        BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
-        Sharedapp.user.user = txtmail.text.toString()
-        Sharedapp.paswd.paswd = txtpsw.text.toString()
-        Sharedapp.prefs.tipousu = "cliente"
-    }
+
 }
