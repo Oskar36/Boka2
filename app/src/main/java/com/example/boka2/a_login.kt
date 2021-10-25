@@ -12,6 +12,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.p_login.*
 import android.content.SharedPreferences
 import android.os.SystemClock
+import android.widget.TextView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -45,9 +46,11 @@ class a_login : AppCompatActivity() {
             val intent= Intent(this, a_registro::class.java)
             startActivity(intent)
 
-
         }
         Login_but_entrar.setOnClickListener() {
+            val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
+            val login_contr = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_contr) as TextView
+
             //Si introducimos los datos de inicio de sesion de un administrador
             if (login_correo.text.toString().toLowerCase().equals("admin") && login_contr.text.toString().toLowerCase().equals("admin")){
                 val intent =Intent(this, MainActivity::class.java)
