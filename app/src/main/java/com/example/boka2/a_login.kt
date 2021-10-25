@@ -20,6 +20,7 @@ import kotlinx.coroutines.runBlocking
 
 
 class a_login : AppCompatActivity() {
+    //1
     private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
     val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
     val login_contr = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_contr) as TextView
