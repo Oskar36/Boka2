@@ -10,6 +10,9 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.p_perfil.*
 import kotlinx.android.synthetic.main.p_registro.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 
 class a_perfil : AppCompatActivity() {
