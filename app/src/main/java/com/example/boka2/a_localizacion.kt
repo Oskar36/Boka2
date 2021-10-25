@@ -161,7 +161,6 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
         val bd = Base_de_Datos(this, "bd", null, 1)
         val lista3 = bd.Coordenadas2()
 
-//gtdfhtr
 
         val random:Int =(0 until lista3.size).random()
         gmap!!.clear()

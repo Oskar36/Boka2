@@ -24,7 +24,6 @@ class a_calendario : AppCompatActivity() {
         }else{
             inflater.inflate(R.menu.menu, menu)
         }
-        //inflater.inflate(R.menu.menu, menu)
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -111,16 +110,10 @@ class a_calendario : AppCompatActivity() {
             //Asignamos un valor fijo para que las imagenes no se deformen
             LinearLayout.LayoutParams(1125, 700)
         )
-        val lp2 = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-
-
-            )
 
         val layout: LinearLayout =llcalendario
 
-        //Creamos los botones en bucle
+        //Creamos las imagenes en bucle
         var numBotones = BBDDeven.Evento_ofe("evento").size
         for (i in 0 until numBotones) {
             //Cargamos las imagenes de la base de datos y las añadimos a la vista

@@ -22,9 +22,6 @@ class a_login : AppCompatActivity() {
     private val BBDD = Base_de_Datos(this, "usuarios", null, 1 )
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
         SystemClock.sleep(1000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_login)
@@ -43,7 +40,7 @@ class a_login : AppCompatActivity() {
 
 
         Login_txt_registro.setOnClickListener(){
-            //En caso de pilsar el boton de registro  nos redirige a dicha activity
+            //En caso de pulsar el boton de registro  nos redirige a dicha activity
 
             val intent= Intent(this, a_registro::class.java)
             startActivity(intent)
@@ -54,10 +51,8 @@ class a_login : AppCompatActivity() {
             //Si introducimos los datos de inicio de sesion de un administrador
             if (login_correo.text.toString().toLowerCase().equals("admin") && login_contr.text.toString().toLowerCase().equals("admin")){
                 val intent =Intent(this, MainActivity::class.java)
-
                 mainadmin()
-
-                //Si iiciamos sesion como cliente
+                //Si iciamos sesion como cliente
             }else {
                 if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
                     val intent = Intent(this, MainActivity::class.java)
@@ -74,7 +69,7 @@ class a_login : AppCompatActivity() {
             maininvitado()
         }
     }
-    //creo una corrutina para logear a un cliente
+    //creamos una corrutina para logear a un cliente
     fun main () = runBlocking {
         launch {
             delay(1000L)

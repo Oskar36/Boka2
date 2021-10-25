@@ -80,7 +80,7 @@ class a_perfil : AppCompatActivity() {
     private val BBDD = Base_de_Datos(this, "bd", null, 1 )
     var usuario:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
-//Barra de tareas
+    //Barra de tareas
         getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         getSupportActionBar()?.setLogo(R.drawable.logo2)
         getSupportActionBar()?.setTitle("")
@@ -88,8 +88,10 @@ class a_perfil : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.p_perfil)
+        //cargamos los datos del usuario desde las sharedpreferences
         prefil_txt_correo.setText(Sharedapp.user.user)
         Perfil_contra.setText(Sharedapp.paswd.paswd)
+        //actualizamos los datos del usuario en caso de que pulse el boton guardar
         usuario= prefil_txt_correo.text.toString()
         Perfil_btn_guardar.setOnClickListener {
             if (!prefil_txt_correo.text.isEmpty() &&  !Perfil_contra.text.isEmpty()){

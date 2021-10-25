@@ -75,7 +75,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         insertarEventoOfe("ofertae","2022-01-12","oferta",db)
         insertarEventoOfe("ofertaf","2022-01-29","oferta",db)
 
-
+        //Inserciones de municipios y calles
         insertarLocalizacion ("Bilbao","Pl. del Arriaga","43.259572","-2.925205",db)
         insertarLocalizacion ("Bilbao","Av. Abandoibarra","43.268270","-2.933497",db)
         insertarLocalizacion ("Bilbao","Indautxu Plaza","43.260.181","-2.940444",db)
@@ -127,7 +127,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         registrar2.put("tipo",tipo)
         db?.insert("eveofe",null,registrar2)
     }
-
+    //Insercion de las localizaciones
     fun insertarLocalizacion(municipio1:String,calle1:String,coordenada1:String,coordenada2:String, db:SQLiteDatabase?){
         val registrar2=ContentValues()
         registrar2.put("municipio",municipio1)
@@ -142,11 +142,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         val fila:MutableList<usuario> = ArrayList()
         val db=this.readableDatabase
         val cursorfila = db.rawQuery("select * from usuarios where user=?", arrayOf(user1))
-        if (cursorfila.count == 0){
-            return true
-        }else{
-            return false
-        }
+        return cursorfila.count == 0
     }
 
     //Funcion para comprobar usuario
@@ -154,14 +150,10 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         val fila:MutableList<usuario> = ArrayList()
         val db=this.readableDatabase
         val cursorfila = db.rawQuery("select * from usuarios where user=? AND contrasena=?", arrayOf(user1, contrasena1))
-        if (cursorfila.count == 1){
-            return true
-        }else{
-            return false
-        }
+        return cursorfila.count == 1
     }
 
-    //Funcion para recoger en una lista todos los  eventos o ofertas que hay en la carta
+    //Funcion para recoger en una lista los  eventos u ofertas que hay en la carta
     fun Evento_ofe(tipo:String):List<eve_ofe>{
         val fila:MutableList<eve_ofe> = ArrayList()
         val db=this.readableDatabase
@@ -174,6 +166,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
 
         return fila
     }
+    //Funcion para recoger en una lista todos los  eventos y ofertas que hay en la carta
     fun Main():List<eve_ofe>{
         val fila:MutableList<eve_ofe> = ArrayList()
         val db=this.readableDatabase
@@ -200,7 +193,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     }
 
 
-
+    //Funcion para cargar los municipios sin repetir ninguno
     fun Municipio():MutableList<String>{
         val fila:MutableList<String> = ArrayList()
         val db=this.readableDatabase
@@ -211,6 +204,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         }
         return fila
     }
+    //Funcion para cargar las calles en funcion del municipio elegido
     fun Calle(municip:String):MutableList<String>{
         val fila:MutableList<String> = ArrayList()
         val db=this.readableDatabase
@@ -221,6 +215,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         }
         return fila
     }
+    //Funcion para cargar las coordenadas de una localizacion concreta
     fun Coordenadas(calle:String):MutableList<coordenadas>{
         val fila:MutableList<coordenadas> = ArrayList()
         val db=this.readableDatabase
@@ -231,7 +226,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         }
         return fila
     }
-
+    //Funcion para cargar las coordenadas de una localizacion concreta
     fun Coordenadas2():MutableList<coordenadas2>{
         val fila:MutableList<coordenadas2> = ArrayList()
         val db=this.readableDatabase
@@ -242,6 +237,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         }
         return fila
     }
+    //Funcion para actualizar al usuario
     fun actualizar(usuarioold:String,usuarionew:String,contraseña:String){
         val db=this.writableDatabase
         val fila=ContentValues()
@@ -249,6 +245,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         fila.put("contrasena",contraseña)
         db.update("usuarios",fila,"user=?", arrayOf(usuarioold))
     }
+    //Funcion para insertar una nueva resrerva
     fun insertReserva(fecha: String,hora:String,comensales:String,municipio:String,calle:String){
         val db=this.writableDatabase
         val fila=ContentValues()
@@ -259,6 +256,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         fila.put("calle",calle)
         db?.insert("reserva",null,fila)
     }
+    //Funcion para cargar las reservas
     fun reservas():MutableList<reserva>{
         val fila:MutableList<reserva> = ArrayList()
         val db=this.readableDatabase

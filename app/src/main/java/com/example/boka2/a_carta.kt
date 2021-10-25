@@ -111,14 +111,6 @@ class a_carta : AppCompatActivity() {
 
 
         )
-        val lp2 = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-
-
-
-            )
-
         val layout: LinearLayout =llcarta
 
         //Creamos los botones en bucle

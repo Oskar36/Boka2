@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         )
         val layout: LinearLayout =llprincipal
 
-        //Creamos los botones en bucle
+        //Creamos las imagenes en bucle
         var numBotones = BBDDcarta.Main().size
         for (i in 0 until numBotones) {
             //Cargamos las imagenes de la base de datos y las añadimos a la vista
@@ -124,7 +124,5 @@ class MainActivity : AppCompatActivity() {
         }
 
         }
-
-
     }
 

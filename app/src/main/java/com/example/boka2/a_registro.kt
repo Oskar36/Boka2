@@ -25,7 +25,7 @@ class a_registro : AppCompatActivity() {
             //Comprobamos que no hay ningun campo vacio
             if (!txtmail.text.trim().isEmpty() && !txtpsw.text.trim().isEmpty() && !txtreppaswd.text.trim().isEmpty() ){
                 if (txtpsw.text.toString().equals(txtreppaswd.text.toString())) {
-                    //comprobamos la contraseña
+                    //comprobamos la contraseña (alfanumerica minimo de 6 caracteres combinando mayusculas y minusculas)
                     var ok = 0
                     var i=0
                     var mayus=false

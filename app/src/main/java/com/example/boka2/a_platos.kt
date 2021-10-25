@@ -107,16 +107,9 @@ class a_platos : AppCompatActivity() {
             //Asignamos un valor fijo para que las imagenes no se deformen
             LinearLayout.LayoutParams(1125, 700)
         )
-        val lp2 = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-
-
-            )
-
         val layout: LinearLayout =llplatos
 
-        //Creamos los botones en bucle
+        //Creamos las imagenes en bucle en funcion del tipo de comida elegida
         var tipo = Sharedapp.tipo.tipo
         var numBotones = BBDDplatos.Carta(tipo).size
         for (i in 0 until numBotones) {
