@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 val intent= Intent(this, a_registro::class.java)
                 Sharedapp.prefs.tipousu = "invitado"
-                finish()
+
                 startActivity(intent)
             }
         }
