@@ -40,28 +40,54 @@
                             android:layout_marginTop="16dp"
                             android:src="@drawable/furgoneta" />
 
-                        <EditText
-                            android:id="@+id/login_correo"
-                            android:layout_width="210dp"
-                            android:layout_height="45dp"
-                            android:layout_marginTop="5dp"
-                            android:ems="10"
-                            android:hint="@string/usuario"
-                            android:inputType="textPersonName"
-                            android:minHeight="48dp"
-                            style="@style/Contenedores"
-                            />
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout_login"
+                            android:layout_width="208dp"
+                            android:layout_height="48dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView"
+                            android:layout_marginTop="30dp"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="0dp">
 
-                        <EditText
-                            android:id="@+id/login_contr"
-                            style="@style/Contenedores"
-                            android:layout_marginTop="15dp"
-                            android:ems="10"
-                            android:hint="@string/contraseña"
-                            android:inputType="textPassword"
-                            android:minHeight="48dp"
-                            android:layout_width="210dp"
-                            android:layout_height="45dp"/>
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/Contenedores"
+                                android:layout_width="208dp"
+                                android:layout_height="48dp"
+                                android:hint="@string/usuario"
+                                android:ems="10"
+                                android:minHeight="48dp"
+                                android:inputType="textPersonName"
+                                android:id="@+id/login_correo"
+                                android:gravity="left"
+                                android:textAlignment="gravity"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout"
+                            android:layout_width="208dp"
+                            android:layout_height="48dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_login"
+                            app:passwordToggleEnabled="true"
+                            android:layout_marginTop="30dp"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="0dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/Contenedores"
+                                android:layout_width="208dp"
+                                android:layout_height="48dp"
+                                android:hint="@string/contraseña"
+                                android:inputType="textPassword"
+                                android:id="@+id/login_contr"
+                                android:gravity="left"
+                                android:textAlignment="gravity"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
                         <CheckBox
                             android:id="@+id/mostrar"
@@ -112,6 +138,7 @@
                             android:layout_width="230dp"
                             android:layout_height="52dp"
                             android:layout_marginTop="40dp"
+                            android:layout_marginBottom="20dp"
                             android:text="@string/Login_txt_registro"
                             android:textAlignment="center"
                             android:textColor="#2979FF"
