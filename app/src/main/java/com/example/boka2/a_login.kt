@@ -41,7 +41,7 @@ class a_login : AppCompatActivity() {
 
         Login_txt_registro.setOnClickListener(){
 
-            //En caso de pulsar el boton de registro  nos redirige a dicha activity
+            //En caso de pulsar el  boton de registro  nos redirige a dicha activity
 
             val intent= Intent(this, a_registro::class.java)
             startActivity(intent)
