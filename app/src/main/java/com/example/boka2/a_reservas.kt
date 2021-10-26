@@ -214,7 +214,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
             }
           }else{
               CustomDialogClass(this).show()
-              Sharedapp.Reserva.reserva="si"
+              Sharedapp.reserva.reservas="si"
           }
         }
     }

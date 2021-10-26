@@ -8,17 +8,18 @@ class Sharedapp : Application() {
         lateinit var user: User
         lateinit var paswd: Paswd
         lateinit var tipo: tipo
-        lateinit var Reserva: Reserva
+        lateinit var reserva: Reserva
         lateinit var Fecha: Fecha
     }
 
     override fun onCreate() {
         super.onCreate()
+
         prefs = Prefs(applicationContext)
         user = User(applicationContext)
         paswd = Paswd(applicationContext)
         tipo = tipo(applicationContext)
-        Reserva = Reserva(applicationContext)
+        reserva = Reserva(applicationContext)
         Fecha = Fecha(applicationContext)
     }
 }

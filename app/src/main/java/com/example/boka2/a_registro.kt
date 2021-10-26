@@ -55,13 +55,20 @@ class a_registro : AppCompatActivity() {
                             }
                             if(mayus && numero){
                                 if (BBDD.buscarCorreo(txtmail.text.toString())){
-                                    val intent = Intent(this, MainActivity::class.java)
-                                    registro()
-                                    startActivity(intent)
-                                    Toast.makeText(this, "Usuario creado con exito", Toast.LENGTH_SHORT)
-                                        .show()
-                                    startActivity(intent)
-                                    finish()
+                                    //En caso de que venga desde reserva le llevara directamente a reserva
+                                    if(Sharedapp.reserva.reservas.equals("si")){
+                                        Sharedapp.reserva.reservas="no"
+                                        registro()
+                                        finish()
+                                    }else{
+                                        val intent = Intent(this, MainActivity::class.java)
+                                        registro()
+                                        startActivity(intent)
+                                        Toast.makeText(this, "Usuario creado con exito", Toast.LENGTH_SHORT)
+                                            .show()
+                                        startActivity(intent)
+                                        finish()
+                                    }
                                 }
                                 else{
                                     Toast.makeText(this, "${getResources().getString(R.string.usuario_existente)}", Toast.LENGTH_SHORT)

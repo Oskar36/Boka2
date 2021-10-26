@@ -46,7 +46,9 @@ class a_login : AppCompatActivity() {
 
             val intent= Intent(this, a_registro::class.java)
             startActivity(intent)
-
+            if(Sharedapp.reserva.reservas.equals("si")){
+                finish()
+            }
         }
         Login_but_entrar.setOnClickListener() {
             val login_correo = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.login_correo) as TextView
@@ -62,8 +64,8 @@ class a_login : AppCompatActivity() {
             }else {
                 if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
                    //En caso de que venga desde reserva le llevara directamente a reserva
-                    if(Sharedapp.Reserva.reserva.equals("si")){
-                        Sharedapp.Reserva.reserva="no"
+                    if(Sharedapp.reserva.reservas.equals("si")){
+                        Sharedapp.reserva.reservas="no"
                         Sharedapp.prefs.tipousu="cliente"
                         Sharedapp.user.user = login_correo.text.toString()
                         Sharedapp.paswd.paswd = login_contr.text.toString()
@@ -83,6 +85,7 @@ class a_login : AppCompatActivity() {
         //Si pulsamos el boton de entrar como invitado nos manda a la pantalla principal como invitados
         txtInvitado.setOnClickListener(){
             val invitado = Intent(this, MainActivity::class.java)
+            maininvitado()
             startActivity(invitado)
         }
     }
