@@ -163,7 +163,7 @@ class a_localizacion : AppCompatActivity(), OnMapReadyCallback {
         val bd = Base_de_Datos(this, "bd", null, 1)
         val lista3 = bd.Coordenadas2()
 
-
+    //Se genera la localizacion en el mapa aleatoriamente
         val random:Int =(0 until lista3.size).random()
         gmap!!.clear()
         val location = LatLng(lista3.get(random).coorde1.toDouble(),lista3.get(random).coorde2.toDouble())

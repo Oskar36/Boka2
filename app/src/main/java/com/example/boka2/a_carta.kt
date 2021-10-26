@@ -12,6 +12,7 @@ import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.p_carta.*
 
 class a_carta : AppCompatActivity() {
+    //Barra de tareas
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater

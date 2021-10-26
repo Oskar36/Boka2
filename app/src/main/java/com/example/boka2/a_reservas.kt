@@ -198,7 +198,9 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
         btnreserva.setOnClickListener(){
             val textofecha= findViewById<View>(R.id.txtFechaRes) as TextView
             val textohora= findViewById<View>(R.id.txtHoraRes) as TextView
+            //Si entra como invitado aparecera un mensaje debido a que debe iniciar sesion
           if(!Sharedapp.prefs.tipousu.equals("invitado")){
+              //Comprobar si los campos no estan vacios
             if(!textohora.text.toString().isEmpty() && !textofecha.text.toString().isEmpty()  && !numberPicker.isEmpty()){
                 Toast.makeText(this, "Reserva realizada correctamente", Toast.LENGTH_SHORT).show()
                 bd.insertReserva(textofecha.text.toString(),textohora.text.toString(),numberPicker.value.toString(),spinermunicipio.selectedItem.toString(),spinercalle.selectedItem.toString())

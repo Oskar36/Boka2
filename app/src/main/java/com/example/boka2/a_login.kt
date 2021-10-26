@@ -61,6 +61,7 @@ class a_login : AppCompatActivity() {
                 //Si iciamos sesion como cliente
             }else {
                 if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
+                   //En caso de que venga desde reserva le llevara directamente a reserva
                     if(Sharedapp.Reserva.reserva.equals("si")){
                         Sharedapp.Reserva.reserva="no"
                         Sharedapp.prefs.tipousu="cliente"
