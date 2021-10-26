@@ -39,4 +39,6 @@
     <string name="contraseñas_distintas">Las contraseñas son distintas</string>
     <string name="Contraseña_incorrecta">Las contraseñas debe tener una mayuscula y un número y debe tener como mínimo 6 carácteres</string>
     <string name="ver">Mostrar</string>
+    <string name="actualizar_datos">Datos del usuario actualizados</string>
+    <string name="reserva_correcta">Reserva realizada correctamente</string>
 </resources>

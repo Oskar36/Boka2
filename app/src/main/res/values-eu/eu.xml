@@ -40,4 +40,6 @@
     <string name="contraseñas_distintas">Pasahitzak ezberdinak dira</string>
     <string name="Contraseña_incorrecta">Pasahitza minuskula bat eta zenbaki bat izan behar du. 6 letra edo gehiago izan behar ditu</string>
     <string name="ver">Erakutsi</string>
+    <string name="actualizar_datos">Erabiltzailearen datuak gordeta</string>
+    <string name="reserva_correcta">Erreserba behar bezala egina</string>
 </resources>

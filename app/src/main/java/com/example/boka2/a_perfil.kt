@@ -131,7 +131,7 @@ class a_perfil : AppCompatActivity() {
                         }
                         if(mayus && numero){
                             actualizar()
-                            Toast.makeText(this, "Datos del usuario actualizados", LENGTH_SHORT).show()
+                            Toast.makeText(this, "${getResources().getString(R.string.actualizar_datos)}", LENGTH_SHORT).show()
                         }
                         else{
                             Toast.makeText(this, "${getResources().getString(R.string.Contraseña_incorrecta)}", Toast.LENGTH_SHORT)

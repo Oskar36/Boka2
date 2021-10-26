@@ -40,5 +40,7 @@
     <string name="contraseñas_distintas">passwords are differents</string>
     <string name="Contraseña_incorrecta">Passwords must have one uppercase, one number and have 6 characters or more</string>
     <string name="ver">Show</string>
+    <string name="actualizar_datos">User data updated</string>
+    <string name="reserva_correcta">Reservation made correctly</string>
 
 </resources>
