@@ -11,13 +11,36 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView4"
-        android:layout_width="734dp"
-        android:layout_height="383dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="412dp"
+        android:layout_height="523dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/TxtComensales"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/mapView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.348" />
+
+    <TextView
+        android:id="@+id/txtFechaADM"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/mapView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TxtComensales"
+        app:layout_constraintVertical_bias="0.594" />
 
 </androidx.constraintlayout.widget.ConstraintLayout >

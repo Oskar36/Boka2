@@ -282,7 +282,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
     private fun onDateSelected(day: Int, month: Int, year: Int,
                                elementoPicker: Int) {
         val txtFechaRes = findViewById<View>(R.id.txtFechaRes) as TextView
-        txtFechaRes.setText("$day/$month/$year")
+        txtFechaRes.setText("$day/${month+1}/$year")
     }
     override fun onValueChange(p0: NumberPicker?, p1: Int, p2: Int) {
     }

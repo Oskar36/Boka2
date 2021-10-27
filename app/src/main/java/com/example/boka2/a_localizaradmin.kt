@@ -12,7 +12,11 @@ import com.google.android.gms.maps.model.LatLng
 
 import com.google.android.gms.maps.model.MarkerOptions
 
-import kotlinx.android.synthetic.main.p_localizacion.*
+import com.google.android.gms.maps.GoogleMap
+import kotlinx.android.synthetic.main.p_localizacion.mapView4
+import kotlinx.android.synthetic.main.p_localizaradmin.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
@@ -137,22 +141,29 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
-        gmap!!.setMinZoomPreference(12f)
-        var ny = LatLng(43.267010, -2.942118)
-        val location = LatLng(43.267010, -2.942118)
-        gmap!!.moveCamera(CameraUpdateFactory.newLatLng(ny))
-        //Definición del marcador y ponerle la foto al marcador
-        val marker = MarkerOptions().position(ny)
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
-        ny=LatLng(43.265869, -2.947557)
-        val marker2 = MarkerOptions().position(ny)
-        marker2.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
-        ny=LatLng(43.265627, -2.944349)
-        val marker3 = MarkerOptions().position(ny)
-        marker3.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
-        gmap!!.addMarker(marker)
-        gmap!!.addMarker(marker2)
-        gmap!!.addMarker(marker3)
+        gmap!!.setMinZoomPreference(10f)
+        val bd = Base_de_Datos(this, "bd", null, 1)
+        val lista3 = bd.Localizacion()
+       for(i in 0 until bd.Localizacion().size){
+           val location = LatLng(bd.Localizacion().get(i).coordenada1, bd.Localizacion().get(i).coordenada2)
+           val marker = MarkerOptions().position(location).title(bd.Localizacion().get(i).municipio).snippet(bd.Localizacion().get(i).calle)
+           marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.furgomapa))
+           gmap!!.moveCamera(CameraUpdateFactory.newLatLng(location))
+           gmap!!.addMarker(marker)
+       }
+        gmap!!.setOnMarkerClickListener { marker ->
+            if (marker.isInfoWindowShown) {
+                marker.hideInfoWindow()
+            } else {
+                marker.showInfoWindow()
+            }
+            val sdf = SimpleDateFormat("dd/M/yyyy ")
+            val currentDate = sdf.format(Date())
+            txtFechaADM.text=currentDate.toString()
+            TxtComensales.text="Comensales: "+bd.buscarReserva(marker.snippet.toString(),txtFechaADM.text.toString()).toString()
+            true
+        }
     }
 }
+
 

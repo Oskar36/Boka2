@@ -12,9 +12,10 @@ data class usuario (val correo: String, val contraseña: String)
 data class carta (val nombre:String, val tipo:String,val alergias:String)
 data class cartagen(val nombre:String)
 data class eve_ofe(val nombre:String)
+data class comensales(val cant:Int)
 data class coordenadas(val coorde1:Double,val coorde2:Double)
 data class coordenadas2(val calle:String,val coorde1:String,val coorde2:String)
-data class localizacion (val calle: String, val municipio: String, val coordenada1: String, val coordenada2: String)
+data class localizacion (val municipio: String, val calle: String, val coordenada1: Double, val coordenada2: Double)
 data class reserva(val fecha: String,val hora: String,val comensales:String,val municipio: String,val calle: String)
 class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.CursorFactory?, version:Int) :SQLiteOpenHelper(context,name,factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
@@ -266,5 +267,23 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
             fila.add(todo)
         }
         return fila
+    }
+    fun Localizacion ():MutableList<localizacion>{
+        val fila:MutableList<localizacion> = ArrayList()
+        val db=this.readableDatabase
+        val cursor:Cursor = db.rawQuery("select * from localizacion", null)
+        while (cursor.moveToNext()){
+            val todo= localizacion(cursor.getString(0), cursor.getString(1),cursor.getDouble(2),cursor.getDouble(3))
+            fila.add(todo)
+        }
+        return fila
+    }
+    fun buscarReserva(calle1: String,fecha1: String):String{
+        val db=this.readableDatabase
+        var cant=""
+       val cursor:Cursor = db.rawQuery("select SUM(comensales) from reserva where calle=? AND fecha=?", arrayOf(calle1,fecha1))
+        cursor.moveToFirst()
+            cant=cursor.getInt(0).toString()
+        return cant
     }
 }

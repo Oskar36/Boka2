@@ -89,25 +89,25 @@ class a_quienesSomos : AppCompatActivity() {
         setContentView(R.layout.p_quienes_somos)
         //Al pulsar los diferentes txt nos redirige a sus correspondientes formas de contacto (Telefono, instagram.....)
         txtInstagram.setOnClickListener(){
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/?hl=es"))
-            startActivity(browserIntent)
+            abrirweb("https://www.instagram.com/?hl=es")
         }
         txtFacebook.setOnClickListener(){
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://es-es.facebook.com/"))
-            startActivity(browserIntent)
+            abrirweb("https://es-es.facebook.com/")
         }
         txtGmail.setOnClickListener(){
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"))
-            startActivity(browserIntent)
+            abrirweb("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin")
         }
         txtTwitter.setOnClickListener(){
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/?lang=es"))
-            startActivity(browserIntent)
+            abrirweb("https://twitter.com/?lang=es")
         }
         txtTelefono.setOnClickListener(){
             val nTel= Uri.parse("tel:"+txtTelefono.text.toString())
             val phone= Intent(Intent.ACTION_DIAL, nTel)
             startActivity(phone)
         }
+    }
+    fun abrirweb(web:String){
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/?hl=es"))
+        startActivity(browserIntent)
     }
 }
