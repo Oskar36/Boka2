@@ -100,10 +100,10 @@ class a_registro : AppCompatActivity() {
     fun registro () = runBlocking {
         launch {
             delay(20L)
-            BBDD.insertar(txtmail.text.toString().toLowerCase(), txtpsw.text.toString())
+            BBDD.insertar(txtmail.text.toString(), txtpsw.text.toString())
         }
 
-        Sharedapp.user.user = txtmail.text.toString().toLowerCase()
+        Sharedapp.user.user = txtmail.text.toString()
         Sharedapp.paswd.paswd = txtpsw.text.toString()
         Sharedapp.prefs.tipousu = "cliente"
     }

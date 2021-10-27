@@ -62,12 +62,12 @@ class a_login : AppCompatActivity() {
                 startActivity(intent)
                 //Si iciamos sesion como cliente
             }else {
-                if (BBDD.ComprobarUsuario(login_correo.text.toString().toLowerCase(), login_contr.text.toString())) {
+                if (BBDD.ComprobarUsuario(login_correo.text.toString(), login_contr.text.toString())) {
                    //En caso de que venga desde reserva le llevara directamente a reserva
                     if(Sharedapp.reserva.reservas.equals("si")){
                         Sharedapp.reserva.reservas="no"
                         Sharedapp.prefs.tipousu="cliente"
-                        Sharedapp.user.user = login_correo.text.toString().toLowerCase()
+                        Sharedapp.user.user = login_correo.text.toString()
                         Sharedapp.paswd.paswd = login_contr.text.toString()
                         finish()
                     }else{
