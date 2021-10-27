@@ -166,8 +166,12 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
             val sdf = SimpleDateFormat("dd/M/yyyy ")
             val currentDate = sdf.format(Date())
             val txtFechaADM = findViewById<EditText>(R.id.txtFechaADM) as TextView
-            txtFechaADM.text=currentDate.toString()
-            TxtComensales.text="Comensales: "+bd.buscarReserva(marker.snippet.toString(),txtFechaADM.text.toString()).toString()
+            if(txtFechaADM.text.toString().isNotEmpty()){
+                TxtComensales.text="Comensales: "+bd.buscarReserva(marker.snippet.toString(),txtFechaADM.text.toString()).toString()
+            }
+            else{
+                Toast.makeText(this, "\"${getResources().getString(R.string.campos_vacios)}\"", Toast.LENGTH_SHORT).show()
+            }
             true
         }
     }

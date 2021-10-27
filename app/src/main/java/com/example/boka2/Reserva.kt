@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class Reserva(context: Context) {
-    val PREFS_NAME = "com.example.boka2.sharedpreferences.Reserva"
+    val PREFS_NAME = "com.example.boka2.sharedpreferences.ReservE"
     val SHARED_NAME = "shared_name"
     val Reserva: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
     var reservas: String
