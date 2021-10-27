@@ -235,6 +235,8 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
         mapView!!.onResume()
     }
 
+
+
     override fun onStart() {
         super.onStart()
         mapView!!.onStart()
