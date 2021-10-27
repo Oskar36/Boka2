@@ -281,9 +281,10 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
     fun buscarReserva(calle1: String,fecha1: String):String{
         val db=this.readableDatabase
         var cant=""
-       val cursor:Cursor = db.rawQuery("select SUM(comensales) from reserva where calle=? AND fecha=?", arrayOf(calle1,fecha1))
-        cursor.moveToFirst()
-            cant=cursor.getInt(0).toString()
+       val cursor:Cursor = db.rawQuery("select SUM(comensales) from reserva where calle=? and fecha=?  ", arrayOf(calle1,fecha1))
+       cursor.moveToFirst()
+        cant=cursor.getInt(0).toString()
+
         return cant
     }
 }
