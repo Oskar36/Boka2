@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:name="com.google.android.gms.maps.MapFragment"
+    tools:context=".a_localizacion"
+    tools:ignore="ExtraText">
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView4"
+        android:layout_width="735dp"
+        android:layout_height="255dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/TxtComensales"
+        style="@style/Contenedores"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:foregroundGravity="left"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/mapView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
+
+    <TextView
+        android:id="@+id/txtFechaADM"
+        style="@style/Contenedores"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:foregroundGravity="left"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/mapView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981" />
+
+</androidx.constraintlayout.widget.ConstraintLayout >
