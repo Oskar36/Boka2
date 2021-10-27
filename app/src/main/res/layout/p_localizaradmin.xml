@@ -31,13 +31,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.322"
-        android:foregroundGravity="left"
-        android:textAlignment="gravity"/>
+        android:textAlignment="gravity"
+        android:gravity="center"/>
 
-    <TextView
+    <EditText
         android:foregroundGravity="left"
         android:textAlignment="gravity"
         android:id="@+id/txtFechaADM"
+        android:inputType="time"
         style="@style/Contenedores"
         android:layout_width="265dp"
         android:layout_height="50dp"
@@ -46,6 +47,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TxtComensales"
-        app:layout_constraintVertical_bias="0.641" />
+        app:layout_constraintVertical_bias="0.641"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/fecha"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout >
