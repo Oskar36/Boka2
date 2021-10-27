@@ -11,8 +11,8 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView4"
-        android:layout_width="412dp"
-        android:layout_height="523dp"
+        android:layout_width="735dp"
+        android:layout_height="255dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -26,26 +26,29 @@
         style="@style/Contenedores"
         android:layout_width="265dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/mapView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322"
-        android:foregroundGravity="left"
-        android:textAlignment="gravity"/>
-
-    <TextView
         android:foregroundGravity="left"
         android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/mapView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
+
+    <TextView
         android:id="@+id/txtFechaADM"
         style="@style/Contenedores"
         android:layout_width="265dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:foregroundGravity="left"
         android:gravity="center"
+        android:textAlignment="gravity"
         app:layout_constraintBottom_toTopOf="@+id/mapView4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TxtComensales"
-        app:layout_constraintVertical_bias="0.641" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981" />
 
 </androidx.constraintlayout.widget.ConstraintLayout >
