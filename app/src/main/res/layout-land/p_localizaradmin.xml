@@ -35,10 +35,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.504" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtFechaADM"
         style="@style/Contenedores"
         android:layout_width="265dp"
+        android:inputType="time"
         android:layout_height="50dp"
         android:layout_marginBottom="52dp"
         android:foregroundGravity="left"

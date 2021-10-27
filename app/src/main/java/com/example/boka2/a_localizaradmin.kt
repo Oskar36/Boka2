@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
@@ -15,6 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.GoogleMap
 import kotlinx.android.synthetic.main.p_localizacion.mapView4
 import kotlinx.android.synthetic.main.p_localizaradmin.*
+import kotlinx.android.synthetic.main.p_reservas.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -96,7 +100,9 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
         mapView = mapView4
         mapView!!.onCreate(mapViewBundle)
         mapView!!.getMapAsync(this)
-
+        txtFechaADM.setOnClickListener(){
+            showDatePickerDialog(1)
+        }
     }
     //En caso de que haya problemas con el Bundle
     override fun onSaveInstanceState(outState: Bundle) {
@@ -159,10 +165,22 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
             }
             val sdf = SimpleDateFormat("dd/M/yyyy ")
             val currentDate = sdf.format(Date())
+            val txtFechaADM = findViewById<EditText>(R.id.txtFechaADM) as TextView
             txtFechaADM.text=currentDate.toString()
             TxtComensales.text="Comensales: "+bd.buscarReserva(marker.snippet.toString(),txtFechaADM.text.toString()).toString()
             true
         }
+    }
+    private fun showDatePickerDialog(elementId: Int) {
+        val datePicker = DatePickerFragment { day, month, year ->
+            onDateSelected(day, month, year,elementId) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    private fun onDateSelected(day: Int, month: Int, year: Int,
+                               elementoPicker: Int) {
+        val txtFechaRes = findViewById<View>(R.id.txtFechaADM) as TextView
+        txtFechaRes.setText("$day/${month+1}/$year")
     }
 }
 
