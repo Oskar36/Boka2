@@ -170,7 +170,7 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
                 TxtComensales.text="Comensales: "+bd.buscarReserva(marker.snippet.toString(),txtFechaADM.text.toString()).toString()
             }
             else{
-                Toast.makeText(this, "\"${getResources().getString(R.string.campos_vacios)}\"", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "\"${getResources().getString(R.string.seleccion_fecha)}\"", Toast.LENGTH_SHORT).show()
             }
             true
         }

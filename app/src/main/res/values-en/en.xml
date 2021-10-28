@@ -43,4 +43,5 @@
     <string name="actualizar_datos">User data updated</string>
     <string name="reserva_correcta">Reservation made correctly</string>
     <string name="comensales">commensal</string>
+    <string name="seleccion_fecha">choose a date</string>
 </resources>
