@@ -26,32 +26,33 @@
         style="@style/Contenedores"
         android:layout_width="265dp"
         android:layout_height="50dp"
+        android:gravity="center"
+        android:hint="@string/comensales"
+        android:textAlignment="gravity"
         app:layout_constraintBottom_toTopOf="@+id/mapView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322"
-        android:textAlignment="gravity"
-        android:gravity="center"/>
+        app:layout_constraintVertical_bias="0.322" />
 
     <EditText
-        android:foregroundGravity="left"
-        android:textAlignment="gravity"
         android:id="@+id/txtFechaADM"
-        android:inputType="time"
         style="@style/Contenedores"
         android:layout_width="265dp"
         android:layout_height="50dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/mapView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TxtComensales"
-        app:layout_constraintVertical_bias="0.641"
         android:clickable="false"
         android:editable="false"
         android:ems="10"
         android:focusable="false"
-        android:hint="@string/fecha"/>
+        android:foregroundGravity="left"
+        android:gravity="center"
+        android:hint="@string/fecha"
+        android:inputType="time"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/mapView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TxtComensales"
+        app:layout_constraintVertical_bias="0.641" />
 
 </androidx.constraintlayout.widget.ConstraintLayout >

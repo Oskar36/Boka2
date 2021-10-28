@@ -29,8 +29,7 @@
         </activity>
         <activity
             android:name=".a_localizaradmin"
-            android:exported="true"
-            android:configChanges="orientation|screenSize"/>
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.gms.version"
