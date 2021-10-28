@@ -200,18 +200,23 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
             val textohora= findViewById<View>(R.id.txtHoraRes) as TextView
             //Si entra como invitado aparecera un mensaje debido a que debe iniciar sesion
           if(!Sharedapp.prefs.tipousu.equals("invitado")){
+              if(!bd.ComprobarUsuReserva(textofecha.text.toString().trim(),Sharedapp.user.user )){
               //Comprobar si los campos no estan vacios
             if(!textohora.text.toString().isEmpty() && !textofecha.text.toString().isEmpty()  && !numberPicker.isEmpty()){
                 Toast.makeText(this, "Reserva realizada correctamente", Toast.LENGTH_SHORT).show()
-                bd.insertReserva(textofecha.text.toString(),textohora.text.toString(),numberPicker.value.toString(),spinermunicipio.selectedItem.toString(),spinercalle.selectedItem.toString())
+                bd.insertReserva(textofecha.text.toString(),textohora.text.toString(),numberPicker.value.toString(),spinermunicipio.selectedItem.toString(),spinercalle.selectedItem.toString(),Sharedapp.user.user)
                 val intent= Intent(this, MainActivity::class.java)
                 finish()
                 startActivity(intent)
-            }else{
+            }
+            else{
 
                 Toast.makeText(this, "${getResources().getString(R.string.campos_vacios)}", Toast.LENGTH_SHORT).show()
 
             }
+          }else{
+                  Toast.makeText(this, "Ya ha realizado una reserva para ese dia", Toast.LENGTH_SHORT).show()
+          }
           }else{
               CustomDialogClass(this).show()
               Sharedapp.reserva.reservas="si"

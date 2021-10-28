@@ -26,7 +26,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db!!.execSQL("create table eveofe ( nombre text,fecha real,tipo text,primary key(nombre,fecha))  ")
         db!!.execSQL("create table carta (nombre text primary key, tipo text,alergias text)")
         db!!.execSQL("create table localizacion (municipio text, calle text primary key ,coordenada1 text, coordenada2 text)")
-        db!!.execSQL("create table reserva (id INTEGER  primary key AUTOINCREMENT,fecha text, hora text,comensales text,municipio text,calle text)")
+        db!!.execSQL("create table reserva (id INTEGER  primary key AUTOINCREMENT,fecha text, hora text,comensales text,municipio text,calle text,usuario text)")
       //  db!!.execSQL("create table reserva (id text  primary key AUTOINCREMENT, fecha text,hora text,comensales text,municipio text, calle text)")
         //Insercciones de la tabla carta
         insertarCarta("ensalada","general","ninguno",db)
@@ -247,7 +247,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         db.update("usuarios",fila,"user=?", arrayOf(usuarioold))
     }
     //Funcion para insertar una nueva resrerva
-    fun insertReserva(fecha: String,hora:String,comensales:String,municipio:String,calle:String){
+    fun insertReserva(fecha: String,hora:String,comensales:String,municipio:String,calle:String,usuario: String){
         val db=this.writableDatabase
         val fila=ContentValues()
         fila.put("fecha",fecha)
@@ -255,6 +255,7 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         fila.put("comensales",comensales)
         fila.put("municipio",municipio)
         fila.put("calle",calle)
+        fila.put("usuario",usuario)
         db?.insert("reserva",null,fila)
     }
     //Funcion para cargar las reservas
@@ -286,5 +287,11 @@ class Base_de_Datos(context:Context, name:String, factory: SQLiteDatabase.Cursor
         cant=cursor.getInt(0).toString()
 
         return cant
+    }
+    fun ComprobarUsuReserva(fecha: String,usuario: String):Boolean{
+        val fila:MutableList<reserva> = ArrayList()
+        val db=this.readableDatabase
+        val cursor:Cursor = db.rawQuery("select usuario from reserva where fecha=? and usuario=?", arrayOf(fecha,usuario))
+        return cursor.count >0
     }
 }
