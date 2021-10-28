@@ -43,5 +43,6 @@
     <string name="reserva_correcta">Reserva realizada correctamente</string>
     <string name="comensales">Comensales</string>
     <string name="seleccion_fecha">Seleccione una fecha</string>
-
+    <string name="reserva_realizada_dia">Ya ha realizado una reserva para ese dia</string>
+    <string name="usuario_creado">Usuario creado con exito</string>
 </resources>
