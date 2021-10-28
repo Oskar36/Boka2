@@ -175,12 +175,13 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
             true
         }
     }
+    //
     private fun showDatePickerDialog(elementId: Int) {
         val datePicker = DatePickerFragment { day, month, year ->
             onDateSelected(day, month, year,elementId) }
         datePicker.show(supportFragmentManager, "datePicker")
     }
-
+//funcion para cuando se selcciona la fecha
     private fun onDateSelected(day: Int, month: Int, year: Int,
                                elementoPicker: Int) {
         val txtFechaRes = findViewById<View>(R.id.txtFechaADM) as TextView
