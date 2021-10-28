@@ -16,7 +16,14 @@ class a_quienesSomos : AppCompatActivity() {
         super.onCreateOptionsMenu(menu)
 
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
+         if (Sharedapp.prefs.tipousu.equals("invitado")){
+            inflater.inflate(R.menu.menuinvitado, menu)
+        } else if (Sharedapp.prefs.tipousu.equals("admin")){
+            inflater.inflate(R.menu.menuadmin, menu)
+        }
+        else{
+            inflater.inflate(R.menu.menu, menu)
+        }
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -107,7 +114,7 @@ class a_quienesSomos : AppCompatActivity() {
         }
     }
     fun abrirweb(web:String){
-        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/?hl=es"))
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(web))
         startActivity(browserIntent)
     }
 }

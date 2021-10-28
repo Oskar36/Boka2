@@ -22,7 +22,12 @@ class a_perfil : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
+        if (Sharedapp.prefs.tipousu.equals("admin")){
+            inflater.inflate(R.menu.menuadmin, menu)
+        }
+        else{
+            inflater.inflate(R.menu.menu, menu)
+        }
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

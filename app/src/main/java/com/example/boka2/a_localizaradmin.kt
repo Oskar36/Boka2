@@ -30,7 +30,7 @@ class a_localizaradmin : AppCompatActivity(), OnMapReadyCallback {
         super.onCreateOptionsMenu(menu)
 
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
+        inflater.inflate(R.menu.menuadmin, menu)
         return true
     }
 

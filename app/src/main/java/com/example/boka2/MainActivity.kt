@@ -19,7 +19,10 @@ class MainActivity : AppCompatActivity() {
         val inflater = menuInflater
         if (Sharedapp.prefs.tipousu.equals("invitado")){
             inflater.inflate(R.menu.menuinvitado, menu)
-        }else{
+        }else if (Sharedapp.prefs.tipousu.equals("admin")){
+            inflater.inflate(R.menu.menuadmin, menu)
+        }
+        else{
             inflater.inflate(R.menu.menu, menu)
         }
         return true
