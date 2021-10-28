@@ -197,6 +197,7 @@ class a_carta : AppCompatActivity() {
                 b.tag.equals("img4") -> Sharedapp.tipo.tipo = "smoothiebowl"
             }
             val intent= Intent(this@a_carta, a_platos::class.java)
+            finish()
             startActivity(intent)
         }
     }

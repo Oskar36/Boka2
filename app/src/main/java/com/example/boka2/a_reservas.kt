@@ -202,7 +202,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
           if(!Sharedapp.prefs.tipousu.equals("invitado")){
               if(!bd.ComprobarUsuReserva(textofecha.text.toString().trim(),Sharedapp.user.user )){
               //Comprobar si los campos no estan vacios
-            if(!textohora.text.toString().isEmpty() && !textofecha.text.toString().isEmpty()  && !numberPicker.isEmpty()){
+            if(!textohora.text.toString().isEmpty() && !textofecha.text.toString().isEmpty()  && !numberPicker.isEmpty() && numberPicker.value>0){
                 Toast.makeText(this, "${getResources().getString(R.string.reserva_correcta)}", Toast.LENGTH_SHORT).show()
                 bd.insertReserva(textofecha.text.toString(),textohora.text.toString(),numberPicker.value.toString(),spinermunicipio.selectedItem.toString(),spinercalle.selectedItem.toString(),Sharedapp.user.user)
                 val intent= Intent(this, MainActivity::class.java)
