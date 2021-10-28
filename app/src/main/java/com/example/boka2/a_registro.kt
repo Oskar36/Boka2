@@ -64,7 +64,7 @@ class a_registro : AppCompatActivity() {
                                         val intent = Intent(this, MainActivity::class.java)
                                         registro()
                                         startActivity(intent)
-                                        Toast.makeText(this, "Usuario creado con exito", Toast.LENGTH_SHORT)
+                                        Toast.makeText(this, "${getResources().getString(R.string.usuario_creado)}", Toast.LENGTH_SHORT)
                                             .show()
                                         startActivity(intent)
                                         finish()

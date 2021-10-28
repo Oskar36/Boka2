@@ -61,7 +61,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
 
         }
         if (iditem==R.id.Reservar){
-            Toast.makeText(this, "Ya estas en esta pagina", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${getResources().getString(R.string.pagina_actual)}", Toast.LENGTH_SHORT).show()
         }
         if (iditem==R.id.Calendario){
                val intent=Intent(this, a_calendario::class.java)
@@ -203,7 +203,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
               if(!bd.ComprobarUsuReserva(textofecha.text.toString().trim(),Sharedapp.user.user )){
               //Comprobar si los campos no estan vacios
             if(!textohora.text.toString().isEmpty() && !textofecha.text.toString().isEmpty()  && !numberPicker.isEmpty()){
-                Toast.makeText(this, "Reserva realizada correctamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "${getResources().getString(R.string.reserva_correcta)}", Toast.LENGTH_SHORT).show()
                 bd.insertReserva(textofecha.text.toString(),textohora.text.toString(),numberPicker.value.toString(),spinermunicipio.selectedItem.toString(),spinercalle.selectedItem.toString(),Sharedapp.user.user)
                 val intent= Intent(this, MainActivity::class.java)
                 finish()
@@ -215,7 +215,7 @@ class a_reservas : AppCompatActivity(), OnMapReadyCallback, NumberPicker.OnValue
 
             }
           }else{
-                  Toast.makeText(this, "Ya ha realizado una reserva para ese dia", Toast.LENGTH_SHORT).show()
+                  Toast.makeText(this, "${getResources().getString(R.string.reserva_realizada_dia)}", Toast.LENGTH_SHORT).show()
           }
           }else{
               CustomDialogClass(this).show()

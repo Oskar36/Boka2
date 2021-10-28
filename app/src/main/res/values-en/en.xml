@@ -43,4 +43,6 @@
     <string name="actualizar_datos">User data updated</string>
     <string name="reserva_correcta">Reservation made correctly</string>
     <string name="comensales">commensal</string>
+    <string name="reserva_realizada_dia">You have already made a reservation for that day</string>
+    <string name="usuario_creado">User created successfully</string>
 </resources>

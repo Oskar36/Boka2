@@ -43,4 +43,6 @@
     <string name="actualizar_datos">Erabiltzailearen datuak gordeta</string>
     <string name="reserva_correcta">Erreserba behar bezala egina</string>
     <string name="comensales">Mahaikideak</string>
+    <string name="reserva_realizada_dia">Erreserba egin duzu dagoeneko egun horretarako</string>
+    <string name="usuario_creado">Erabiltzailea ondo eginda</string>
 </resources>
